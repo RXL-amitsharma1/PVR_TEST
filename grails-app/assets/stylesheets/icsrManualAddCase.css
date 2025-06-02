@@ -1,0 +1,13 @@
+.btn-info{
+    background: transparent linear-gradient(180deg, #515E6E 0%, #1f2630 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #1f2630;
+    background: transparent linear-gradient(180deg, #515E6E 0%, #1F2630 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #1F2630;
+    border-radius: 61px;
+    opacity: 1;
+}
+#addToScheduleManual .modal-content{
+    width: 85%;
+    margin-left:7%;
+    margin-top:20%;
+}

@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="788" leftMargin="27" rightMargin="27" topMargin="12" bottomMargin="12" uuid="3bcb2985-97be-4947-9454-c84afc411eca">
+	<property name="net.sf.jasperreports.data.adapter" value="repo:/templates/591638/data/adapter.xml"/>
+	<property name="ireport.jasperserver.url" value="http://10.100.6.156:8080/reports/"/>
+	<property name="ireport.jasperserver.user" value="Devendra.Sharma"/>
+	<property name="ireport.jasperserver.report.resource" value="/templates/591638/data/Nov_Appendix3a.jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/templates/591638/reportUnit"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="style_822558_" hImageAlign="Left" isBlankWhenNull="true">
+		<box topPadding="5"/>
+	</style>
+	<style name="style_822559_" hTextAlign="Right" vTextAlign="Middle" isBlankWhenNull="true" fontName="Arial Unicode" fontSize="9"/>
+	<style name="style_822560_" forecolor="#000000" isBlankWhenNull="true" fontName="Arial Unicode" fontSize="9">
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+	</style>
+	<style name="style_822561_" isBlankWhenNull="true" fontName="Arial Unicode" fontSize="9">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{PV_outputFormat} == null || "HTML".equals($P{PV_outputFormat})]]></conditionExpression>
+			<style isBlankWhenNull="true" fontSize="14"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[!($P{PV_outputFormat} == null || "HTML".equals($P{PV_outputFormat}) || "XLSX".equals($P{PV_outputFormat}))]]></conditionExpression>
+			<style isBlankWhenNull="true">
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="boldStyle" style="style_822561_" isBlankWhenNull="true" isBold="true"/>
+	<style name="pageHeader_ReportHeaderStyle" style="boldStyle" hTextAlign="Center" vTextAlign="Middle" isBlankWhenNull="true" fontSize="12">
+		<box bottomPadding="5"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{PV_outputFormat} == null || "HTML".equals($P{PV_outputFormat})]]></conditionExpression>
+			<style isBlankWhenNull="true" fontSize="16"/>
+		</conditionalStyle>
+	</style>
+	<style name="style_822562_" isBlankWhenNull="true">
+		<box>
+			<topPen lineWidth="1.0" lineStyle="Double"/>
+		</box>
+	</style>
+	<style name="style_822564_" isBlankWhenNull="true" fontSize="9">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{PV_outputFormat} == null || "HTML".equals($P{PV_outputFormat})]]></conditionExpression>
+			<style isBlankWhenNull="true" fontSize="14"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[!($P{PV_outputFormat} == null || "HTML".equals($P{PV_outputFormat}) || "XLSX".equals($P{PV_outputFormat}))]]></conditionExpression>
+			<style isBlankWhenNull="true">
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="style_822563_" style="style_822564_" isBlankWhenNull="true"/>
+	<style name="style_822565_" isBlankWhenNull="true">
+		<box>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#B4B4B4"/>
+		</box>
+	</style>
+	<style name="style_822566_" vTextAlign="Bottom" isBlankWhenNull="true" fontName="Arial Unicode" fontSize="9"/>
+	<style name="style_822567_" style="style_822561_" isBlankWhenNull="true"/>
+	<style name="currentPageNumberingStyle" style="style_822567_" hTextAlign="Right" vTextAlign="Middle" isBlankWhenNull="true">
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+	</style>
+	<style name="totalPagesNumberingStyle" style="style_822567_" hTextAlign="Left" vTextAlign="Middle" isBlankWhenNull="true">
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+	</style>
+	<style name="style_822568_" hImageAlign="Right" vImageAlign="Middle" isBlankWhenNull="true">
+		<box topPadding="5"/>
+	</style>
+	<style name="columnHeaderStyle" mode="Opaque" backcolor="#0071A5" isBlankWhenNull="true"/>
+	<style name="columnTitleStyle" style="style_822561_" mode="Opaque" forecolor="#FFFFFF" backcolor="#0071A5" hTextAlign="Left" vTextAlign="Top" isBlankWhenNull="true" isBold="true">
+		<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="columnStyle" style="style_822561_" hTextAlign="Left" vTextAlign="Top" isBlankWhenNull="true">
+		<box leftPadding="1" rightPadding="1">
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#DCDCDC"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#DCDCDC"/>
+		</box>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="PROJECT_NUM" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="INDICATION" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="CLINICAL_TRIAL" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="EUDRACT_NO" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="PHASE_CODE" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="COUNRTY_CODE" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="STUDY_TITLE" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="STUDY_DESIGN" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="DOSING_REGIMEN" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="STUDY_POPULATION" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="PLANNED_ENROLLMENT" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="ESTIMATED_EXPOSURE" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="FPFV" style="columnStyle" isBlankWhenNull="true"/>
+	<style name="ACTUAL_DATE" style="columnStyle" isBlankWhenNull="true"/>
+	<parameter name="PV_HEADER_TEXT" class="java.lang.String"/>
+	<parameter name="PV_PRINT_HEADER_TEXT" class="java.lang.Boolean"/>
+	<parameter name="PV_HEADER_IMAGE" class="java.awt.Image"/>
+	<parameter name="PV_PRINT_HEADER_IMAGE" class="java.lang.Boolean"/>
+	<parameter name="PV_REPORT_TITLE" class="java.lang.String"/>
+	<parameter name="PV_PRINT_REPORT_TITLE" class="java.lang.Boolean"/>
+	<parameter name="PV_REPORT_DATE" class="java.util.Date"/>
+	<parameter name="PV_RUN_DATE" class="java.lang.String"/>
+	<parameter name="PV_PRINT_RUN_DATE" class="java.lang.Boolean"/>
+	<parameter name="PV_EXTRA_DETAILS" class="java.lang.String"/>
+	<parameter name="PV_PRINT_EXTRA_DETAILS" class="java.lang.Boolean"/>
+	<parameter name="PV_IS_CRITERIA_SHEET_OR_APPENDIX" class="java.lang.Boolean"/>
+	<parameter name="PV_PAGE_FOOTER_TEXT" class="java.lang.String"/>
+	<parameter name="PV_PRINT_PAGE_FOOTER_TEXT" class="java.lang.Boolean"/>
+	<parameter name="PV_PRINT_PAGE_FOOTER_PAGE_NUM" class="java.lang.Boolean"/>
+	<parameter name="PV_PAGE_FOOTER_IMAGE" class="java.awt.Image"/>
+	<parameter name="PV_PRINT_PAGE_FOOTER_IMAGE" class="java.lang.Boolean"/>
+	<parameter name="PV_REPORT_START_DATE" class="java.util.Date"/>
+	<parameter name="PV_REPORT_END_DATE" class="java.util.Date"/>
+	<parameter name="PV_showCompanyLogo" class="java.lang.Boolean"/>
+	<parameter name="PV_advancedOptions" class="java.lang.String"/>
+	<parameter name="PV_outputFormat" class="java.lang.String"/>
+	<queryString language="csv">
+		<![CDATA[]]>
+	</queryString>
+	<field name="PROJECT_NUM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PROJECT_NUM"/>
+		<fieldDescription><![CDATA[PROJECT_NUM]]></fieldDescription>
+	</field>
+	<field name="INDICATION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="INDICATION"/>
+		<fieldDescription><![CDATA[INDICATION]]></fieldDescription>
+	</field>
+	<field name="CLINICAL_TRIAL" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CLINICAL_TRIAL"/>
+		<fieldDescription><![CDATA[CLINICAL_TRIAL]]></fieldDescription>
+	</field>
+	<field name="EUDRACT_NO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="EUDRACT_NO"/>
+		<fieldDescription><![CDATA[EUDRACT_NO]]></fieldDescription>
+	</field>
+	<field name="PHASE_CODE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PHASE_CODE"/>
+		<fieldDescription><![CDATA[PHASE_CODE]]></fieldDescription>
+	</field>
+	<field name="COUNRTY_CODE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="COUNRTY_CODE"/>
+		<fieldDescription><![CDATA[COUNRTY_CODE]]></fieldDescription>
+	</field>
+	<field name="COMPOUND_CODE" class="java.lang.String"/>
+	<field name="STUDY_TITLE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STUDY_TITLE"/>
+		<fieldDescription><![CDATA[STUDY_TITLE]]></fieldDescription>
+	</field>
+	<field name="STUDY_DESIGN" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STUDY_DESIGN"/>
+		<fieldDescription><![CDATA[STUDY_DESIGN]]></fieldDescription>
+	</field>
+	<field name="DOSING_REGIMEN" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DOSING_REGIMEN"/>
+		<fieldDescription><![CDATA[DOSING_REGIMEN]]></fieldDescription>
+	</field>
+	<field name="STUDY_POPULATION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STUDY_POPULATION"/>
+		<fieldDescription><![CDATA[STUDY_POPULATION]]></fieldDescription>
+	</field>
+	<field name="PLANNED_ENROLLMENT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PLANNED_ENROLLMENT"/>
+		<fieldDescription><![CDATA[PLANNED_ENROLLMENT]]></fieldDescription>
+	</field>
+	<field name="ESTIMATED_EXPOSURE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ESTIMATED_EXPOSURE"/>
+		<fieldDescription><![CDATA[ESTIMATED_EXPOSURE]]></fieldDescription>
+	</field>
+	<field name="FPFV" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FPFV"/>
+		<fieldDescription><![CDATA[FPFV]]></fieldDescription>
+	</field>
+	<field name="ACTUAL_DATE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ACTUAL_DATE"/>
+		<fieldDescription><![CDATA[ACTUAL_DATE]]></fieldDescription>
+	</field>
+	<field name="TEXT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TEXT"/>
+		<fieldDescription><![CDATA[TEXT]]></fieldDescription>
+	</field>
+	<sortField name="PROJECT_NUM"/>
+	<sortField name="INDICATION"/>
+	<variable name="Total_Clinical_Count" class="java.lang.Integer" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{CLINICAL_TRIAL}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="INDICATION_COUNT" class="java.lang.Integer" resetType="Group" resetGroup="Group_INDICATION" calculation="Count">
+		<variableExpression><![CDATA[$F{PROJECT_NUM} + $F{INDICATION}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="Group_PROJECT_NUM">
+		<groupExpression><![CDATA[$F{PROJECT_NUM}]]></groupExpression>
+	</group>
+	<group name="Group_INDICATION" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{INDICATION}]]></groupExpression>
+		<groupHeader>
+			<band height="142">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<frame>
+					<reportElement key="" positionType="Float" x="0" y="65" width="786" height="76" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="c7288aae-eb31-43a6-89af-c2cac79dfed5">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<staticText>
+						<reportElement x="0" y="0" width="100" height="76" isPrintInFirstWholeBand="true" uuid="79a6aee5-1ee4-4ed1-99e5-9e51c04d09af"/>
+						<box leftPadding="2" bottomPadding="2">
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Clinical trial/
+EudraCT no.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="100" y="0" width="38" height="76" isPrintInFirstWholeBand="true" uuid="8a1d24c1-1993-42b6-8d91-000fc6b9f1b7"/>
+						<box leftPadding="2" bottomPadding="2">
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Phase]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="138" y="0" width="60" height="76" isPrintInFirstWholeBand="true" uuid="e8d8e8c7-c3b1-4e23-b860-1c6ea462c5d6"/>
+						<box leftPadding="2" bottomPadding="2">
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Country]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="198" y="0" width="100" height="76" isPrintInFirstWholeBand="true" uuid="1457e055-e32a-4f38-a48b-bc6f8cbf84ab"/>
+						<box leftPadding="2" bottomPadding="2">
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Study title]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="398" y="0" width="100" height="76" isPrintInFirstWholeBand="true" uuid="fb69f19a-e17e-4604-83bd-7765bb469743"/>
+						<box leftPadding="2" bottomPadding="2">
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Bottom">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Dosing regimen
+(Drug, Dose,
+Frequency,
+Route of
+adminstration,
+Planned
+randomisation)]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="298" y="0" width="100" height="76" isPrintInFirstWholeBand="true" uuid="d7eed846-0875-4fa9-8c4c-aaddc83e129b"/>
+						<box leftPadding="2" bottomPadding="2">
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="MS Mincho" size="9" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Study
+design
+(Blinding,
+Structure,
+Randomisation,
+Other
+design)]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="498" y="0" width="131" height="76" isPrintInFirstWholeBand="true" uuid="92d1d54a-090e-4cfb-951c-853f4b169515"/>
+						<box leftPadding="2" bottomPadding="2">
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Bottom">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Study
+population]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="629" y="0" width="157" height="76" isPrintInFirstWholeBand="true" uuid="e797f0bf-28db-46e9-8ed7-42319ae4c690">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						</reportElement>
+						<box leftPadding="2" bottomPadding="2">
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Bottom">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Estimated
+subject
+exposure per
+treatment
+arm*]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="0" width="786" height="56" isRemoveLineWhenBlank="true" uuid="0e6b0e22-732a-44c4-8cd1-ddbf7c24180a">
+						<printWhenExpression><![CDATA[new Boolean(($V{INDICATION_COUNT}.intValue()==0))]]></printWhenExpression>
+					</reportElement>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement key="detail.column_PROJECT_NUM1" style="PROJECT_NUM" x="255" y="0" width="280" height="20" uuid="400e1b38-32df-486a-8b26-f1ba699304c3">
+							<printWhenExpression><![CDATA[($F{CLINICAL_TRIAL}.isEmpty() && $F{PROJECT_NUM}.isEmpty() )? false: true]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="MS Mincho" size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{PROJECT_NUM}]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement key="detail.column_PROJECT_NUM1" style="PROJECT_NUM" x="255" y="20" width="280" height="20" uuid="319d8935-342d-441b-9d81-d3086f7dbfc4">
+							<printWhenExpression><![CDATA[($F{CLINICAL_TRIAL}.isEmpty() && $F{PROJECT_NUM}.isEmpty() )? false: true]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="MS Mincho" size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{INDICATION}]]></textFieldExpression>
+					</textField>
+					<textField evaluationTime="Group" evaluationGroup="Group_INDICATION">
+						<reportElement x="255" y="40" width="58" height="16" uuid="b33385a5-88cd-4901-bd55-8d7040062281"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[($F{CLINICAL_TRIAL}.isEmpty() && $F{PROJECT_NUM}.isEmpty() )?"0": $V{INDICATION_COUNT}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="0" width="255" height="20" uuid="7d65dc59-c55e-44df-920b-2e358cc9f718"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Project : "]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="20" width="255" height="20" uuid="48fb456d-159d-47f4-ba89-8b32494ee7f9"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Indication :"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="40" width="255" height="16" uuid="b0ddca1c-2861-4fee-8690-12050bb5fab9"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="MS Mincho" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Total no. of Completed trials in indication:"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group_ClINICAL_TRIAL">
+		<groupExpression><![CDATA[$F{CLINICAL_TRIAL}]]></groupExpression>
+		<groupHeader>
+			<band height="45">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<frame>
+					<reportElement positionType="Float" x="0" y="0" width="786" height="45" isRemoveLineWhenBlank="true" uuid="0388cb14-d512-4a63-8881-060c360dd792"/>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="100" height="45" uuid="9714b41e-8626-40ef-948d-3df8391be59f">
+							<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24103ce8-c66e-4caa-826d-495b4316b4fc"/>
+						</reportElement>
+						<box topPadding="2" leftPadding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="MS Mincho"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{CLINICAL_TRIAL} + "\n" + ($F{EUDRACT_NO} ==null ?"" :  $F{EUDRACT_NO})]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="100" y="0" width="38" height="45" uuid="296f64fb-262f-4988-a963-15c7498a5b14">
+							<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6604bf8c-b5e3-49ea-bdda-85ecd230f1d5"/>
+						</reportElement>
+						<box topPadding="2" leftPadding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="MS Mincho"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{PHASE_CODE}]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="138" y="0" width="60" height="45" uuid="8ce35671-a543-4b00-8292-c1607da33bd4"/>
+						<box topPadding="2" leftPadding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="MS Mincho"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{COUNRTY_CODE}]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="198" y="0" width="100" height="45" uuid="4364bc55-02e7-4abb-b629-f60c48558cc6"/>
+						<box topPadding="2" leftPadding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="MS Mincho"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{STUDY_TITLE}]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="298" y="0" width="100" height="45" uuid="96c75c90-edc3-41f1-b52b-b58c37e80f40"/>
+						<box topPadding="2" leftPadding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="MS Mincho"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{STUDY_DESIGN}]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="398" y="0" width="100" height="45" uuid="8cd58812-d3ca-4f3d-aa49-8b3398875847"/>
+						<box topPadding="2" leftPadding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="MS Mincho"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{DOSING_REGIMEN}]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="498" y="0" width="131" height="45" uuid="4a9a50c4-ae7f-4cd4-8653-6a4aa02b8723"/>
+						<box topPadding="2" leftPadding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="MS Mincho"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{STUDY_POPULATION}]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="629" y="0" width="157" height="45" uuid="71d7ddd9-b621-4d61-9b09-dbaf52e285d4">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						</reportElement>
+						<box topPadding="2" leftPadding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="MS Mincho"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{ESTIMATED_EXPOSURE}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<pageHeader>
+		<band height="65">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField evaluationTime="Report">
+				<reportElement positionType="Float" x="255" y="45" width="100" height="19" isRemoveLineWhenBlank="true" uuid="04928426-0708-4ecd-a3b6-45893eb9e6b4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MS Mincho" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{CLINICAL_TRIAL}.isEmpty() && $F{PROJECT_NUM}.isEmpty() )? "0":$V{Total_Clinical_Count}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="335" y="0" width="100" height="14" uuid="d2f27f1a-e530-467a-8e13-f9910e26f0ef">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MS Mincho" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Confidential]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="540" y="14" width="245" height="14" uuid="03b1cfbc-f59f-419a-a4f6-ebf3f16a49bd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="MS Mincho" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{PV_REPORT_START_DATE} == null) ? ("Reporting period: until " + new SimpleDateFormat("dd-MMM-yyyy").format(new Date().getTime())) : 
+("Reporting period:" +  (new SimpleDateFormat("dd-MMM-yyyy")).format($P{PV_REPORT_START_DATE}) + " to " +  (new SimpleDateFormat("dd-MMM-yyyy")).format($P{PV_REPORT_END_DATE}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="668" y="0" width="70" height="14" uuid="53d3b0ea-0a2f-495e-8aa6-35a65e1fe6d4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="MS Mincho" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page no: "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="100" height="14" uuid="b4721d8c-fcd0-44f1-9e29-407db7eedd01"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MS Mincho" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Novartis]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="detail.column_PROJECT1" positionType="Float" stretchType="ElementGroupHeight" x="0" y="14" width="200" height="14" uuid="73cbfd7b-fb62-4c90-8506-01ac00eeabc6"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MS Mincho" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Investigational drug:  "+($F{TEXT}==null ? "" : $F{TEXT})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="738" y="0" width="47" height="14" uuid="8b954d39-8054-418d-97c7-50ab9a89ad48">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MS Mincho" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="28" width="778" height="16" uuid="a9ab50dd-0523-49de-b1a3-f864b4b623ba">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="MS Mincho" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Appendix 3b - Status of clinical trials in reporting period - Overview of"  +" "+($F{TEXT}==null ? "" : $F{TEXT}) + " studies completed during the reporting period"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement positionType="Float" x="0" y="45" width="230" height="19" isRemoveLineWhenBlank="true" uuid="f7f7d27c-3075-4de2-8694-695a8491338b">
+					<printWhenExpression><![CDATA[new Boolean(($V{REPORT_COUNT}.intValue()==0))]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MS Mincho" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total no. of Completed " +($F{TEXT}==null ? "" : $F{TEXT}) +" trials :"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="76">
+			<frame>
+				<reportElement key="pageFooter.list1" style="style_822564_" positionType="Float" x="0" y="0" width="786" height="76" uuid="9a6cb0fd-f192-4d2a-a240-679f2c9baa74"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="786" height="40" uuid="5a40e1a3-2c84-4bb2-82c2-7891f58058d3"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MS Mincho" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["* Exposure for the completed studies is reported in Section 6 of the DSUR.\nN/A - Not Applicable\nN/AV - Data not available in source system"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="dd-MMM-yyyy" isBlankWhenNull="true">
+					<reportElement key="detail.column_PROJECT1" x="360" y="43" width="186" height="14" uuid="748e54fd-c2fa-497b-b909-df842dbe5a1e">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MS Mincho" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Run date :  "+ $P{PV_RUN_DATE}.replace("Run Date and Time:", "")]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

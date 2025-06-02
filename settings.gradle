@@ -1,0 +1,36 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        maven { url "https://repo.grails.org/grails/core/" }
+        gradlePluginPortal()
+    }
+    plugins {
+        id "com.gradle.develocity" version "3.17.5"
+        id "com.bertramlabs.asset-pipeline" version "4.3.0"
+        id "com.github.erdi.webdriver-binaries" version "3.2"
+        id 'org.grails.plugins.hibernate' version '8.1.0'
+        id 'org.springframework.boot' version '2.7.18'
+    }
+}
+
+//include "../pv-ui"
+
+//include 'pv-dictionary'
+//project(':pv-dictionary').name = 'pv-dictionary'
+//project(':pv-dictionary').projectDir = new File('../pv-dictionary')
+
+//include 'audit-logging'
+//project(':audit-logging').name = 'audit-logging'
+//project(':audit-logging').projectDir = new File('../Rxlogix-Audit-Logging/audit-logging')
+
+//include 'spring-session'
+//project(':spring-session').name = 'spring-session'
+//project(':spring-session').projectDir = new File('/home/anshulbhatia/rxProjects/spring-session')
+
+//include 'grails-scim'
+//project(':grails-scim').name = 'grails-scim'
+//project(':grails-scim').projectDir = new File('../grails-scim')
+
+//include(":pv-dynamicConfigUpdater")
+//project(':pv-dynamicConfigUpdater').name = 'pv-dynamicConfigUpdater'
+//project(":pv-dynamicConfigUpdater").projectDir = new File("/home/amit-yadav/Downloads/pv-dynamicConfigUpdater")

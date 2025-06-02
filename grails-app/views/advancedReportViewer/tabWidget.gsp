@@ -1,0 +1,1 @@
+<g:render template="tabContent" model="${pageScope.variables}" />

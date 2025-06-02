@@ -1,0 +1,62 @@
+.es-scheduled {
+    color: #337ab7;
+}
+
+.es-generating {
+    color: #337ab7;
+}
+
+.es-delivering {
+    color: #337ab7;
+}
+
+.es-completed {
+    color: #5cb85c;
+}
+
+.es-completed-deleted {
+    color: #808080;
+}
+
+.es-error {
+    color: #d9534f;
+}
+
+.es-warn {
+    color: #f0ad4e;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+div span.glyphicon-stop{
+    margin-left: 8px;
+    color: red;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.es-priorityReport {
+    margin-right: 8px;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.e-status {
+    display:none;
+}
+tr:hover .e-status {
+    display:inline-block;
+}

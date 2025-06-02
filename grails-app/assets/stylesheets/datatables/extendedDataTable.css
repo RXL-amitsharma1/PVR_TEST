@@ -1,0 +1,130 @@
+th .edt-header-item-value {
+    text-align: center;
+}
+
+.edt-header-item {
+    background-color: transparent;
+    position: relative;
+}
+
+.dt-layout-table table thead tr th.edt-active-column {
+    background: #ebebeb !important;
+}
+
+.edt-header-item-controls {
+    cursor: pointer;
+    background-color: #ffffffff;
+}
+
+table thead tr th.edt-active-column .edt-header-item-controls {
+    background-color: #ebebeb !important;
+}
+
+.table-sort-control, .edt-search-control {
+    color: #1e1e1e !important;
+}
+
+.edt-header-item-control {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}
+
+.edt-header-item-controls .edt-header-item-control {
+    display: none;
+    padding: 1px;
+    margin: 1px;
+    color: #1e1e1e;
+}
+
+table thead tr th.edt-active-column .edt-header-item-control.edt-active-control {
+    color: #007cbc !important;
+}
+
+.edt-header-item-controls-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.edt-stacked-column .edt-header-item-controls-container {
+    left: -1px;
+}
+
+.edt-inline-search-box .datepicker .form-control {
+    width: calc(100% - 45px) !important;
+}
+
+.edt-inline-search-box .inline-filter-datepicker {
+    display: inline-flex;
+    align-items: center;
+}
+
+.edt-inline-search-box .datepicker .input-group {
+    display: block !important;
+}
+
+.edt-inline-search-box .datepicker .input-group-btn {
+    display: block !important;
+}
+
+.edt-inline-search-box .datepicker .input-group-btn button {
+    display: inline-block !important;
+    margin-left: -2px;
+    border-radius: 0 4px 4px 0;
+    border-color: rgb(118, 118, 118) !important;
+}
+
+.edt-inline-search-box .datepicker table tr td {
+    padding: 0 !important;
+}
+.edt-inline-search-box .datepicker table.datepicker-calendar-days tr td {
+    max-width: 30px !important;
+}
+.edt-inline-search-box .inline-filter-datepicker .fuelux .rx-datepicker {
+    max-width: 242px;
+}
+
+.edt-inline-search {
+    margin: 1px !important;
+    width: calc(100% - 17px) !important;
+}
+
+.edt-inline-search-box {
+    position: absolute;
+    z-index: 999999999;
+    background: white;
+    border-radius: 4px !important;
+    padding: 7px;
+    border: 1px solid #cccccc;
+}
+
+.edt-inline-search-box[data-filter-type=date-range] {
+    padding-top: 5px;
+}
+
+.edt-inline-search-box .edt-clear-inline-filter {
+    padding: 2px;
+    color: #d2d2d2;
+}
+
+.edt-inline-search-box .edt-clear-inline-filter.active-clear-filter {
+    color: #1e1e1e;
+}
+
+.edt-inline-search-box .inline-filter-wrapper .form-control {
+    display: inline-block !important;
+}
+
+.edt-inline-search-box .inline-filter-datepicker .rx-datepicker {
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+
+.edt-stacked-separator {
+    border-top: 1px solid #ccc;
+    width: 100%;
+}

@@ -1,0 +1,187 @@
+<div ng-controller="caseLineListing">
+    <div class="rxSimpleContainer">
+        <table>
+            <tr>
+                <td>
+                    Case Number
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="rxSimpleContainer">
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td valign="top" style="width: 130px;">
+                                Additional Fields
+                            </td>
+                            <td>
+                                <div>
+                                    <select style="width: 140px;" ng-model="dbFields" ng-options="column.id as column.display for column in dbColumns" ng-change="clearFieldAlert()"></select>
+                                    <option value=""></option>
+                                    </select>
+                                    <button class="rxButtonIconAdd" ng-click="addField();">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </button>
+                                    <button class="rxButtonIconAdd" ng-click="addAllFields();">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                        All
+                                    </button>
+                                    <button class="rxButtonIconRemove" ng-hide="fields.length == 0" ng-click="removeAllFields();">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                        All
+                                    </button>
+                                    <style>
+                                        input[type=text]:disabled {
+                                            border: 1px solid #000;
+                                            padding: 1px 5px;
+                                            background-color: #FFF;
+                                            margin-bottom: 2px;
+                                        }
+                                    </style>
+                                    <div ng-repeat="field in fields" style="margin-top: 5px;">
+                                        <input type="text" ng-model="field.name" disabled="disabled" />
+                                        <button class="rxButtonIconRemove"ng-click="removeField($index)">
+                                            <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td valign="top">
+                                <div ng-bind-html="fieldAlert">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="rxSimpleContainer">
+        <table>
+            <tr>
+                <td valign="top" style="width: 130px;">
+                    Report Category
+                </td>
+                <td valign="top">
+                    <select ng-init="template.category = template.category || categories[0].value" ng-model="template.category"
+                            ng-options="option.value as option.name for option in categories"
+                            style="margin-bottom: 4px;">
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 130px;">
+                    Tag
+                </td>
+                <td>
+                    <select ng-model="template.tagId"
+                            ng-options="tag.id as tag.name for tag in tags" ng-change="clearFieldAlert()"
+                            style="margin-bottom: 4px;">
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    Report Title
+                </td>
+                <td valign="top">
+                    <input type="text" ng-model="template.name" placeholder="Enter report title here" style="width: 520px; margin-bottom: 4px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    Report Description
+                </td>
+                <td valign="top">
+                    <textarea ng-model="template.description" placeholder="Enter description here" style="width: 520px; height: 60px; resize: none;"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="rxSimpleContainer">
+        <table>
+            <tr>
+                <td style="width: 130px;">
+                    Grouping
+                </td>
+                <td>
+                    <select style="width: 120px;">
+                        <option></option>
+                    </select>
+                    <button class="rxButtonIconAdd">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 130px;">
+                    Sorting
+                </td>
+                <td>
+                    <select style="width: 120px;">
+                        <option></option>
+                    </select>
+                    <button class="rxButtonIconAdd">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="rxSimpleContainer">
+        <table>
+            <tr>
+                <td colspan="2">
+                    Display Options
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 130px;">
+                    <label class="rxLabelCLick">
+                        <input type="checkbox" value="All" checked />
+                        Blind fields
+                    </label>
+                </td>
+                <td>
+                    <label class="rxLabelCLick"l>
+                        <input type="radio" name="publicPrivate" value="public" style="width:14px; height:12px;"/>
+                        Public
+                    </label>
+                    <label class="rxLabelCLick">
+                        <input type="radio" name="publicPrivate" value="private" checked style="width:14px; height:12px;"/>
+                        Private
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="rxSimpleContainer">
+        <div>
+            <label class="rxLabelCLick">
+                <input type="checkbox" value="0" ng-click="change();" ng-model="moreReports"/>
+                Add More Reports
+            </label>
+            <!--<div>-->
+                <!--<button class="rxButtonIconAdd">-->
+                    <!--<span class="glyphicon glyphicon-plus"></span>-->
+                <!--</button>-->
+                <!--<button class="rxButtonIconRemove">-->
+                    <!--<span class="glyphicon glyphicon-minus"></span>-->
+                <!--</button>-->
+            <!--</div>-->
+            <div ng-include src="sidebar.location"></div>
+        </div>
+    </div>
+    <div align="right" class="rxSimpleContainerNoBorder">
+        <button class="rxButtonDefault" ng-click="clearTemplate();">Clear</button>
+        <button class="rxButtonActive" ng-click="saveTemplate();" ng-show="modTemplate == false">Save</button>
+        <button class="rxButtonActive" ng-click="updateTemplate();" ng-hide="modTemplate == false">Update</button>
+        <button class="rxButtonActive" >Run Now</button>
+        <button class="rxButtonActive" >Schedule</button>
+        <button class="rxButtonDefault" onclick="window.location.href=''">Cancel</button>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="Helvetica">
+        <normal>fonts/Helvetica/Helvetica.ttf</normal>
+        <bold>fonts/Helvetica/Helvetica-Bold.ttf</bold>
+        <italic>fonts/Helvetica/Helvetica-Oblique.ttf</italic>
+        <boldItalic>fonts/Helvetica/Helvetica-BoldOblique.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'Arial Unicode', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.xhtml">'Arial Unicode', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.rtf">Arial</export>
+        </exportFonts>
+    </fontFamily>
+</fontFamilies>

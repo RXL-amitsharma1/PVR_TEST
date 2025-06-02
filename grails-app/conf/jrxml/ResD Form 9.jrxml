@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReSD listed Tabulation" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="2" topMargin="12" bottomMargin="12" uuid="67aa5309-c609-4d4c-b3fc-b569f4e88f91">
+	<property name="net.sf.jasperreports.export.docx.flexible.row.height" value="true"/>
+	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
+	<property name="net.sf.jasperreports.export.pdf.size.page.to.content" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.rows" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.columns" value="true"/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.wrap.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.font.size.fix.enabled" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.collapse.row.span" value="false"/>
+	<property name="net.sf.jasperreports.export.ignore.page.margins" value="true"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<import value="org.apache.commons.lang.StringEscapeUtils"/>
+	<style name="htmlFont" fontName="MS Mincho">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{PV_outputFormat} == null || "HTML".equals($P{PV_outputFormat})]]></conditionExpression>
+			<style fontSize="14"/>
+		</conditionalStyle>
+	</style>
+	<style name="Header" style="htmlFont" fontName="MS Mincho">
+		<paragraph lineSpacing="Fixed" lineSpacingSize="10.0" leftIndent="2" spacingBefore="2"/>
+	</style>
+	<style name="HeaderBox" style="htmlFont" fontName="MS Mincho">
+		<box>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+		<paragraph lineSpacing="Fixed" lineSpacingSize="10.0" leftIndent="2" spacingBefore="2"/>
+	</style>
+	<style name="HeadersBold" style="Header" isBold="true"/>
+	<style name="HeadersBoldBox" style="HeaderBox" backcolor="#0071A5" isBold="true"/>
+	<parameter name="PV_outputFormat" class="java.lang.String"/>
+	<parameter name="PV_MEDDRA_VERSION" class="java.lang.String"/>
+	<parameter name="PV_TEMPLATE_FOOTER" class="java.lang.String"/>
+	<queryString language="csv">
+		<![CDATA[]]>
+	</queryString>
+	<field name="ROW_1" class="java.lang.String"/>
+	<field name="ROW_2" class="java.lang.String"/>
+	<field name="ROW_3" class="java.lang.String"/>
+	<field name="ROW_4" class="java.lang.String"/>
+	<field name="GP_0_CC11" class="java.lang.Integer"/>
+	<field name="GP_0_CE11" class="java.lang.Integer"/>
+	<field name="GP_0_CC12" class="java.lang.Integer"/>
+	<field name="GP_0_CE12" class="java.lang.Integer"/>
+	<field name="GP_1_CC12" class="java.lang.Integer"/>
+	<field name="GP_1_CE12" class="java.lang.Integer"/>
+	<sortField name="ROW_3_NVL" type="Variable"/>
+	<sortField name="ROW_3_Field" type="Variable"/>
+	<sortField name="ROW_4_NVL" type="Variable"/>
+	<sortField name="ROW_4_Field" type="Variable"/>
+	<variable name="escapedTotal" class="java.lang.String">
+		<variableExpression><![CDATA[StringEscapeUtils.escapeHtml("総計")]]></variableExpression>
+	</variable>
+	<variable name="escapedSubTotal" class="java.lang.String">
+		<variableExpression><![CDATA[StringEscapeUtils.escapeHtml("小計")]]></variableExpression>
+	</variable>
+	<variable name="SUB_TOTAL_GP_0_CC11" class="java.lang.Integer" resetType="Group" resetGroup="Group_SOC">
+		<variableExpression><![CDATA[($F{ROW_2}.equals("Subtotal")|| $F{ROW_2}.equals("小計") || $F{ROW_2}.equals($V{escapedSubTotal}))? $F{GP_0_CC11} : 0]]></variableExpression>
+	</variable>
+	<variable name="SUB_TOTAL_GP_0_CE11" class="java.lang.Integer" resetType="Group" resetGroup="Group_SOC">
+		<variableExpression><![CDATA[($F{ROW_2}.equals("Subtotal")|| $F{ROW_2}.equals("小計") || $F{ROW_2}.equals($V{escapedSubTotal}))? $F{GP_0_CE11}  : 0]]></variableExpression>
+	</variable>
+	<variable name="SUB_TOTAL_GP_0_CC12" class="java.lang.Integer" resetType="Group" resetGroup="Group_SOC">
+		<variableExpression><![CDATA[($F{ROW_2}.equals("Subtotal")|| $F{ROW_2}.equals("小計") || $F{ROW_2}.equals($V{escapedSubTotal}))? $F{GP_0_CC12} : 0]]></variableExpression>
+	</variable>
+	<variable name="SUB_TOTAL_GP_0_CE12" class="java.lang.Integer" resetType="Group" resetGroup="Group_SOC">
+		<variableExpression><![CDATA[($F{ROW_2}.equals("Subtotal")|| $F{ROW_2}.equals("小計") || $F{ROW_2}.equals($V{escapedSubTotal}))? $F{GP_0_CE12} : 0]]></variableExpression>
+	</variable>
+	<variable name="SUB_TOTAL_GP_1_CC12" class="java.lang.Integer" resetType="Group" resetGroup="Group_SOC">
+		<variableExpression><![CDATA[($F{ROW_2}.equals("Subtotal")|| $F{ROW_2}.equals("小計") || $F{ROW_2}.equals($V{escapedSubTotal}))? $F{GP_1_CC12} : 0]]></variableExpression>
+	</variable>
+	<variable name="SUB_TOTAL_GP_1_CE12" class="java.lang.Integer" resetType="Group" resetGroup="Group_SOC">
+		<variableExpression><![CDATA[($F{ROW_2}.equals("Subtotal")|| $F{ROW_2}.equals("小計") || $F{ROW_2}.equals($V{escapedSubTotal}))? $F{GP_1_CE12} : 0]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_GP_0_CC11" class="java.lang.Integer">
+		<variableExpression><![CDATA[($F{ROW_1}.equals( "Total") || $F{ROW_1}.equals( "総計") || $F{ROW_1}.equals($V{escapedTotal}))? $F{GP_0_CC11}  : 0]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_GP_0_CE11" class="java.lang.Integer">
+		<variableExpression><![CDATA[($F{ROW_1}.equals( "Total") || $F{ROW_1}.equals( "総計") || $F{ROW_1}.equals($V{escapedTotal}))? $F{GP_0_CE11}  : 0]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_GP_0_CC12" class="java.lang.Integer">
+		<variableExpression><![CDATA[($F{ROW_1}.equals( "Total") || $F{ROW_1}.equals( "総計") || $F{ROW_1}.equals($V{escapedTotal}))? $F{GP_0_CC12}  : 0]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_GP_0_CE12" class="java.lang.Integer">
+		<variableExpression><![CDATA[($F{ROW_1}.equals( "Total") || $F{ROW_1}.equals( "総計") || $F{ROW_1}.equals($V{escapedTotal}))? $F{GP_0_CE12}  : 0]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_GP_1_CC12" class="java.lang.Integer">
+		<variableExpression><![CDATA[($F{ROW_1}.equals( "Total") || $F{ROW_1}.equals( "総計") || $F{ROW_1}.equals($V{escapedTotal}))? $F{GP_1_CC12}  : 0]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_GP_1_CE12" class="java.lang.Integer">
+		<variableExpression><![CDATA[($F{ROW_1}.equals( "Total") || $F{ROW_1}.equals( "総計") || $F{ROW_1}.equals($V{escapedTotal}))? $F{GP_1_CE12}  : 0]]></variableExpression>
+	</variable>
+	<variable name="ROW_3_Field" class="java.lang.Integer" resetType="Group" resetGroup="Group_SOC">
+		<variableExpression><![CDATA[$F{ROW_2}.trim().equals("(empty)")|| $F{ROW_2}.equals("Subtotal") || $F{ROW_2}.equals("小計")  || $F{ROW_2}.equals($V{escapedSubTotal})? Integer.parseInt($V{First_RankId}.trim()) : (($F{ROW_3}.trim().equals("(empty)") || $F{ROW_3}.trim().equals("Subtotal") || $F{ROW_3}.equals("小計") || $F{ROW_3}.equals($V{escapedSubTotal}) || $F{ROW_3}.trim().isEmpty() || $F{ROW_3}==null) ? 0 : Integer.parseInt($F{ROW_3}.trim()))]]></variableExpression>
+	</variable>
+	<variable name="ROW_3_NVL" class="java.lang.Integer" resetType="Group" resetGroup="Group_SOC">
+		<variableExpression><![CDATA[($F{ROW_1}.equals( "Total") || $F{ROW_1}.equals( "総計") || $F{ROW_1}.equals($V{escapedTotal}))? 3 : ($F{ROW_1}.trim().equals("(empty)") ? 2 : ($V{ROW_3_Field}==0 ? 1 : 0))]]></variableExpression>
+	</variable>
+	<variable name="ROW_4_Field" class="java.lang.Integer" resetType="Group" resetGroup="Group_SOC">
+		<variableExpression><![CDATA[($F{ROW_4}.trim().equals("(empty)") || $F{ROW_4}.trim().equals("Subtotal") || $F{ROW_4}.equals("小計") || $F{ROW_4}.trim().equals($V{escapedSubTotal}) || $F{ROW_4}.trim().isEmpty() || $F{ROW_4}==null) ? 0 : Integer.parseInt($F{ROW_4}.trim())]]></variableExpression>
+	</variable>
+	<variable name="ROW_4_NVL" class="java.lang.Integer" resetType="Group" resetGroup="Group_SOC">
+		<variableExpression><![CDATA[$V{ROW_4_Field}==0]]></variableExpression>
+	</variable>
+	<variable name="First_RankId" class="java.lang.String" resetType="Group" resetGroup="Group_SOC" calculation="First">
+		<variableExpression><![CDATA[$F{ROW_3}.trim().equals("(empty)") ?"0": $F{ROW_3}]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{ROW_3}.trim().equals("(empty)") ?"0": $F{ROW_3}]]></initialValueExpression>
+	</variable>
+	<filterExpression><![CDATA[(!new Boolean("Subtotal".equals($F{ROW_3}.toString()))) && (!new Boolean("小計".equals($F{ROW_3}.toString()))) && (!new Boolean($V{escapedSubTotal}.equals($F{ROW_3}.toString()))) && (!new Boolean("Subtotal".equals($F{ROW_4}.toString()))) && (!new Boolean("小計".equals($F{ROW_4}.toString()))) && (!new Boolean($V{escapedSubTotal}.equals($F{ROW_4}.toString())))]]></filterExpression>
+	<group name="Group_SOC">
+		<groupExpression><![CDATA[$F{ROW_1}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<frame>
+					<reportElement style="HeadersBoldBox" positionType="Float" x="110" y="0" width="586" height="30" isRemoveLineWhenBlank="true" uuid="9ed860a1-d1aa-447b-9600-ce7f440366c7">
+						<printWhenExpression><![CDATA[($F{ROW_2}.equals( "Subtotal") || $F{ROW_2}.equals( "Total") || $F{ROW_2}.equals( "総計") || $F{ROW_2}.equals( "小計") || $F{ROW_1}.equals( "Subtotal") || $F{ROW_1}.equals( "Total") || $F{ROW_1}.equals( "総計") || $F{ROW_1}.equals( "小計") || $F{ROW_1}.equals($V{escapedTotal}) || $F{ROW_2}.equals($V{escapedSubTotal}) ? false :true)]]></printWhenExpression>
+					</reportElement>
+					<textField isBlankWhenNull="true">
+						<reportElement style="HeadersBoldBox" mode="Opaque" x="0" y="0" width="160" height="30" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="dc90b334-fd2f-4e17-83a8-32d8200afaae"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle" markup="html"/>
+						<textFieldExpression><![CDATA[$F{ROW_1}]]></textFieldExpression>
+					</textField>
+					<textField evaluationTime="Group" evaluationGroup="Group_SOC" isBlankWhenNull="true">
+						<reportElement style="HeadersBoldBox" mode="Opaque" x="160" y="0" width="71" height="30" isRemoveLineWhenBlank="true" backcolor="#D4E9EF" uuid="0c63f98c-a221-41dc-a21a-56de761e0e0f"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[($V{SUB_TOTAL_GP_0_CC11} == 0 || $V{SUB_TOTAL_GP_0_CC11} == null ) ||  $V{SUB_TOTAL_GP_0_CC11}.equals("Total" )? "0" : $V{SUB_TOTAL_GP_0_CC11}.toString()]]></textFieldExpression>
+					</textField>
+					<textField evaluationTime="Group" evaluationGroup="Group_SOC" isBlankWhenNull="true">
+						<reportElement style="HeadersBoldBox" mode="Opaque" x="231" y="0" width="71" height="30" isRemoveLineWhenBlank="true" backcolor="#D4E9EF" uuid="c282c86f-797f-476a-a00b-21e5a2e65166"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[($V{SUB_TOTAL_GP_0_CE11} == 0 || $V{SUB_TOTAL_GP_0_CE11} == null )? "0" : $V{SUB_TOTAL_GP_0_CE11}.toString()]]></textFieldExpression>
+					</textField>
+					<textField evaluationTime="Group" evaluationGroup="Group_SOC" isBlankWhenNull="true">
+						<reportElement style="HeadersBoldBox" mode="Opaque" x="302" y="0" width="71" height="30" isRemoveLineWhenBlank="true" backcolor="#D4E9EF" uuid="bf3c6806-d012-4e68-92d2-cdb6980a419a"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[($V{SUB_TOTAL_GP_0_CC12} == 0 || $V{SUB_TOTAL_GP_0_CC12} == null )? "0" : $V{SUB_TOTAL_GP_0_CC12}.toString()]]></textFieldExpression>
+					</textField>
+					<textField evaluationTime="Group" evaluationGroup="Group_SOC" isBlankWhenNull="true">
+						<reportElement style="HeadersBoldBox" mode="Opaque" x="373" y="0" width="71" height="30" isRemoveLineWhenBlank="true" backcolor="#D4E9EF" uuid="4842cba6-ed63-4a13-b384-f49285da8cc7"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[($V{SUB_TOTAL_GP_0_CE12} == 0 || $V{SUB_TOTAL_GP_0_CE12} == null )? "0" : $V{SUB_TOTAL_GP_0_CE12}.toString()]]></textFieldExpression>
+					</textField>
+					<textField evaluationTime="Group" evaluationGroup="Group_SOC" isBlankWhenNull="true">
+						<reportElement style="HeadersBoldBox" mode="Opaque" x="444" y="0" width="71" height="30" isRemoveLineWhenBlank="true" backcolor="#D4E9EF" uuid="43609723-6b92-4cba-81ff-9d46bc2d9476"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[($V{SUB_TOTAL_GP_1_CC12} == 0 || $V{SUB_TOTAL_GP_1_CC12} == null )? "0" : $V{SUB_TOTAL_GP_1_CC12}.toString()]]></textFieldExpression>
+					</textField>
+					<textField evaluationTime="Group" evaluationGroup="Group_SOC" isBlankWhenNull="true">
+						<reportElement style="HeadersBoldBox" mode="Opaque" x="515" y="0" width="71" height="30" isRemoveLineWhenBlank="true" backcolor="#D4E9EF" uuid="5b293fc1-3bfe-4bce-9d60-2f4397ce03dd"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[($V{SUB_TOTAL_GP_1_CE12} == 0 || $V{SUB_TOTAL_GP_1_CE12} == null )? "0" : $V{SUB_TOTAL_GP_1_CE12}.toString()]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement style="HeadersBold" x="110" y="0" width="160" height="20" uuid="654e92c2-0173-4a93-97ee-84a671c26590"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["別紙様式9"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeadersBold" x="110" y="20" width="586" height="20" uuid="379f4d7f-cf81-41c9-87c0-8a77ec1c031e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["「使用上の注意」から予測できない副作用・感染症の発現状況"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<frame>
+				<reportElement style="HeadersBoldBox" stretchType="ElementGroupHeight" x="110" y="0" width="586" height="40" uuid="8701fbaa-e97e-45e7-93e6-43cd31e6df6f"/>
+				<textField isBlankWhenNull="true">
+					<reportElement key="" style="HeadersBoldBox" stretchType="ElementGroupHeight" x="0" y="0" width="160" height="40" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="4ef58acf-d54c-4d56-8111-f42cada52a6c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["副作用等の種類"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement key="" style="HeadersBoldBox" x="160" y="0" width="142" height="20" isRemoveLineWhenBlank="true" uuid="af8a2dda-d923-4dfa-98ba-ec7a0387facb"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["総数"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="160" y="20" width="71" height="20" isRemoveLineWhenBlank="true" forecolor="#0A0000" backcolor="#FFFFFF" uuid="6d53326e-834b-4e1f-a37f-6d842d6ef323"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["症例数"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeadersBoldBox" positionType="Float" stretchType="RelativeToBandHeight" x="231" y="20" width="71" height="20" isRemoveLineWhenBlank="true" forecolor="#0A0000" backcolor="#FFFFFF" uuid="86643413-3356-47c7-98b0-9de0095bd643"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["件数"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement key="" style="HeadersBoldBox" x="302" y="0" width="142" height="20" isRemoveLineWhenBlank="true" uuid="21452562-f210-45c3-801e-dfa3df04e8be"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["重篤"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="373" y="20" width="71" height="20" isRemoveLineWhenBlank="true" forecolor="#0A0000" backcolor="#FFFFFF" uuid="363b6cb3-d9c0-4468-86d9-5a7a91e37559"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["件数"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="302" y="20" width="71" height="20" isRemoveLineWhenBlank="true" forecolor="#0A0000" backcolor="#FFFFFF" uuid="d78eeaaf-5751-4a07-9708-8c867c15740f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["症例数"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="444" y="20" width="71" height="20" isRemoveLineWhenBlank="true" forecolor="#0A0000" backcolor="#FFFFFF" uuid="328705c4-514e-4929-9624-b7a1a827f55b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["症例数"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="515" y="20" width="71" height="20" isRemoveLineWhenBlank="true" forecolor="#0A0000" backcolor="#FFFFFF" uuid="b2d7604b-11bf-4c87-9392-30291d19b0a5"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["件数"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement key="" style="HeadersBoldBox" x="444" y="0" width="142" height="20" isRemoveLineWhenBlank="true" uuid="68eba729-769a-4958-a1df-807a691bac8a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["非重篤"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement key="" style="HeadersBoldBox" x="110" y="40" width="586" height="30" isRemoveLineWhenBlank="true" uuid="cbd37640-cd35-423e-892b-7c29f3f19cc6">
+					<printWhenExpression><![CDATA[$V{PAGE_NUMBER}==1]]></printWhenExpression>
+				</reportElement>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement style="HeadersBoldBox" mode="Opaque" x="515" y="0" width="71" height="30" backcolor="#D4E9EF" uuid="4a00ffc0-3e95-4782-a4cc-b300627ff6c7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[($V{TOTAL_GP_1_CE12} == 0 || $V{TOTAL_GP_1_CE12} == null )? "0" : $V{TOTAL_GP_1_CE12}.toString()]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement style="HeadersBoldBox" mode="Opaque" x="373" y="0" width="71" height="30" backcolor="#D4E9EF" uuid="25b9eba9-e100-4f82-a772-e32962146b19"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[($V{TOTAL_GP_0_CE12} == 0 || $V{TOTAL_GP_0_CE12} == null )? "0" : $V{TOTAL_GP_0_CE12}.toString()]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement style="HeadersBoldBox" mode="Opaque" x="302" y="0" width="71" height="30" backcolor="#D4E9EF" uuid="a4a2db4a-6b25-46c3-95ce-71c256df6e75"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[($V{TOTAL_GP_0_CC12} == 0 || $V{TOTAL_GP_0_CC12} == null )? "0" : $V{TOTAL_GP_0_CC12}.toString()]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement style="HeadersBoldBox" mode="Opaque" x="231" y="0" width="71" height="30" backcolor="#D4E9EF" uuid="41dd3f5a-13b6-489d-93ce-9275fac19da0"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[($V{TOTAL_GP_0_CE11} == 0 || $V{TOTAL_GP_0_CE11} == null )? "0" : $V{TOTAL_GP_0_CE11}.toString()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeadersBoldBox" mode="Opaque" x="0" y="0" width="160" height="30" backcolor="#FFFFFF" uuid="daad1e85-b80d-405d-a923-02ede0f65ea3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["合計"]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement style="HeadersBoldBox" mode="Opaque" x="160" y="0" width="71" height="30" backcolor="#D4E9EF" uuid="e0e436a6-f06a-4371-9fdb-46adcfd7cc21"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[($V{TOTAL_GP_0_CC11} == 0 || $V{TOTAL_GP_0_CC11} == null )? "0" : $V{TOTAL_GP_0_CC11}.toString()]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement style="HeadersBoldBox" mode="Opaque" x="444" y="0" width="71" height="30" backcolor="#D4E9EF" uuid="db252ce7-e5ad-41de-b55c-6fdf3a28f1d1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[($V{TOTAL_GP_1_CC12} == 0 || $V{TOTAL_GP_1_CC12} == null )? "0" : $V{TOTAL_GP_1_CC12}.toString()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30">
+			<frame>
+				<reportElement style="HeaderBox" positionType="Float" x="110" y="0" width="586" height="30" isRemoveLineWhenBlank="true" uuid="63379f76-371b-4d29-acd7-f2f358d1b7bd">
+					<printWhenExpression><![CDATA[($F{ROW_2}.equals( "Subtotal") || $F{ROW_2}.equals( "Total") || $F{ROW_2}.equals( "総計") || $F{ROW_2}.equals( "小計") || $F{ROW_1}.equals( "Subtotal") || $F{ROW_1}.equals( "Total") || $F{ROW_1}.equals( "総計") || $F{ROW_1}.equals( "小計") || $F{ROW_3}.equals( "Subtotal") || $F{ROW_3}.equals( "Total") || $F{ROW_3}.equals( "総計") || $F{ROW_3}.equals( "小計") || $F{ROW_4}.equals( "Subtotal") || $F{ROW_4}.equals( "Total") || $F{ROW_4}.equals( "総計") || $F{ROW_4}.equals( "小計")  || $F{ROW_1}.equals($V{escapedTotal}) || $F{ROW_2}.equals($V{escapedSubTotal}) || $F{ROW_3}.equals($V{escapedSubTotal}) || $F{ROW_4}.equals($V{escapedSubTotal})? false  :true)]]></printWhenExpression>
+				</reportElement>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeaderBox" stretchType="RelativeToBandHeight" x="0" y="0" width="160" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="460a154b-678d-49b2-b898-a9d7f6a08194">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0aa826c6-77eb-4eef-a38b-e37b449a4532"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html"/>
+					<textFieldExpression><![CDATA[$F{ROW_2}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeaderBox" stretchType="RelativeToBandHeight" x="160" y="0" width="71" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="80385be6-f019-4345-986e-a4b3082714ab">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="20abad52-d16b-4a8c-a265-5db3a9a7c1a0"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{GP_0_CC11}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeaderBox" stretchType="RelativeToBandHeight" x="231" y="0" width="71" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="d51f562d-5666-437d-9dd0-1fb2883a94af">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11794c47-37e9-45cf-98e5-4dad5a82dfb2"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{GP_0_CE11}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeaderBox" stretchType="RelativeToBandHeight" x="302" y="0" width="71" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="db9c7f25-cbea-44c1-861f-6d1c1d74248d">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11794c47-37e9-45cf-98e5-4dad5a82dfb2"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{GP_0_CC12}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeaderBox" stretchType="RelativeToBandHeight" x="373" y="0" width="71" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="95f57e65-feb0-4b8e-a3bc-281e8d1671d2">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11794c47-37e9-45cf-98e5-4dad5a82dfb2"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{GP_0_CE12}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeaderBox" stretchType="RelativeToBandHeight" x="444" y="0" width="71" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="51e7514f-c011-4367-99a4-897aa67b4333">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11794c47-37e9-45cf-98e5-4dad5a82dfb2"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{GP_1_CC12}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeaderBox" stretchType="RelativeToBandHeight" x="515" y="0" width="71" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="556d34cc-73df-47fa-9224-17e0455241ab">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11794c47-37e9-45cf-98e5-4dad5a82dfb2"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{GP_1_CE12}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40">
+			<frame>
+				<reportElement x="110" y="0" width="586" height="30" uuid="c6a6e867-bcf0-4b4c-8a89-2c0a87305bff"/>
+				<textField isBlankWhenNull="true">
+					<reportElement style="Header" x="265" y="0" width="108" height="30" uuid="6df1e8df-637e-4f1e-8025-811346dcffb3">
+						<printWhenExpression><![CDATA[!$P{PV_outputFormat}.equals("XLSX")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["- " + $V{PAGE_NUMBER} + " -"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Header" x="0" y="0" width="231" height="30" uuid="9a4cca76-7254-4815-959a-0319a0b46042"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{PV_TEMPLATE_FOOTER}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="Header" x="373" y="0" width="213" height="30" uuid="248dc3e2-4465-4f6b-9ac0-98b955124eb2"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["MedDRA／J version (" +($P{PV_MEDDRA_VERSION}.length()>8 ? ($P{PV_MEDDRA_VERSION}.contains("MedDRA/J") ? $P{PV_MEDDRA_VERSION}.substring(27,32) : $P{PV_MEDDRA_VERSION}.substring(15)) : $P{PV_MEDDRA_VERSION})+")"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="50">
+			<textField>
+				<reportElement style="HeadersBold" x="110" y="0" width="586" height="25" uuid="5a1e21d0-d774-48d9-a638-68ca4503d3f7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["注１）各副作用等の種類の「総数」「重篤」「非重篤」の「症例数」については、それぞれを計算し た。「総数」の「件数」については、「重篤」と「非重篤」の和とした。"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeadersBold" x="110" y="25" width="586" height="25" uuid="c9940c46-c081-4fd0-b1eb-2e157bd5e334">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["注2）同一症例において、基本語（PT）が同一となる副作用・感染症が複数回発現した場合の「件 数」は発現回数にて計算した。"]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="30">
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT}<1]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement key="" style="HeadersBoldBox" positionType="Float" x="110" y="0" width="586" height="30" isRemoveLineWhenBlank="true" uuid="3a89f979-e5d7-4eff-8b34-4732e7590d73"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["データがありません"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="FontAwesome">
+        <normal>fonts/FA/fontawesome-webfont.ttf</normal>
+        <bold>fonts/FA/fontawesome-webfont.ttf</bold>
+        <italic>fonts/FA/fontawesome-webfont.ttf</italic>
+        <boldItalic>fonts/FA/fontawesome-webfont.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'FontAwesome'</export>
+            <export key="net.sf.jasperreports.xhtml">'FontAwesome'</export>
+            <export key="net.sf.jasperreports.rtf">Arial</export>
+        </exportFonts>
+    </fontFamily>
+</fontFamilies>

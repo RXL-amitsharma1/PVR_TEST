@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="futura">
+        <normal>fonts/futura/futura-extra-bold.ttf</normal>
+        <bold>fonts/futura/futura-extra-bold.ttf</bold>
+        <italic>fonts/futura/futura-extra-bold.ttf</italic>
+        <boldItalic>fonts/futura/futura-extra-bold.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'futura','Arial Unicode', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.xhtml">'futura','Arial Unicode', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.rtf">Arial</export>
+        </exportFonts>
+    </fontFamily>
+</fontFamilies>

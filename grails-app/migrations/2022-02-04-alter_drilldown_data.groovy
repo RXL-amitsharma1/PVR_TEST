@@ -1,0 +1,11 @@
+databaseChangeLog = {
+
+	changeSet(author: "anurag", id: "040220220118-1") {
+		sql("ALTER TABLE DRILLDOWN_DATA ADD (CASE_ID NUMBER GENERATED ALWAYS AS (json_value(cll_row_data, '\$.masterCaseId' RETURNING NUMBER ))); ");
+		sql("ALTER TABLE DRILLDOWN_DATA ADD (TENANT_ID NUMBER GENERATED ALWAYS AS (json_value(cll_row_data, '\$.masterEnterpriseId' RETURNING NUMBER ))); ");
+		sql("ALTER TABLE DRILLDOWN_DATA ADD (PROCESSED_REPORT_ID VARCHAR2(255 char) GENERATED ALWAYS AS (json_value(cll_row_data, '\$.vcsProcessedReportId' RETURNING VARCHAR2(255 char) ))); ");
+		sql("ALTER TABLE DRILLDOWN_DATA ADD (CASE_NUM VARCHAR2(255 char) GENERATED ALWAYS AS (json_value(cll_row_data, '\$.masterCaseNum' RETURNING VARCHAR2(255 char) ))); ");
+		sql("CREATE INDEX IX01_DRILLDOWN_DATA on DRILLDOWN_DATA(CASE_ID,TENANT_ID,PROCESSED_REPORT_ID)");
+		sql("CREATE INDEX IX02_DRILLDOWN_DATA on DRILLDOWN_DATA(CASE_NUM)");
+	}
+}

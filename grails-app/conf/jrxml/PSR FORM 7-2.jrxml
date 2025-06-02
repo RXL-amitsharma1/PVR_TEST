@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="561" leftMargin="17" rightMargin="27" topMargin="27" bottomMargin="27" uuid="4040029c-31a0-4c2b-8237-40afda5273f3">
+	<property name="net.sf.jasperreports.data.adapter" value="repo:/templates/13244/data/adapter.xml"/>
+	<property name="ireport.jasperserver.url" value="http://10.100.22.130:8080/reports/"/>
+	<property name="ireport.jasperserver.user" value="admin"/>
+	<property name="ireport.jasperserver.report.resource" value="/templates/13244/data/PSR FORM 7-2.jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/templates/13244/reportUnit"/>
+	<property name="net.sf.jasperreports.export.docx.flexible.row.height" value="true"/>
+	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
+	<property name="net.sf.jasperreports.export.pdf.size.page.to.content" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.rows" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.columns" value="true"/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.wrap.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.font.size.fix.enabled" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.collapse.row.span" value="false"/>
+	<property name="net.sf.jasperreports.export.ignore.page.margins" value="true"/>
+	<style name="htmlFont" fontName="MS Mincho">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{PV_outputFormat} == null || "HTML".equals($P{PV_outputFormat})]]></conditionExpression>
+			<style fontSize="14"/>
+		</conditionalStyle>
+	</style>
+	<style name="Header" style="htmlFont" fontName="MS Mincho">
+		<paragraph lineSpacing="Fixed" lineSpacingSize="10.0" leftIndent="2" spacingBefore="2"/>
+	</style>
+	<style name="HeaderBox" style="htmlFont" fontName="MS Mincho">
+		<box>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+		<paragraph lineSpacing="Fixed" lineSpacingSize="10.0" leftIndent="2" spacingBefore="2"/>
+	</style>
+	<style name="HeadersBold" style="Header" isBold="true"/>
+	<style name="HeadersBoldBox" style="HeaderBox" isBold="true"/>
+	<parameter name="PV_outputFormat" class="java.lang.String"/>
+	<parameter name="PV_MEDDRA_VERSION" class="java.lang.String"/>
+	<parameter name="PV_INCLUDE_CASE_NUM_NUPR" class="java.lang.Boolean"/>
+	<queryString language="csv">
+		<![CDATA[]]>
+	</queryString>
+	<field name="REC_NUM" class="java.lang.String">
+		<fieldDescription><![CDATA[REC_NUM]]></fieldDescription>
+	</field>
+	<field name="MDR_AE_PT" class="java.lang.String">
+		<fieldDescription><![CDATA[MDR_AE_PT]]></fieldDescription>
+	</field>
+	<field name="MDR_AE_PT_CODE" class="java.lang.Integer">
+		<fieldDescription><![CDATA[MDR_AE_PT_CODE]]></fieldDescription>
+	</field>
+	<field name="GENDER" class="java.lang.String">
+		<fieldDescription><![CDATA[GENDER]]></fieldDescription>
+	</field>
+	<field name="AGE" class="java.lang.String">
+		<fieldDescription><![CDATA[AGE]]></fieldDescription>
+	</field>
+	<field name="ONSET_DATE" class="java.lang.String">
+		<fieldDescription><![CDATA[ONSET_DATE]]></fieldDescription>
+	</field>
+	<field name="OUTCOME" class="java.lang.String">
+		<fieldDescription><![CDATA[OUTCOME]]></fieldDescription>
+	</field>
+	<field name="REPORT_TYPE" class="java.lang.String">
+		<fieldDescription><![CDATA[REPORT_TYPE]]></fieldDescription>
+	</field>
+	<field name="REMARK" class="java.lang.String">
+		<fieldDescription><![CDATA[REMARK]]></fieldDescription>
+	</field>
+	<field name="START_DATE" class="java.lang.String">
+		<fieldDescription><![CDATA[START_DATE]]></fieldDescription>
+	</field>
+	<field name="END_DATE" class="java.lang.String">
+		<fieldDescription><![CDATA[END_DATE]]></fieldDescription>
+	</field>
+	<field name="MEDDRA_VER" class="java.lang.String">
+		<fieldDescription><![CDATA[MEDDRA_VER]]></fieldDescription>
+	</field>
+	<field name="CASE_NUM" class="java.lang.String">
+		<fieldDescription><![CDATA[CASE_NUM]]></fieldDescription>
+	</field>
+	<field name="AE_SOC_INTL_RANK_ID" class="java.lang.Integer"/>
+	<field name="CASE_ID" class="java.lang.Integer"/>
+	<field name="AE_REC_NUM" class="java.lang.Integer"/>
+	<sortField name="AE_SOC_INTL_RANK_ID" type="Variable"/>
+	<sortField name="AE_SOC_INTL_RANK_ID"/>
+	<sortField name="MDR_AE_PT_CODE" type="Variable"/>
+	<sortField name="MDR_AE_PT_CODE"/>
+	<sortField name="ONSET_DATE_NVL" type="Variable"/>
+	<sortField name="ONSET_DATE" type="Variable"/>
+	<sortField name="CASE_ID" type="Variable"/>
+	<sortField name="CASE_ID"/>
+	<sortField name="AE_REC_NUM" type="Variable"/>
+	<sortField name="AE_REC_NUM"/>
+	<variable name="AE_SOC_INTL_RANK_ID" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{AE_SOC_INTL_RANK_ID}==0]]></variableExpression>
+	</variable>
+	<variable name="MDR_AE_PT_CODE" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{MDR_AE_PT_CODE}==0]]></variableExpression>
+	</variable>
+	<variable name="partialDateMembersCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{ONSET_DATE}.split("-").length]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="ONSET_DATE_NVL" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{ONSET_DATE}==null || $F{ONSET_DATE}.isEmpty()]]></variableExpression>
+	</variable>
+	<variable name="ONSET_DATE" class="java.lang.String">
+		<variableExpression><![CDATA[$V{partialDateMembersCount}==1 ? $F{ONSET_DATE}+"-13-32" : ($V{partialDateMembersCount}==2 ? $F{ONSET_DATE}+"-32" : $F{ONSET_DATE})]]></variableExpression>
+	</variable>
+	<variable name="CASE_ID" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{CASE_ID}==0]]></variableExpression>
+	</variable>
+	<variable name="AE_REC_NUM" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{AE_REC_NUM}==0]]></variableExpression>
+	</variable>
+	<variable name="START_DATEVar" class="java.time.LocalDate">
+		<variableExpression><![CDATA[$F{START_DATE}.isEmpty() ? java.time.LocalDate.now()  : java.time.LocalDate.parse($F{START_DATE})]]></variableExpression>
+	</variable>
+	<variable name="END_DATEVar" class="java.time.LocalDate">
+		<variableExpression><![CDATA[$F{END_DATE}.isEmpty() ? java.time.LocalDate.now()  : java.time.LocalDate.parse($F{END_DATE})]]></variableExpression>
+	</variable>
+	<pageHeader>
+		<band height="66">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField>
+				<reportElement style="HeadersBold" x="13" y="10" width="535" height="20" uuid="86abfe9d-046f-4185-ad8f-aedc719d7fb4">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["別紙"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeadersBold" x="13" y="30" width="535" height="20" uuid="7342ff1d-6fa9-4739-b41e-5e38327ebd9d">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["未知・非重篤副作用別発現症例一覧表"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="40">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<frame>
+				<reportElement key="columnHeader.list2" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="13" y="0" width="535" height="40" uuid="883f0974-6212-4be5-9ba4-9f6e3b9190e4"/>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="30" height="40" backcolor="#FFFFFF" uuid="c6ee24a3-bc2a-4d81-b7ea-1f661c377bf5">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["番号"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="HeadersBoldBox" positionType="Float" x="30" y="0" width="140" height="20" uuid="89e9c8cf-bb36-463a-81ed-436f98d0419a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["副作用の種類"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_eventBodySysJ_2.title1" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="30" y="20" width="70" height="20" forecolor="#0A0000" backcolor="#FFFFFF" uuid="a2300527-9976-442f-b45e-d0b281e1b30e">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["基本語"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_eventPrefTermJ_3.title1" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="100" y="20" width="70" height="20" forecolor="#0A0000" backcolor="#FFFFFF" uuid="eb57e598-fcb0-48a8-87cb-8c01c6d50eaa">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["MedDRAコード"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_patInfoGenderId_4.title1" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="170" y="0" width="35" height="40" forecolor="#0A0000" backcolor="#FFFFFF" uuid="dd0d862a-5156-40df-b3a1-7395d6881dd3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["性別"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_patInfoPatAge_5.title1" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="205" y="0" width="35" height="40" forecolor="#0A0000" backcolor="#FFFFFF" uuid="30f8565a-a88b-4352-99a7-2146a86b095d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["年齢"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_caiEventOnsetDateJ_6.title1" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="240" y="0" width="80" height="40" forecolor="#0A0000" backcolor="#FFFFFF" uuid="22970774-ca91-421f-afde-52d5c7e2f21c">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["副作用等発現 年 月 日"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="320" y="0" width="30" height="40" backcolor="#FFFFFF" uuid="c2530479-4ddf-48b4-be01-f255a7f25fc7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["転帰"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_cafInfectionFlag_8.title1" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="350" y="0" width="50" height="40" forecolor="#0A0000" backcolor="#FFFFFF" uuid="cf98dacc-81e8-4d11-93b9-a125c20fb3d4">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["報告の種類"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_masterRptTypeId_9.title1" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="400" y="0" width="70" height="40" forecolor="#0A0000" backcolor="#FFFFFF" uuid="51d44337-3436-46a0-b45b-8244e7b989fd">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<printWhenExpression><![CDATA[$P{PV_INCLUDE_CASE_NUM_NUPR}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["備考"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_masterRptTypeId_9.title1" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="470" y="0" width="65" height="40" forecolor="#0A0000" backcolor="#FFFFFF" uuid="258d3304-9c08-4417-84d2-b266812a0bbe">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[$P{PV_INCLUDE_CASE_NUM_NUPR}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["症例番号"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_masterRptTypeId_9.title1" style="HeadersBoldBox" positionType="Float" stretchType="ElementGroupHeight" x="400" y="0" width="135" height="40" forecolor="#0A0000" backcolor="#FFFFFF" uuid="904627a7-19a1-4ded-b316-f63013c0c75a">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[!$P{PV_INCLUDE_CASE_NUM_NUPR}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["備考"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="60">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement key="detail.list1" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="13" y="0" width="535" height="60" isRemoveLineWhenBlank="true" uuid="f3951e36-c288-4404-bac0-0a1b69b49d0c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="30" height="60" uuid="2bd226c9-ac00-48da-80a2-90228e7961ef">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{REC_NUM}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="30" y="0" width="70" height="60" uuid="560785ee-b0f2-4614-9ff1-e8f050ed702d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{MDR_AE_PT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="100" y="0" width="70" height="60" uuid="373dd719-76e8-42a9-bab9-457363fc5629">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{MDR_AE_PT_CODE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="170" y="0" width="35" height="60" uuid="f83be009-6149-455b-b48c-db44c9ab6e79">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[($F{GENDER}.equals("女性")) || ( $F{GENDER}.equals("男性")) ? $F{GENDER} : "不明"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="205" y="0" width="35" height="60" uuid="a2cdb2b3-ab2c-40cf-85f3-3e6d6b7baafc">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[($F{AGE}==null || $F{AGE}.isEmpty()) ? "不明" : $F{AGE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="240" y="0" width="80" height="60" uuid="4242e10d-f93c-4a85-b9a1-3a73a3c28d3c">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{ONSET_DATE}.length() != 0 ? 
+($V{partialDateMembersCount} == 3 ? (Integer.valueOf($F{ONSET_DATE}.substring( 0, 4 )) + " 年" + Integer.valueOf($F{ONSET_DATE}.substring(5,7)) + " 月" + Integer.valueOf($F{ONSET_DATE}.substring(8)) + " 日") : 
+($V{partialDateMembersCount} == 2 ? (Integer.valueOf($F{ONSET_DATE}.substring( 0, 4 )) + " 年" + Integer.valueOf($F{ONSET_DATE}.substring(5,7)) + " 月") :  (Integer.valueOf($F{ONSET_DATE}.substring( 0, 4 )) + " 年" )))
+: "不明"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="320" y="0" width="30" height="60" uuid="ccf76cf4-8ed0-49c2-a751-68794947406b">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{OUTCOME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="350" y="0" width="50" height="60" uuid="4e79cb32-64ae-4785-b512-4fc6c91a8b27">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{REPORT_TYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="400" y="0" width="70" height="60" uuid="aaa2c7a5-9b3c-47e5-81af-f8e62e4b99be">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<printWhenExpression><![CDATA[$P{PV_INCLUDE_CASE_NUM_NUPR}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{REMARK}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="470" y="0" width="65" height="60" uuid="d9b9e2ff-d10b-4381-9e60-10c178eb9156">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[$P{PV_INCLUDE_CASE_NUM_NUPR}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{CASE_NUM}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" style="HeaderBox" positionType="Float" stretchType="ElementGroupHeight" x="400" y="0" width="135" height="60" uuid="5fddb032-541f-4535-a4bf-763992868be0">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<printWhenExpression><![CDATA[!$P{PV_INCLUDE_CASE_NUM_NUPR}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{REMARK}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement style="Header" x="13" y="0" width="535" height="40" uuid="4985608a-a9ce-4523-817b-59770d72a13c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="Header" x="265" y="0" width="75" height="40" uuid="0654b11c-449b-4591-8633-e6094ec8ecc0">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<printWhenExpression><![CDATA[!$P{PV_outputFormat}.equals("XLSX")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["-" + $V{PAGE_NUMBER} + "-"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Header" x="0" y="0" width="265" height="40" uuid="da92735b-710d-4715-ad33-f5ed4e26b82c">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="net.sf.jasperreports.export.xls.wrap.text" value="false"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["副作用の用語は、" + ($F{MEDDRA_VER}==null || $F{MEDDRA_VER}.isEmpty() ? ($P{PV_MEDDRA_VERSION}.length()>8 ? ($P{PV_MEDDRA_VERSION}.contains("MedDRA/J") ? $P{PV_MEDDRA_VERSION}.substring(27,32) : $P{PV_MEDDRA_VERSION}.substring(15)) : $P{PV_MEDDRA_VERSION}) : $F{MEDDRA_VER}) + "を使用。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="75">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement style="Header" positionType="Float" x="13" y="40" width="535" height="35" uuid="f4a3c0e3-8153-42f9-b60a-3b45474760c9">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Header" x="0" y="20" width="535" height="15" uuid="c3093d42-489e-42c0-a636-e6f836c16acc">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[(($F{START_DATE}.isEmpty()) || ($F{END_DATE}.isEmpty())) ? "" : 
+"調査単位期間：" + $V{START_DATEVar}.getYear()+"年"+$V{START_DATEVar}.getMonthValue()+"月" + $V{START_DATEVar}.getDayOfMonth() + "日"
++ " ～ " + 
+$V{END_DATEVar}.getYear()+"年"+$V{END_DATEVar}.getMonthValue()+"月" + $V{END_DATEVar}.getDayOfMonth() + "日"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Header" x="0" y="0" width="535" height="20" uuid="a1129f95-13d1-4b2b-aa2e-933748207d71"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["転帰：[1] 回復、[2] 軽快、[3] 未回復、[4] 回復したが後遺症あり、[0]不明"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement key="detail.list1" positionType="Float" stretchType="ElementGroupHeight" x="13" y="0" width="535" height="40" isRemoveLineWhenBlank="true" uuid="f16a0fd5-701f-4112-8a5d-26be7cb89208">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}<1]]></printWhenExpression>
+				</reportElement>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="HeadersBoldBox" stretchType="ContainerHeight" x="0" y="0" width="535" height="40" uuid="c04c941d-9c72-49ae-bacc-d54decd3f9ce"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["データがありません"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

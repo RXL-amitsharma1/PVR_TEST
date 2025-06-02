@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="CourierNew">
+        <normal>fonts/CourierNew/CourierNew.ttf</normal>
+        <bold>fonts/CourierNew/CourierNew.ttf</bold>
+        <italic>fonts/CourierNew/CourierNew.ttf</italic>
+        <boldItalic>fonts/CourierNew/CourierNew.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'MS Mincho', Arial, Helvetica, sans-serif, CourierNew</export>
+            <export key="net.sf.jasperreports.xhtml">'MS Mincho', Arial, Helvetica, sans-serif, CourierNew</export>
+            <export key="net.sf.jasperreports.rtf">Arial</export>
+        </exportFonts>
+    </fontFamily>
+</fontFamilies>

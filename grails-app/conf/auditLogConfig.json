@@ -1,0 +1,1338 @@
+{
+  "actionItem": {
+    "root": "true",
+    "name": "Action Item",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      }
+    }
+  },
+  "user": {
+    "root": "true",
+    "name": "User",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+        }
+      },
+      "RULE_HIDE_PROPERTY": {
+        "metadata": [
+          "preference",
+          "tenants"
+        ]
+      }
+    }
+  },
+  "userRole": {
+    "root": "false",
+    "name": "User",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+        }
+      }
+    }
+  },
+  "fieldProfile": {
+    "root": "true",
+    "name": "Field Profile",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+        }
+      }
+    }
+  },
+  "SourceProfile": {
+    "root": "true",
+    "name": "Source Profile",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+        }
+      }
+    }
+  },
+  "caseSeries": {
+    "root": "true",
+    "name": "Case Series",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler",
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)",
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Selection Criteria and Basic Information": [
+            "caseSeries.*"
+          ],
+          "Case Delivery Option": [
+            "caseDeliveryOption.*"
+          ],
+          "Email Configuration": [
+            "emailConfiguration.*"
+          ]
+        }
+      }
+    }
+  },
+  "executedCaseSeries": {
+    "root": "true",
+    "name": "Executed Case Series",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler",
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    }
+  },
+  "emailConfiguration": {
+    "root": "false",
+    "name": "Email Configuration",
+    "rules": {}
+  },
+  "caseSeriesDateRangeInformation": {
+    "root": "false",
+    "name": "Date Range",
+    "rules": {}
+  },
+  "configuration": {
+    "root": "true",
+    "name": "Adhoc Report Configuration",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler",
+          "asOfVersionDateDelta": "As of Version Date",
+          "displayMedDraVersionNumber": "Display MedDRA Version Number",
+          "draftOnly": "Non-submittable",
+          "templtReassessDate": "Template Reassess Date",
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)",
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Selection Criteria and Report Details": [
+            "configuration.*"
+          ],
+          "Report Section": [
+            "templateQuery.*"
+          ],
+          "Report Delivery Option": [
+            "deliveryOption.*"
+          ],
+          "Email Configuration": [
+            "emailConfiguration.*"
+          ],
+          "Action Items To Be Created On Report Execution": [
+            "configuration.reportTasks"
+          ]
+        }
+      }
+    }
+  },
+  "executedConfiguration": {
+    "root": "true",
+    "name": "Executed Adhoc Report Configuration",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler",
+          "asOfVersionDateDelta": "As of Version Date",
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)",
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Selection Criteria and Report Details": [
+            "executedConfiguration.*"
+          ],
+          "Report Section": [
+            "executedTemplateQuery.*"
+          ]
+        }
+      }
+    }
+  },
+  "periodicReportConfiguration": {
+    "root": "true",
+    "name": "Aggregate Report Configuration",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler",
+          "asOfVersionDateDelta": "As of Version Date",
+          "displayMedDraVersionNumber": "Display MedDRA Version Number",
+          "draftOnly": "Non-submittable",
+          "templtReassessDate": "Template Reassess Date",
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)",
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "generateSpotfire": "code:com.rxlogix.util.ViewHelper.getCustomChartOptions(x)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Selection Criteria and Report Details": [
+            "periodicReportConfiguration.*"
+          ],
+          "Report Section": [
+            "templateQuery.*"
+          ],
+          "Report Delivery Option": [
+            "deliveryOption.*"
+          ],
+          "Email Configuration": [
+            "emailConfiguration.*"
+          ],
+          "Action Items To Be Created On Report Execution": [
+            "periodicReportConfiguration.reportTasks"
+          ]
+        }
+      }
+    }
+  },
+  "executedPeriodicReportConfiguration": {
+    "root": "true",
+    "name": "Executed Aggregate Report Configuration",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler",
+          "asOfVersionDateDelta": "As of Version Date",
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)",
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    }
+  },
+  "icsrReportConfiguration": {
+    "root": "true",
+    "name": "ICSR Report Configuration",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler",
+          "asOfVersionDateDelta": "As of Version Date",
+          "displayMedDraVersionNumber": "Display MedDRA Version Number",
+          "draftOnly": "Non-submittable",
+          "templtReassessDate": "Template Reassess Date",
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)",
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+            "Selection Criteria and Report Details": [
+              "icsrReportConfiguration.*"
+            ],
+            "Report Section": [
+              "icsrTemplateQuery.*"
+            ],
+            "Report Delivery Option": [
+              "deliveryOption.*"
+            ],
+            "Email Configuration": [
+              "emailConfiguration.*"
+            ]
+        }
+      }
+    }
+  },
+  "executedIcsrReportConfiguration": {
+    "root": "true",
+    "name": "Executed ICSR Report Configuration",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler",
+          "asOfVersionDateDelta": "As of Version Date",
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)",
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    }
+  },
+  "icsrProfileConfiguration": {
+    "root": "true",
+    "name": "ICSR Profile Configuration",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler",
+          "asOfVersionDateDelta": "As of Version Date",
+          "displayMedDraVersionNumber": "Display MedDRA Version Number",
+          "includeOpenCases": "Generate Report before Case Finalization",
+          "calendars": "Holiday Calendar",
+          "draftOnly": "Non-submittable",
+          "templtReassessDate": "Template Reassess Date",
+          "includeWHODrugs": "Include WHO Drugs",
+          "awareDate": "Use Japan Aware Date"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)",
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "calendars": "code:com.rxlogix.util.ViewHelper.getCalendarNames(x)",
+          "authorizationTypes": "code:com.rxlogix.util.ViewHelper.getAuthorizationTypeNames(x)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "General": [
+            "icsrProfileConfiguration.reportName",
+            "icsrProfileConfiguration.recipientOrganization",
+            "icsrProfileConfiguration.senderOrganization",
+            "icsrProfileConfiguration.autoScheduling",
+            "icsrProfileConfiguration.autoTransmit",
+            "icsrProfileConfiguration.autoSubmit",
+            "icsrProfileConfiguration.localCpRequired",
+            "icsrProfileConfiguration.manualScheduling",
+            "icsrProfileConfiguration.adjustDueDate",
+            "icsrProfileConfiguration.autoScheduleFUPReport",
+            "icsrProfileConfiguration.deviceReportable",
+            "icsrProfileConfiguration.isEnabled",
+            "icsrProfileConfiguration.autoGenerate",
+            "icsrProfileConfiguration.isDeleted",
+            "icsrProfileConfiguration.dateCreated",
+            "icsrProfileConfiguration.tenantId",
+            "icsrProfileConfiguration.lastUpdated",
+            "icsrProfileConfiguration.owner",
+            "icsrProfileConfiguration.modifiedBy",
+            "icsrProfileConfiguration.createdBy",
+            "icsrProfileConfiguration.executing",
+            "icsrProfileConfiguration.configSelectedTimeZone",
+            "icsrProfileConfiguration.includeOpenCases",
+            "icsrProfileConfiguration.calendars"
+          ],
+          "Global Criteria": [
+            "icsrProfileConfiguration.productSelection",
+            "icsrProfileConfiguration.productGroupSelection",
+            "icsrProfileConfiguration.studySelection",
+            "icsrProfileConfiguration.isMultiIngredient",
+            "icsrProfileConfiguration.includeWHODrugs",
+            "icsrProfileConfiguration.poiInputsParameterValues",
+            "icsrProfileConfiguration.excludeNonValidCases",
+            "icsrProfileConfiguration.includeProductObligation",
+            "icsrProfileConfiguration.includeStudyObligation",
+            "icsrProfileConfiguration.includeNonReportable",
+            "icsrProfileConfiguration.globalQuery",
+            "icsrProfileConfiguration.globalQueryValueLists",
+            "icsrProfileConfiguration.suspectProduct"
+          ],
+          "Additional Details": [
+            "icsrProfileConfiguration.qualityChecked",
+            "icsrProfileConfiguration.description"
+          ]
+        }
+      }
+    }
+  },
+  "executedIcsrProfileConfiguration": {
+    "root": "true",
+    "name": "Executed ICSR Profile Configuration",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler",
+          "asOfVersionDateDelta": "As of Version Date",
+          "includeWHODrugs": "Include WHO Drugs",
+          "awareDate": "Use Japan Aware Date"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)",
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    }
+  },
+  "autoReasonOfDelay": {
+    "root": "true",
+    "name": "Auto Reason Of Delay",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "scheduleDateJSON": "Scheduler"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "scheduleDateJSON": "code:com.rxlogix.util.AuditLogConfigUtil.scheduleDateJsonView(x)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    }
+  },
+  "templateQuery": {
+    "root": "false",
+    "name": "Sections",
+    "rules": {}
+  },
+  "executedTemplateQuery": {
+    "root": "false",
+    "name": "Sections",
+    "rules": {}
+  },
+  "reportTask": {
+    "root": "false",
+    "name": "Report Task",
+    "rules": {}
+  },
+  "deliveryOption": {
+    "root": "false",
+    "name": "Delivery Option",
+    "rules": {}
+  },
+  "executedDeliveryOption": {
+    "root": "false",
+    "name": "Delivery Option",
+    "rules": {}
+  },
+  "publisherConfigurationSection": {
+    "root": "false",
+    "name": "Publisher Configuration Section",
+    "rules": {}
+  },
+  "publisherSource": {
+    "root": "true",
+    "name": "Publisher Source",
+    "rules": {}
+  },
+  "actionPlanSummary": {
+    "root": "false",
+    "name": "Action Plan Summary",
+    "rules": {}
+  },
+  "capa8DAttachment": {
+    "root": "false",
+    "name": "Attachment",
+    "rules": {}
+  },
+  "capa8D": {
+    "root": "true",
+    "name": "Issue",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    },
+    "enablingConditions": {
+      "or": {
+        "pv.app.pvquality.enabled": "true",
+        "pv.app.pvcentral.enabled": "true"
+      }
+    }
+  },
+  "caseLineListingTemplate": {
+    "root": "true",
+    "name": "Case Line Listing Template",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "userTemplates": "Shared With",
+          "userGroupTemplates": "Shared With Group",
+          "name": "Template Name"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "columnList": "code:com.rxlogix.util.ViewHelper.getReadableMap(x)",
+          "groupingList": "code:com.rxlogix.util.ViewHelper.getReadableMap(x)",
+          "rowColumnList": "code:com.rxlogix.util.ViewHelper.getReadableMap(x)",
+          "serviceColumnList": "code:com.rxlogix.util.ViewHelper.getReadableMap(x)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    }
+  },
+  "dataTabulationTemplate": {
+    "root": "true",
+    "name": "Data Tabulation Template",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "userTemplates": "Shared With",
+          "userGroupTemplates": "Shared With Group",
+          "positiveCountOnly": "Limit to Rows with Period Count>0",
+          "name": "Template Name",
+          "chartExportAsImage": "Export Chart As Image",
+          "drillDownFilerColumns": "Drill Down Filter Columns",
+          "drillDownField": "Drill Down Column",
+          "chartCustomOptions": "Custom Chart Options"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "groupingList": "code:com.rxlogix.util.ViewHelper.getReadableMap(x)",
+          "rowList": "code:com.rxlogix.util.ViewHelper.getReadableMap(x)",
+          "chartCustomOptions": "code:com.rxlogix.util.ViewHelper.getCustomChartOptions(x)"
+        }
+      }
+    }
+  },
+  "customSQLTemplate": {
+    "root": "true",
+    "name": "Custom SQL Template",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "userTemplates": "Shared With",
+          "userGroupTemplates": "Shared With Group",
+          "name": "Template Name",
+          "drillDownFilerColumns": "Drill Down Filter Columns",
+          "drillDownField": "Drill Down Column"
+        }
+      }
+    }
+  },
+  "nonCaseSQLTemplate": {
+    "root": "true",
+    "name": "NonCase SQL Template",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "userTemplates": "Shared With",
+          "userGroupTemplates": "Shared With Group",
+          "name": "Template Name",
+          "chartExportAsImage": "Export Chart As Image",
+          "drillDownFilerColumns": "Drill Down Filter Columns",
+          "drillDownField": "Drill Down Column"
+        }
+      }
+    }
+  },
+  "XMLTemplate": {
+    "root": "true",
+    "name": "XML Template",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "userTemplates": "Shared With",
+          "userGroupTemplates": "Shared With Group",
+          "name": "Template Name"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    }
+  },
+  "templateSet": {
+    "root": "true",
+    "name": "Template Set",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "userTemplates": "Shared With",
+          "userGroupTemplates": "Shared With Group"
+        }
+      }
+    }
+  },
+  "customReportField": {
+    "root": "false",
+    "name": "Custom Report Field",
+    "rules": {
+    }
+  },
+  "globalDateRangeInformation": {
+    "root": "false",
+    "name": "Global Date Range Information",
+    "rules": {
+    }
+  },
+  "executedGlobalDateRangeInformation": {
+    "root": "false",
+    "name": "Executed Global Date Range Information",
+    "rules": {
+    }
+  },
+  "dashboard": {
+    "root": "true",
+    "name": "Dashboard",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "widgets": "Current Active Widgets"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "widgets": "code:com.rxlogix.util.ViewHelper.getWidgetNames(x)",
+          "widgetType": "code:com.rxlogix.util.ViewHelper.getWidgetNames('[' + x + ']')"
+        }
+      }
+    }
+  },
+  "customSQLQuery": {
+    "root": "true",
+    "name": "Custom SQL Query",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "userQueries": "Shared With",
+          "userGroupQueries": "Shared With Group",
+          "JSONQuery": "Query Criteria"
+        }
+      }
+    }
+  },
+  "query": {
+    "root": "true",
+    "name": "Query",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "userQueries": "Shared With",
+          "userGroupQueries": "Shared With Group",
+          "JSONQuery": "Query Criteria"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "reassessListedness": "code:com.rxlogix.util.ViewHelper.getReassessListedness(x)"
+        }
+      }
+    }
+  },
+  "querySet": {
+    "root": "true",
+    "name": "Query Set",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "userQueries": "Shared With",
+          "userGroupQueries": "Shared With Group",
+          "JSONQuery": "Query Criteria"
+        }
+      }
+    }
+  },
+  "distributionChannel": {
+    "root": "false",
+    "name": "Distribution Channel",
+    "rules": {
+    }
+  },
+  "email": {
+    "root": "true",
+    "name": "Email",
+    "rules": {
+    }
+  },
+  "emailTemplate": {
+    "root": "true",
+    "name": "Email Template",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "description": "Subject",
+          "body": "Body ( Source Code )"
+        }
+      }
+    }
+  },
+  "etlSchedule": {
+    "root": "true",
+    "name": "ETL Schedule",
+    "rules": {
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    },
+    "enablingConditions": {
+      "or": {
+        "safety.source": "argus"
+      }
+    }
+  },
+  "taskTemplate": {
+    "root": "true",
+    "name": "Task Template",
+    "rules": {
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "type": "code:com.rxlogix.util.ViewHelper.getTaskTemplateType(x)"
+        }
+      }
+    }
+  },
+  "task": {
+    "root": "false",
+    "name": "Task",
+    "rules": {
+    }
+  },
+  "publisherSectionTask": {
+    "root": "false",
+    "name": "Publisher Section Task",
+    "rules": {
+    }
+  },
+  "reportRequestAttachment": {
+    "root": "false",
+    "name": "Attachment",
+    "rules": {
+    }
+  },
+  "reportRequestField": {
+    "root": "true",
+    "name": "Report Request Field",
+    "rules": {
+    }
+  },
+  "reportRequestLinkType": {
+    "root": "true",
+    "name": "Report Request Link Type",
+    "rules": {
+    }
+  },
+  "reportRequestPriority": {
+    "root": "true",
+    "name": "Report Request Priority",
+    "rules": {
+    }
+  },
+  "userDictionary": {
+    "root": "true",
+    "name": "User Dictionary",
+    "rules": {
+    }
+  },
+  "reportRequestType": {
+    "root": "true",
+    "name": "Report Request Type",
+    "rules": {
+    }
+  },
+  "reportRequestComment": {
+    "root": "false",
+    "name": "Report Request Comment",
+    "rules": {
+    }
+  },
+  "reportRequest": {
+    "root": "true",
+    "name": "Report Request",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    }
+  },
+  "workflowState": {
+    "root": "true",
+    "name": "Workflow State",
+    "rules": {
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "reportActions": "code:com.rxlogix.util.ViewHelper.getReportActionsList(x)",
+          "reportAction": "code:com.rxlogix.util.ViewHelper.getReportAction(x)"
+        }
+      }
+    }
+  },
+  "workflowRule": {
+    "root": "true",
+    "name": "Workflow Rule",
+    "rules": {
+    }
+  },
+  "workflowJustification": {
+    "root": "true",
+    "name": "Workflow Justification",
+    "rules": {
+    }
+  },
+  "workflowStateReportAction": {
+    "root": "false",
+    "name": "Workflow State Report Action",
+    "rules": {
+    }
+  },
+  "qualityIssueDetail": {
+    "root": "false",
+    "name": "Quality Issue Detail",
+    "rules": {
+    }
+  },
+  "inboundInitialConfiguration": {
+    "root": "true",
+    "name": "Inbound Initial Configuration",
+    "rules": {
+    }
+  },
+  "queryCompliance": {
+    "root": "false",
+    "name": "Query Compliance",
+    "rules": {
+    }
+  },
+  "qualityCaseData": {
+    "root": "true",
+    "name": "Quality Case Data",
+    "rules": {
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "metadata": "code:com.rxlogix.util.ViewHelper.getMetaDataValues(x)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    },
+    "enablingConditions": {
+      "or": {
+        "pv.app.pvquality.enabled": "true"
+      }
+    }
+  },
+  "qualitySubmission": {
+    "root": "true",
+    "name": "Quality Submission",
+    "rules": {
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "metadata": "code:com.rxlogix.util.ViewHelper.getMetaDataValues(x)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    },
+    "enablingConditions": {
+      "or": {
+        "pv.app.pvquality.enabled": "true"
+      }
+    }
+  },
+  "qualitySampling": {
+    "root": "true",
+    "name": "Quality Sampling",
+    "rules": {
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "metadata": "code:com.rxlogix.util.ViewHelper.getMetaDataValues(x)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    },
+    "enablingConditions": {
+      "or": {
+        "pv.app.pvquality.enabled": "true"
+      }
+    }
+  },
+  "inboundCompliance": {
+    "root": "true",
+    "name": "Inbound Compliance",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "eventSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)",
+          "studySelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.STUDY)",
+          "productSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryValues(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "productGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.PRODUCT)",
+          "eventGroupSelection": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupValuesForAuditLog(x, com.rxlogix.enums.DictionaryTypeEnum.EVENT)"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    },
+    "enablingConditions": {
+      "or": {
+        "pv.app.pvcentral.enabled": "true"
+      }
+    }
+  },
+  "caseDeliveryOption": {
+    "root": "false",
+    "name": "Case Delivery Option",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      }
+    }
+  },
+  "dictionaryGroup": {
+    "root": "true",
+    "name": "Dictionary Group",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "includeWHODrugs": "Include WHO Drugs"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "type": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupType(x)",
+          "dataSources": "code:com.rxlogix.util.ViewHelper.getDictionaryGroupDataSources(x)"
+        }
+      }
+    }
+  },
+  "executedIcsrTemplateQuery": {
+    "root": "false",
+    "name": "Executed ICSR Template Query",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      }
+    }
+  },
+  "preference": {
+    "root": "false",
+    "name": "Preference",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      }
+    }
+  },
+  "queryRCA": {
+    "root": "false",
+    "name": "Query RCA",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      }
+    }
+  },
+  "reportRequestEmailPreference": {
+    "root": "false",
+    "name": "Report Request Email Preference",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      }
+    }
+  },
+  "unitConfiguration": {
+    "root": "true",
+    "name": "Unit Configuration",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "xsltName": "Transformer",
+          "organizationName": "Company Identifier",
+          "unitRegisteredId": "E2B Routing ID",
+          "unitRetired": "Disabled",
+          "preferredLanguage": "Preferred Language",
+          "unitOrganizationName": "Organization Name"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "preferredTimeZone": "code:com.rxlogix.util.ViewHelper.getCorrectTimeZone(x)",
+          "preferredLanguage": "code:com.rxlogix.util.ViewHelper.getCorrectPreferredLanguage(x)"
+        }
+      }
+    }
+  },
+  "userGroup": {
+    "root": "true",
+    "name": "User Group",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "name": "User Group Name",
+          "sourceProfiles": "Data Source",
+          "defaultRRAssignTo": "Default Report Request Assign To"
+        }
+      }
+    }
+  },
+  "icsrCaseTracking": {
+    "root": "true",
+    "name": "ICSR Case Tracking",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    }
+  },
+  "balanceMinusQuery": {
+    "root": "true",
+    "name": "Balance Minus Query",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "distinctTables": "Selected Tables",
+          "includeCases": "Included Cases",
+          "excludeCases": "Excluded Cases",
+          "xValue": "Execution Period"
+        }
+      },
+      "RULE_SECTION_PROPERTY": {
+        "metadata": {
+          "Basic": [
+          ]
+        }
+      }
+    },
+    "enablingConditions": {
+      "or": {
+        "safety.source": "argus"
+      }
+    }
+  },
+  "bmQuerySection": {
+    "root": "false",
+    "name": "BM Query Section",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+        }
+      }
+    }
+  },
+  "AIEmailPreference": {
+    "root": "false",
+    "name": "Action Item Email Preference",
+    "rules": {
+    }
+  },
+  "globalDateRangeInbound": {
+    "root": "false",
+    "name": "Global Date Range Inbound",
+    "rules": {
+    }
+  },
+  "globalDateRangeInformationAutoROD": {
+    "root": "false",
+    "name": "Global Date Range Information Auto ROD",
+    "rules": {
+    }
+  },
+  "reportSubmission": {
+    "root": "true",
+    "name": "Report Submission",
+    "rules": {
+    }
+  },
+  "RCAMandatory": {
+    "root": "true",
+    "name": "RCA Mandatory",
+    "rules": {
+    }
+  },
+  "responsibleParty": {
+    "root": "true",
+    "name": "Responsible Party",
+    "rules": {
+    }
+  },
+  "rootCauseClassification": {
+    "root": "true",
+    "name": "Root Cause Classification",
+    "rules": {
+    }
+  },
+  "rootCauseSubCategory": {
+    "root": "true",
+    "name": "Root Cause Sub Category",
+    "rules": {
+    }
+  },
+  "pvcAttachment": {
+    "root": "true",
+    "name": "PVC Attachment",
+    "rules": {
+    }
+  },
+  "reportSubmissionLateReason": {
+    "root": "true",
+    "name": "Report Submission Late Reason",
+    "rules": {
+    }
+  },
+  "XMLTemplateNode": {
+    "root": "false",
+    "name": "XML Template Node",
+    "rules": {
+    }
+  },
+  "Comment": {
+    "root": "false",
+    "name": "Comment",
+    "rules": {
+    }
+  },
+  "Log In": {
+    "root": "true",
+    "name": "Log In",
+    "rules": {
+    }
+  },
+  "actionPlan": {
+    "root": "true",
+    "name": "Action Plan",
+    "rules": {
+    },
+    "enablingConditions": {
+      "or": {
+        "pv.app.pvquality.enabled": "true",
+        "pv.app.pvcentral.enabled": "true"
+      }
+    }
+  },
+  "rootCause": {
+    "root": "true",
+    "name": "Root Cause",
+    "rules": {
+    }
+  },
+  "late": {
+    "root": "true",
+    "name": "Issue Type",
+    "rules": {
+    }
+  },
+  "reportWidget": {
+    "root": "false",
+    "name": "Widget",
+    "rules": {
+    }
+  },
+  "reportField": {
+    "root": "true",
+    "name": "Report Field",
+    "rules": {
+      "RULE_CHANGE_PROPERTY": {
+        "metadata": {
+          "name": "Field Name",
+          "querySelectable": "Query Field",
+          "templateCLLSelectable": "Case Line Listing Field",
+          "templateDTRowSelectable": "Data Tabulation Row Field",
+          "templateDTColumnSelectable": "Data Tabulation Column Field"
+        }
+      },
+      "RULE_MAP_ID_TO_TEXT": {
+        "metadata": {
+          "fieldGroup": "code:com.rxlogix.util.ViewHelper.getCorrectFieldGroupName(x)"
+        }
+      }
+    }
+  },
+  "bulkDownloadIcsrReports": {
+    "root": "true",
+    "name": "Bulk Download ICSR Reports",
+    "rules": {
+    }
+  }
+}

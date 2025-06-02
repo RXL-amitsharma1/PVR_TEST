@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <style>
+            .main-container {
+                /*position: relative;*/
+                background-color: #DEDEDE;
+
+            }
+            .row {
+                padding-top: 5px;
+            }
+            .as-label {
+                font-weight: bold;
+                padding: 0px;
+            }
+            .from-to {
+                font-weight: bold;
+                padding: 0px;
+            }
+            .input-mysize {
+                width: 180px;
+            }
+            .label-mysize {
+                width: 25px;
+            }
+            .no-padding {
+                padding: 0px;
+            }
+            .to-center {
+                text-align: center;
+            }
+            .select-box {
+                height: 133px !important;
+                width: 390px;
+                font-family: Helvetica;
+                font-size: 11px;
+            }
+            .bottom-button {
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+            }
+        </style>
+    </head>
+    <title>
+        CSS Test
+    </title>
+    <body>
+        <div class="main-container container">
+            <h1>Select Report Parameters/Criteria</h1>
+            <div class="row">
+                <!--<div class="col-md-1 as-label">-->
+                    <label>Report Name</label>
+                <!--</div>-->
+                <!--<div class="col-md-1">-->
+                    <input type="text" placeholder="Report..." class="form-control  input-sm input-mysize">
+                <!--</div>-->
+            </div>
+            <div class="row as-label">
+                <input type="radio"> Product(s)
+                <input type="radio"> Study(ies)
+            </div>
+            <div class="row">
+                <input type="text" placeholder="Search..." class="form-control input-sm input-mysize">
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 no-padding">
+                    <select multiple class="form-control  select-box">
+                        <option default selected>All</option>
+                    </select>
+                </div>
+                <div class="col-md-1 to-center no-padding">
+                    <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-default"> > </button>
+                        <button type="button" class="btn btn-default"> >> </button>
+                        <button type="button" class="btn btn-default"> < </button>
+                        <button type="button" class="btn btn-default"> << </button>
+                    </div>
+                </div>
+                <div class="col-md-4 no-padding">
+                    <select multiple class="form-control select-box">
+                        <option default selected>All</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+
+                    <div class="row as-label">
+                        Query
+                    </div>
+                    <div class="row no-padding">
+                        <div class="col-md-2 no-padding input-mysize">
+                            <input type="text" placeholder="Search..." class="form-control input-sm input-mysize">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary btn-sm">New Query</button>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary btn-sm">Case Hit List</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="as-label">
+                            Date Range Type
+                        </div>
+                        <select class="form-control input-sm input-mysize">
+                            <option>Case Creation Date</option>
+                            <option>Safety Receipt Date</option>
+                            <option>Case Lock Date</option>
+                            <option>Initial Receipt Date</option>
+                            <option>Submission Date</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="as-label">
+                            Date Range
+                        </div>
+                        <select class="form-control input-sm input-mysize">
+                            <option>Last 5 Days</option>
+                            <option>Last 7 Days</option>
+                            <option>Last 14 Days</option>
+                            <option>Last 30 Days</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 as-label input-mysize">
+                            From
+                        <!--</div>-->
+                        <!--<div class="col-md-2 from-to">-->
+                            <input type="text" class="form-control input-sm input-mysize">
+                        </div>
+                        <div class="col-md-1 as-label label-mysize">
+                            To
+                        <!--</div>-->
+                        <!--<div class="col-md-2 from-to">-->
+                            <input type="text" class="form-control input-sm input-mysize">
+                        </div>
+                    </div>
+                    <div class="row as-label">
+                        Evaluate Case Data
+                    </div>
+                    <div class="row">
+                        <input type="radio"> Latest Version
+                    </div>
+                    <div class="row">
+                        <input type="radio"> Prior Version
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="row as-label">
+                        Include Cases
+                    </div>
+                    <div class="row">
+                        <input type="radio"> Serious Unlisted Only
+                    </div>
+                    <div class="row">
+                        <input type="radio"> SUSAR Only
+                    </div>
+                </div>
+            </div>
+
+            <div class="row bottom-button">
+                <!--<div class="col-md-4 col-md-offset-7">-->
+                    <button type="button" class="btn btn-success btn-sm">Run Now</button>
+                    <button type="button" class="btn btn-success btn-sm">Run Later</button>
+                    <button type="button" class="btn btn-default btn-sm">Cancel</button>
+                <!--</div>-->
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,6 @@
+databaseChangeLog = {
+    changeSet(author: "Sargam (generated)", id: "201906240454-1") {
+        sql("ALTER TABLE DELIVERY MODIFY ADDITIONAL_ATTACHMENTS VARCHAR2(4000)")
+        sql("ALTER TABLE EX_DELIVERY MODIFY ADDITIONAL_ATTACHMENTS VARCHAR2(4000)")
+    }
+}

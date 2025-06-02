@@ -1,0 +1,64 @@
+.padding{padding:5px;}
+
+#submissionHistoryCaseTable thead td {
+    border-bottom: 1px solid;
+}
+#submissionHistoryCaseTable td{
+    border: none;
+}
+#submissionHistoryCaseTable {
+    border-collapse: separate;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#newSubmissionHistoryCaseTable thead td {
+    border-bottom: 1px solid;
+}
+#newSubmissionHistoryCaseTable td{
+    border: none;
+}
+#newSubmissionHistoryCaseTable {
+    border-collapse: separate;
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed;
+    width: 100%;
+    word-wrap: break-word;
+}
+.custom-modal .custom-modal-content {
+    margin: 0 auto;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    max-width: 100%;
+}
+
+.custom-modal .custom-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.custom-modal .custom-modal-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+}
+.custom-modal-footer {
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+

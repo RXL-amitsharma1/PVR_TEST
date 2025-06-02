@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MCCI_IN200101UV012 ITSVersion="XML_1.0"
+                    xsi:schemaLocation="urn:hl7-org:v3 http://eudravigilance.ema.europa.eu/xsd/multicacheschemas/MCCI_IN200101UV01.xsd"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+    <!-- ACK.M.1 - ACK Batch Number -->
+    <id extension="89JP00013606" root="2.16.840.1.113883.3.989.2.1.3.20"/>
+    <!-- ACK.M.4 - ACK Date of Batch Transmission -->
+    <creationTime value="20200123082058"/>
+    <responseModeCode code="D"/>
+    <interactionId extension="MCCI_IN200101UV01" root="2.16.840.1.113883.1.18"/>
+    <MCCI_IN000002UV02>
+        <id extension="13US000192" root="2.16.840.1.113883.3.989.2.1.3.19"/>
+        <!-- ACK.B.r.2 Local Report Number -->
+        <creationTime value="20200123082058"/>
+        <interactionId extension="MCCI_IN000002UV01" root="2.16.840.1.113883.1.18"/>
+        <processingCode code="P"/>
+        <processingModeCode code="T"/>
+        <acceptAckCode code="NE"/>
+        <receiver typeCode="RCV">
+            <device classCode="DEV" determinerCode="INSTANCE">
+                <!-- ACK.B.r.3: ICSR Message Receiver Identifier -->
+                <id extension="1" root="2.16.840.1.113883.3.989.2.1.3.16"/>
+            </device>
+        </receiver>
+        <sender typeCode="SND">
+            <device classCode="DEV" determinerCode="INSTANCE">
+                <!-- ACK.B.r.4: ICSR Message Sender Identifier -->
+                <id extension="1" root="2.16.840.1.113883.3.989.2.1.3.15"/>
+            </device>
+        </sender>
+        <!-- ACK.B.r.5 - Receipt date -Not converted ACK.B.r.5CSV - Receipt date CSV-->
+        <attentionLine>
+            <keyWordText code="1" codeSystem="2.16.840.1.113883.3.989.2.1.1.24" codeSystemVersion="2.0"
+                         displayName="dateOfIcsrMessageCreation"/>
+            <value xsi:type="TS" value="20200123082058"/>
+        </attentionLine>
+        <!-- ACK.B.r.6 - Acknowledgement Report Code -->
+        <acknowledgement typeCode="CA">
+            <targetMessage>
+                <id extension="-Rx_Logix_FDA_OCP-89JP00013606" root="2.16.840.1.113883.3.989.2.1.3.1"/>
+                <!-- ACK.B.r.1 - Safety Report ID ICSR Message Number -->
+            </targetMessage>
+            <acknowledgementDetail>
+                <!-- ACK.B.r.7 - Error/Warning message / comment -->
+                <text>Failure loaded the case into the receiver Database and the Case Number created is 89US00013606
+                </text>
+            </acknowledgementDetail>
+        </acknowledgement>
+    </MCCI_IN000002UV02>
+    <receiver typeCode="RCV">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <!-- ACK.M.3: ACK Batch Receiver Identifier -->
+            <id extension="Rx_Logix_FDA_OCP" root="2.16.840.1.113883.3.989.2.1.3.18"/>
+        </device>
+    </receiver>
+    <sender typeCode="SND">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <!-- ACK.M.2: ACK Batch Sender Identifier -->
+            <id extension="ZZ_FDA_OCP" root="2.16.840.1.113883.3.989.2.1.3.17"/>
+        </device>
+    </sender>
+    <!-- ACK.A.2 - Local Message Number -->
+    <attentionLine>
+        <keyWordText code="2" codeSystem="2.16.840.1.113883.3.989.2.1.1.24"/>
+        <value xsi:type="II" extension="89US00013606" root="2.16.840.1.113883.3.989.2.1.3.21"/>
+    </attentionLine>
+    <!-- ACK.A.3 - Date of ICSR Batch Transmission -->
+    <attentionLine>
+        <keyWordText code="3" codeSystem="2.16.840.1.113883.3.989.2.1.1.24"/>
+        <value xsi:type="TS" value="20200123082058"/>
+    </attentionLine>
+    <!-- ACK.A.4- Transmission Acknowledgment Code -->
+    <acknowledgement typeCode="AA">
+        <!-- ACK.A.1 - ICSR Batch Number -->
+        <targetBatch>
+            <id extension="89JP00013606" root="2.16.840.1.113883.3.989.2.1.3.22"/>
+        </targetBatch>
+        <!-- ACK.A.5 - Batch Validation Error -->
+        <acknowledgementDetail>
+            <text>None</text>
+        </acknowledgementDetail>
+    </acknowledgement>
+</MCCI_IN200101UV012>

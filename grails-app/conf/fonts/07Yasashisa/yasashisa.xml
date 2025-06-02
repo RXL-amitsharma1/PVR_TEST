@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="Yasashisa Gothic">
+        <normal>fonts/07Yasashisa/Yasashisa Gothic.ttf</normal>
+        <bold>fonts/07Yasashisa/Yasashisa Gothic Bold.ttf</bold>
+        <italic>fonts/07Yasashisa/Yasashisa Gothic.ttf</italic>
+        <boldItalic>fonts/07Yasashisa/Yasashisa Gothic Bold.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'Yasashisa Gothic', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.xhtml">'Yasashisa Gothic', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.rtf">Arial</export>
+        </exportFonts>
+    </fontFamily>
+</fontFamilies>

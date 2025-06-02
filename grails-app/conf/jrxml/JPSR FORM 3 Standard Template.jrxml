@@ -1,0 +1,1495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="JPSR FORM 3 Standard Template" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="541" leftMargin="5" rightMargin="5" topMargin="27" bottomMargin="27" uuid="56d506f1-f7fd-452f-a68b-c5b346bf77b8">
+	<property name="ireport.jasperserver.user" value="admin"/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.wrap.text" value="true"/>
+	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
+	<property name="net.sf.jasperreports.export.docx.flexible.row.height" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.font.size.fix.enabled" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.collapse.row.span" value="false"/>
+	<property name="net.sf.jasperreports.export.pdf.size.page.to.content" value="true"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="net.sf.jasperreports.export.ignore.page.margins" value="true"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="htmlFont" fontName="MS Mincho">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{PV_outputFormat} == null || "HTML".equals($P{PV_outputFormat})]]></conditionExpression>
+			<style fontSize="14"/>
+		</conditionalStyle>
+	</style>
+	<style name="HeaderSimple" style="htmlFont" fontName="MS Mincho">
+		<paragraph lineSpacing="Fixed" lineSpacingSize="10.0" leftIndent="2" spacingBefore="2"/>
+	</style>
+	<style name="Headerppt1" fontName="MS Mincho">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[!"PPTX".equals($P{PV_outputFormat})]]></conditionExpression>
+			<style fontSize="0"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA["PPTX".equals($P{PV_outputFormat})]]></conditionExpression>
+			<style fontSize="1"/>
+		</conditionalStyle>
+	</style>
+	<style name="Headerbold" style="HeaderSimple" isBold="true"/>
+	<style name="Crosstab 2_CH" style="Headerbold" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+		<paragraph lineSpacing="Fixed" lineSpacingSize="10.0" leftIndent="2" spacingBefore="2"/>
+	</style>
+	<parameter name="PV_outputFormat" class="java.lang.String"/>
+	<parameter name="PV_MEDDRA_VERSION" class="java.lang.String"/>
+	<queryString language="csv">
+		<![CDATA[]]>
+	</queryString>
+	<field name="MDR_AE_SOC" class="java.lang.String">
+		<fieldDescription><![CDATA[MDR_AE_SOC]]></fieldDescription>
+	</field>
+	<field name="MDR_AE_PT" class="java.lang.String">
+		<fieldDescription><![CDATA[MDR_AE_PT]]></fieldDescription>
+	</field>
+	<field name="REPT_PERIOD" class="java.lang.String">
+		<fieldDescription><![CDATA[REPT_PERIOD]]></fieldDescription>
+	</field>
+	<field name="SOC_COUNT" class="java.lang.String">
+		<fieldDescription><![CDATA[SOC_COUNT]]></fieldDescription>
+	</field>
+	<field name="PT_COUNT" class="java.lang.String">
+		<fieldDescription><![CDATA[PT_COUNT]]></fieldDescription>
+	</field>
+	<field name="MEDDRA_VER" class="java.lang.String">
+		<fieldDescription><![CDATA[MEDDRA_VER]]></fieldDescription>
+	</field>
+	<field name="DELIVERY_QTY" class="java.lang.String">
+		<fieldDescription><![CDATA[DELIVERY_QTY]]></fieldDescription>
+	</field>
+	<field name="CUMM_COUNT" class="java.lang.String">
+		<fieldDescription><![CDATA[CUMM_COUNT]]></fieldDescription>
+	</field>
+	<field name="AE_SOC_INTL_RANK_ID" class="java.lang.Integer"/>
+	<field name="MDR_AE_PT_CODE" class="java.lang.Integer"/>
+	<sortField name="AE_SOC_INTL_RANK_ID" order="Descending" type="Variable"/>
+	<sortField name="AE_SOC_INTL_RANK_ID"/>
+	<sortField name="MDR_AE_PT_CODE" order="Descending" type="Variable"/>
+	<sortField name="MDR_AE_PT_CODE"/>
+	<variable name="AE_SOC_INTL_RANK_ID" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{AE_SOC_INTL_RANK_ID}==0]]></variableExpression>
+	</variable>
+	<variable name="MDR_AE_PT_CODE" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{MDR_AE_PT_CODE}==0]]></variableExpression>
+	</variable>
+	<variable name="START_DATE" class="java.time.LocalDate">
+		<variableExpression><![CDATA[($F{REPT_PERIOD}.isEmpty() || $F{REPT_PERIOD}==null) ? null : java.time.LocalDate.parse($F{REPT_PERIOD}.substring(0,10))]]></variableExpression>
+	</variable>
+	<variable name="END_DATE" class="java.time.LocalDate">
+		<variableExpression><![CDATA[($F{REPT_PERIOD}.isEmpty() || $F{REPT_PERIOD}==null) ? null : java.time.LocalDate.parse($F{REPT_PERIOD}.substring(13))]]></variableExpression>
+	</variable>
+	<variable name="Total_SOC_COUNT" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{SOC_COUNT}.isEmpty() ? 0 : 1]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="Total_PT_COUNT" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{PT_COUNT}.isEmpty() ? 0 : 1]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="Total_REPT_PERIOD" class="java.lang.Integer" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{REPT_PERIOD}]]></variableExpression>
+	</variable>
+	<variable name="CUMM_COUNT" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{CUMM_COUNT}.isEmpty() ? 1 : 0]]></variableExpression>
+	</variable>
+	<group name="Sample">
+		<groupFooter>
+			<band height="191">
+				<printWhenExpression><![CDATA[(($V{REPORT_COUNT}>=1 && $V{Total_SOC_COUNT}==0  && $V{Total_PT_COUNT}==0) ? false : true) && ($V{Total_REPT_PERIOD}<=4? true : false)]]></printWhenExpression>
+				<frame>
+					<reportElement x="0" y="0" width="570" height="150" uuid="7747738c-6fdc-4640-b694-e380c22b5724"/>
+					<crosstab horizontalPosition="Center" ignoreWidth="true">
+						<reportElement style="Crosstab 2_CH" mode="Transparent" x="0" y="0" width="570" height="150" uuid="c7e77bff-ddc9-48d4-a817-c2d73c5b7693">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<crosstabParameter name="PV_outputFormat"/>
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<crosstabHeaderCell>
+							<cellContents>
+								<textField>
+									<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="90" height="70" uuid="b4d662ed-0f12-400d-9d62-9a95e38f8e44"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA["副作用等の種類"]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabHeaderCell>
+						<rowGroup name="SYSTEM_ORGAN_CLASS" width="0">
+							<bucket order="None" class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MDR_AE_SOC}]]></bucketExpression>
+							</bucket>
+							<crosstabRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabRowHeader>
+							<crosstabTotalRowHeader>
+								<cellContents>
+									<staticText>
+										<reportElement x="0" y="0" width="-2147483648" height="-2147483648" uuid="999a3426-8ef8-4eda-be48-7cf56328f9bc"/>
+										<text><![CDATA[Total SYSTEM_ORGAN_CLASS]]></text>
+									</staticText>
+								</cellContents>
+							</crosstabTotalRowHeader>
+						</rowGroup>
+						<rowGroup name="PREFERRED_TERM" width="90" totalPosition="Start">
+							<bucket order="None" class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MDR_AE_PT} == null ? null : $F{MDR_AE_PT}.isEmpty() ? null : $F{MDR_AE_PT}]]></bucketExpression>
+							</bucket>
+							<crosstabRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<box>
+										<pen lineStyle="Dashed"/>
+										<topPen lineWidth="0.5" lineStyle="Dashed" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+										<reportElement style="HeaderSimple" positionType="Float" x="0" y="0" width="90" height="40" isRemoveLineWhenBlank="true" uuid="f2b09dd4-17d7-40df-b361-678ced8ee92d">
+											<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+										</reportElement>
+										<textElement verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[$V{PREFERRED_TERM}]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabRowHeader>
+							<crosstabTotalRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<box>
+										<pen lineStyle="Dashed"/>
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Dashed" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+										<reportElement style="Headerbold" x="0" y="0" width="90" height="40" uuid="02cf0c1d-c751-48f2-9f53-5b07fd43512a"/>
+										<textElement verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "出荷数量" : $V{SYSTEM_ORGAN_CLASS})]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabTotalRowHeader>
+						</rowGroup>
+						<columnGroup name="MEDDRA_VER" height="30" totalPosition="End" headerPosition="Stretch">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MEDDRA_VER}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<textField>
+										<reportElement style="Crosstab 2_CH" x="0" y="0" width="155" height="30" uuid="6b55b691-5788-4033-bdbe-e31f9b9840b0"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA["副作用・感染症の症例報告を行った症例数"]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<frame>
+										<reportElement style="Crosstab 2_CH" stretchType="ContainerHeight" x="0" y="0" width="75" height="70" uuid="525ea3aa-f083-4f47-9d0f-446643db4c11"/>
+										<textField isBlankWhenNull="true">
+											<reportElement style="Crosstab 2_CH" positionType="Float" x="0" y="0" width="75" height="30" uuid="c36b31ad-26fd-4167-8b65-89911e989b30"/>
+										</textField>
+										<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+											<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerBottom" x="0" y="30" width="75" height="40" uuid="a76292ea-0cb4-489a-84a5-123223194e96"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle"/>
+											<textFieldExpression><![CDATA["備考"]]></textFieldExpression>
+										</textField>
+									</frame>
+								</cellContents>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<columnGroup name="REPT_PERIOD" height="40" totalPosition="End">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{REPT_PERIOD}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+										<reportElement style="Crosstab 2_CH" stretchType="ContainerHeight" x="0" y="0" width="80" height="40" uuid="88a8b6ce-51f2-4432-9855-6420aadfb611"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[$V{START_DATE}.getYear()+"年"+$V{START_DATE}.getMonthValue()+"月" + $V{START_DATE}.getDayOfMonth() + "日\n~\n" +
+$V{END_DATE}.getYear()+"年"+$V{END_DATE}.getMonthValue()+"月" + $V{END_DATE}.getDayOfMonth() + "日"]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<textField isBlankWhenNull="true">
+										<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="75" height="40" uuid="03ad98ac-4f8c-4493-90b5-af74f2f1b7f5"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA["再審査期間中の合計"]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<measure name="MEDDRA_VER_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{MEDDRA_VER}]]></measureExpression>
+						</measure>
+						<measure name="SOC_COUNT_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{SOC_COUNT}]]></measureExpression>
+						</measure>
+						<measure name="PT_COUNT_MEASURE" class="java.lang.Integer" calculation="Sum">
+							<measureExpression><![CDATA[(($F{PT_COUNT}==null || $F{PT_COUNT}.equals("") || $F{PT_COUNT}.isEmpty()) ? 0 : ($F{PT_COUNT}.contains("(") ? Integer.parseInt(($F{PT_COUNT}.replace(")", "").split("\\(")[0] )): Integer.parseInt($F{PT_COUNT})))]]></measureExpression>
+						</measure>
+						<measure name="PT_COUNT_MEASURE1" class="java.lang.Integer" calculation="Sum">
+							<measureExpression><![CDATA[(($F{PT_COUNT}==null || $F{PT_COUNT}.equals("") || $F{PT_COUNT}.isEmpty()) ? 0 : ($F{PT_COUNT}.contains("(") ? Integer.parseInt(($F{PT_COUNT}.replace(")", "").split("\\(")[1] )): 0))]]></measureExpression>
+						</measure>
+						<measure name="START_DATE" class="java.time.LocalDate">
+							<measureExpression><![CDATA[$V{START_DATE}]]></measureExpression>
+						</measure>
+						<measure name="END_DATE" class="java.time.LocalDate">
+							<measureExpression><![CDATA[$V{END_DATE}]]></measureExpression>
+						</measure>
+						<measure name="Total_REPT_PERIOD" class="java.lang.Integer">
+							<measureExpression><![CDATA[$V{Total_REPT_PERIOD}]]></measureExpression>
+						</measure>
+						<measure name="CUMM_COUNT" class="java.lang.Integer">
+							<measureExpression><![CDATA[(($F{CUMM_COUNT}==null || $F{CUMM_COUNT}.equals("") || $F{CUMM_COUNT}.isEmpty()) ? 0 : Integer.parseInt($F{CUMM_COUNT}))]]></measureExpression>
+						</measure>
+						<crosstabCell width="80" height="40">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" positionType="Float" x="0" y="0" width="80" height="40" isRemoveLineWhenBlank="true" uuid="f5fdfe91-4a19-467d-8c33-ee9bcc866a98">
+										<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[($V{PT_COUNT_MEASURE}==0 ? "-": $V{PT_COUNT_MEASURE})+ ($V{PT_COUNT_MEASURE1}==0 ? "":"("+$V{PT_COUNT_MEASURE1}+")")]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="75" height="40" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="Headerppt1" positionType="Float" x="0" y="0" width="75" height="40" isRemoveLineWhenBlank="true" uuid="a46a99df-4b70-4f47-93d4-9503487ff73f">
+										<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textFieldExpression><![CDATA["."]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="75" height="40" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" positionType="Float" x="0" y="0" width="75" height="40" isRemoveLineWhenBlank="true" uuid="109ee992-1e5a-4af0-b89c-73c4960d94da">
+										<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[($V{PT_COUNT_MEASURE}==0 ? "-": $V{PT_COUNT_MEASURE})+ ($V{PT_COUNT_MEASURE1}==0 ? "":"("+$V{PT_COUNT_MEASURE1}+")")]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="SYSTEM_ORGAN_CLASS">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="f1261909-9eae-486c-bd46-5ca937ded3be"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="2e99ee49-ffd6-44a8-b53c-64299219d177"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="38ce6936-e1fe-4d52-9b2c-2175585b13ac"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="SYSTEM_ORGAN_CLASS" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="408c5e4f-cd1c-4fa0-aa71-945969e06c9f"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="386ae80f-9765-46f7-8ad8-82fb21ccbc0e"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="1a6511fb-fdaa-4038-a450-8b8deaf9c595"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="SYSTEM_ORGAN_CLASS" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="85640dca-ef22-40d1-a070-4094b2018e85"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="0a329b7c-f50f-458f-a3f1-2ed2b53c365e"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="fc32fe8b-d90f-4e5d-b098-c27bb5845986"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="80" height="40" rowTotalGroup="PREFERRED_TERM">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" x="0" y="0" width="80" height="40" uuid="c0d89192-c622-4d8d-8643-c7b9531e745a"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "" :($V{SOC_COUNT_MEASURE}==null  || $V{SOC_COUNT_MEASURE}.length()<1 ? "-": $V{SOC_COUNT_MEASURE}))]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="75" height="40" rowTotalGroup="PREFERRED_TERM" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" x="0" y="0" width="75" height="40" uuid="b245bd96-6a9e-45be-b20b-c1783d6e2e32">
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1)) ? false : true]]></printWhenExpression>
+									</reportElement>
+								</textField>
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement x="0" y="0" width="75" height="40" isRemoveLineWhenBlank="true" uuid="829a7ded-8390-4eeb-900c-737506d6a77f">
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1)) ? true : false]]></printWhenExpression>
+									</reportElement>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "http://cross-browser.com/toys/diag_300x300.gif" :"")]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="75" height="40" rowTotalGroup="PREFERRED_TERM" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" x="0" y="0" width="75" height="40" uuid="173a797c-23f4-438f-887a-98fef01fc475">
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[($V{CUMM_COUNT}==0 ? "-": $V{CUMM_COUNT})]]></textFieldExpression>
+								</textField>
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement x="0" y="0" width="75" height="40" isRemoveLineWhenBlank="true" uuid="80e9b8dc-9d5a-4b4d-9c71-4161c31d9081">
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1)) ? true : false]]></printWhenExpression>
+									</reportElement>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "http://cross-browser.com/toys/diag_300x300.gif" :"")]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+					</crosstab>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="150" width="570" height="40" isRemoveLineWhenBlank="true" uuid="9820d959-ebf4-4494-994c-1375efbb6df6">
+						<property name="com.jaspersoft.studio.layout"/>
+						<printWhenExpression><![CDATA[$V{CUMM_COUNT}>=1 ? false : true]]></printWhenExpression>
+					</reportElement>
+					<crosstab horizontalPosition="Center" ignoreWidth="true">
+						<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="570" height="40" uuid="6e452bc8-6c59-4ba8-b484-6e5e46b8ae8d">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<crosstabParameter name="PV_outputFormat"/>
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<rowGroup name="DELIVERY_QTY" width="90">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{DELIVERY_QTY}]]></bucketExpression>
+							</bucket>
+							<crosstabRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<frame>
+										<reportElement style="HeaderSimple" positionType="Float" x="0" y="0" width="90" height="40" uuid="b37f62f1-3626-47b0-96e6-94c797406494"/>
+										<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+											<reportElement style="Headerbold" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="90" height="40" uuid="33f0ac7d-88cf-4051-9740-32c7839f6f35"/>
+											<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None"/>
+											<textFieldExpression><![CDATA["出荷数量"]]></textFieldExpression>
+										</textField>
+									</frame>
+								</cellContents>
+							</crosstabRowHeader>
+							<crosstabTotalRowHeader>
+								<cellContents>
+									<staticText>
+										<reportElement x="0" y="0" width="-2147483648" height="-2147483648" uuid="1500d262-08c5-47fc-8134-5da817a551c1"/>
+										<text><![CDATA[Total DELIVERY_QTY]]></text>
+									</staticText>
+								</cellContents>
+							</crosstabTotalRowHeader>
+						</rowGroup>
+						<columnGroup name="MEDDRA_VER" height="0" totalPosition="End">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MEDDRA_VER}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<columnGroup name="REPT_PERIOD" height="0" totalPosition="End">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{REPT_PERIOD}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<measure name="SOC_COUNT_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{SOC_COUNT}]]></measureExpression>
+						</measure>
+						<measure name="PT_COUNT_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{PT_COUNT}]]></measureExpression>
+						</measure>
+						<measure name="MEDDRA_VER_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{MEDDRA_VER}]]></measureExpression>
+						</measure>
+						<crosstabCell width="80" height="40">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="40" uuid="219bb89f-9c89-4eed-aa1f-d4fe9b153fe4"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="75" height="40" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="75" height="40" uuid="aba7e95c-d5be-493c-9e88-65563b4a9464"/>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA["http://cross-browser.com/toys/diag_300x300.gif"]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="75" height="40" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="75" height="40" uuid="35ad17ca-7272-4ac6-b0e7-03b898548883"/>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA["http://cross-browser.com/toys/diag_300x300.gif"]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="DELIVERY_QTY">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="9fcfaa4e-4739-4bb2-845f-a61c32ff1654"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="6cdb4d77-bc1f-4e50-ba94-74b5b55e1084"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="80d0301f-d256-4107-85c6-327b07125e79"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="DELIVERY_QTY" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="dd3d6a49-00cc-4ac2-a54a-df3635a0b9a3"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="d9ffbae4-f3a9-4c81-a263-47100b7323d4"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="c3d6f10d-5b2f-49a9-be33-a21a3515a7a7"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="DELIVERY_QTY" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="cbb432e7-a716-4398-be0c-17833dd43936"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="1699f942-0bd5-44a0-a5fd-30ba9b210310"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="079c3cf3-f52b-4452-91a6-ddc8bfa3aca7"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+					</crosstab>
+				</frame>
+			</band>
+			<band height="211">
+				<printWhenExpression><![CDATA[($V{Total_REPT_PERIOD}> 4 && $V{Total_REPT_PERIOD}<12)]]></printWhenExpression>
+				<frame>
+					<reportElement x="0" y="0" width="585" height="170" uuid="dad6e4e3-e01f-4f31-9ce9-c571e276b2d8"/>
+					<crosstab horizontalPosition="Center" ignoreWidth="false">
+						<reportElement style="Crosstab 2_CH" mode="Transparent" x="0" y="0" width="585" height="170" uuid="1c25b0d9-fd17-483e-a894-a63979343039">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<crosstabParameter name="PV_outputFormat"/>
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<crosstabHeaderCell>
+							<cellContents>
+								<textField>
+									<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="62" height="90" uuid="a1ef4a79-6c03-401f-9134-3347fb9268db"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA["副作用等の種類"]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabHeaderCell>
+						<rowGroup name="SYSTEM_ORGAN_CLASS" width="0">
+							<bucket order="None" class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MDR_AE_SOC}]]></bucketExpression>
+							</bucket>
+							<crosstabRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabRowHeader>
+							<crosstabTotalRowHeader>
+								<cellContents>
+									<staticText>
+										<reportElement x="0" y="0" width="-2147483648" height="-2147483648" uuid="893b6217-beb4-4c38-a800-fbc7e6a4b968"/>
+										<text><![CDATA[Total SYSTEM_ORGAN_CLASS]]></text>
+									</staticText>
+								</cellContents>
+							</crosstabTotalRowHeader>
+						</rowGroup>
+						<rowGroup name="PREFERRED_TERM" width="62" totalPosition="Start">
+							<bucket order="None" class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MDR_AE_PT} == null ? null : $F{MDR_AE_PT}.isEmpty() ? null : $F{MDR_AE_PT}]]></bucketExpression>
+							</bucket>
+							<crosstabRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<box>
+										<pen lineStyle="Dashed"/>
+										<topPen lineWidth="0.5" lineStyle="Dashed" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+										<reportElement style="HeaderSimple" positionType="Float" x="0" y="0" width="62" height="40" isRemoveLineWhenBlank="true" uuid="be764535-87f0-49ec-88bc-2d077c8caf4d">
+											<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+										</reportElement>
+										<textElement verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[$V{PREFERRED_TERM}]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabRowHeader>
+							<crosstabTotalRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<box>
+										<pen lineStyle="Dashed"/>
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Dashed" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+										<reportElement style="Headerbold" x="0" y="0" width="62" height="40" uuid="ef7b5c28-514b-4760-9634-3959003c649b"/>
+										<textElement verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "出荷数量" : $V{SYSTEM_ORGAN_CLASS})]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabTotalRowHeader>
+						</rowGroup>
+						<columnGroup name="MEDDRA_VER" height="30" totalPosition="End" headerPosition="Stretch">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MEDDRA_VER}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<textField>
+										<reportElement style="Crosstab 2_CH" x="0" y="0" width="74" height="30" uuid="3238e138-0681-4442-bdd0-2d7520075d2d"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA["副作用・感染症の症例報告を行った症例数"]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<frame>
+										<reportElement style="Crosstab 2_CH" stretchType="ContainerHeight" x="0" y="0" width="37" height="90" uuid="734af445-637b-4131-80a6-1daa705c3159"/>
+										<textField isBlankWhenNull="true">
+											<reportElement style="Crosstab 2_CH" positionType="Float" x="0" y="0" width="37" height="30" uuid="46d663d4-19eb-4c98-b8db-ed9c13d30aee"/>
+										</textField>
+										<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+											<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerBottom" x="0" y="30" width="37" height="60" uuid="82d6be87-926e-4c26-8914-6dcf2d6cecc4"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle"/>
+											<textFieldExpression><![CDATA["備考"]]></textFieldExpression>
+										</textField>
+									</frame>
+								</cellContents>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<columnGroup name="REPT_PERIOD" height="60" totalPosition="End">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{REPT_PERIOD}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+										<reportElement style="Crosstab 2_CH" stretchType="ContainerHeight" x="0" y="0" width="37" height="60" uuid="e162c970-ffe6-4ac7-9695-4410f3825e23"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[$V{START_DATE}.getYear()+"年"+$V{START_DATE}.getMonthValue()+"月" + $V{START_DATE}.getDayOfMonth() + "日\n~\n" +
+$V{END_DATE}.getYear()+"年"+$V{END_DATE}.getMonthValue()+"月" + $V{END_DATE}.getDayOfMonth() + "日"]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<textField isBlankWhenNull="true">
+										<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="37" height="60" uuid="db2ad799-23c3-4b8c-ba11-0e2069eb0f82"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA["再審査期間中の合計"]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<measure name="MEDDRA_VER_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{MEDDRA_VER}]]></measureExpression>
+						</measure>
+						<measure name="SOC_COUNT_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{SOC_COUNT}]]></measureExpression>
+						</measure>
+						<measure name="PT_COUNT_MEASURE" class="java.lang.Integer" calculation="Sum">
+							<measureExpression><![CDATA[(($F{PT_COUNT}==null || $F{PT_COUNT}.equals("") || $F{PT_COUNT}.isEmpty()) ? 0 : ($F{PT_COUNT}.contains("(") ? Integer.parseInt(($F{PT_COUNT}.replace(")", "").split("\\(")[0] )): Integer.parseInt($F{PT_COUNT})))]]></measureExpression>
+						</measure>
+						<measure name="PT_COUNT_MEASURE1" class="java.lang.Integer" calculation="Sum">
+							<measureExpression><![CDATA[(($F{PT_COUNT}==null || $F{PT_COUNT}.equals("") || $F{PT_COUNT}.isEmpty()) ? 0 : ($F{PT_COUNT}.contains("(") ? Integer.parseInt(($F{PT_COUNT}.replace(")", "").split("\\(")[1] )): 0))]]></measureExpression>
+						</measure>
+						<measure name="START_DATE" class="java.time.LocalDate">
+							<measureExpression><![CDATA[$V{START_DATE}]]></measureExpression>
+						</measure>
+						<measure name="END_DATE" class="java.time.LocalDate">
+							<measureExpression><![CDATA[$V{END_DATE}]]></measureExpression>
+						</measure>
+						<measure name="Total_REPT_PERIOD" class="java.lang.Integer">
+							<measureExpression><![CDATA[$V{Total_REPT_PERIOD}]]></measureExpression>
+						</measure>
+						<measure name="CUMM_COUNT" class="java.lang.Integer">
+							<measureExpression><![CDATA[(($F{CUMM_COUNT}==null || $F{CUMM_COUNT}.equals("") || $F{CUMM_COUNT}.isEmpty()) ? 0 : Integer.parseInt($F{CUMM_COUNT}))]]></measureExpression>
+						</measure>
+						<crosstabCell width="37" height="40">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" positionType="Float" x="0" y="0" width="37" height="40" isRemoveLineWhenBlank="true" uuid="138f0f7c-9283-4498-990c-371d3103328a">
+										<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[($V{PT_COUNT_MEASURE}==0 ? "-": $V{PT_COUNT_MEASURE})+ ($V{PT_COUNT_MEASURE1}==0 ? "":"("+$V{PT_COUNT_MEASURE1}+")")]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="37" height="40" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="Headerppt1" positionType="Float" x="0" y="0" width="37" height="40" isRemoveLineWhenBlank="true" uuid="c502d092-5480-405a-8187-afce401f4098">
+										<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textFieldExpression><![CDATA["."]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="37" height="40" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" positionType="Float" x="0" y="0" width="37" height="40" isRemoveLineWhenBlank="true" uuid="b9b6dfbd-8f56-4396-8e92-4d4e78ac4b64">
+										<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[($V{PT_COUNT_MEASURE}==0 ? "-": $V{PT_COUNT_MEASURE})+ ($V{PT_COUNT_MEASURE1}==0 ? "":"("+$V{PT_COUNT_MEASURE1}+")")]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="SYSTEM_ORGAN_CLASS">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="d5fa49d1-476b-4776-9184-c0c69181d254"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="d484d932-3780-4c11-b8ac-6fa8bf59a929"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="a75819c9-4234-4f9c-89d8-15811f7b4da7"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="SYSTEM_ORGAN_CLASS" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="5e2455b4-74f6-45b5-b8fc-349cae2ed682"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="ff744eef-84d9-4a9f-b5fd-e2c921edf7a1"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="02dcc7fc-d529-4e88-b88f-b81b3d9710df"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="SYSTEM_ORGAN_CLASS" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="8e2fedc1-908a-4ac2-a344-3dda4dd142cd"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="a121eee8-5ac1-4776-bb90-cdacddb20a62"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="5ce83e66-363b-43f1-a1a2-948a414e18fa"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="37" height="40" rowTotalGroup="PREFERRED_TERM">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" x="0" y="0" width="37" height="40" uuid="4a0eb27f-36c1-4cc3-a44d-707b1cedb7e2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "" :($V{SOC_COUNT_MEASURE}==null  || $V{SOC_COUNT_MEASURE}.length()<1 ? "-": $V{SOC_COUNT_MEASURE}))]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="37" height="40" rowTotalGroup="PREFERRED_TERM" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" x="0" y="0" width="37" height="40" uuid="79176d1a-e7ea-4367-9fb3-93519f3b0322">
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1)) ? false : true]]></printWhenExpression>
+									</reportElement>
+								</textField>
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement x="0" y="0" width="37" height="40" isRemoveLineWhenBlank="true" uuid="24bb97ef-829c-4b11-a1a2-f3fce0691cc7">
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1)) ? true : false]]></printWhenExpression>
+									</reportElement>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "http://cross-browser.com/toys/diag_300x300.gif" :"")]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="37" height="40" rowTotalGroup="PREFERRED_TERM" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" x="0" y="0" width="37" height="40" uuid="ab8dfa96-f039-46c2-90e2-78d884888c91">
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[($V{CUMM_COUNT}==0 ? "-": $V{CUMM_COUNT})]]></textFieldExpression>
+								</textField>
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement x="0" y="0" width="37" height="40" isRemoveLineWhenBlank="true" uuid="ab22de81-73c6-4b56-a1be-b6df93a331c2">
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1)) ? true : false]]></printWhenExpression>
+									</reportElement>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "http://cross-browser.com/toys/diag_300x300.gif" :"")]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+					</crosstab>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="170" width="585" height="40" isRemoveLineWhenBlank="true" uuid="caa69e80-cc98-42c6-a412-44a64a941e34">
+						<property name="com.jaspersoft.studio.layout"/>
+						<printWhenExpression><![CDATA[$V{CUMM_COUNT}>=1 ? false : true]]></printWhenExpression>
+					</reportElement>
+					<crosstab horizontalPosition="Center" ignoreWidth="true">
+						<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="585" height="40" uuid="af347b9b-642f-4607-a598-5dcdcfb0ead4">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<crosstabParameter name="PV_outputFormat"/>
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<rowGroup name="DELIVERY_QTY" width="62">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{DELIVERY_QTY}]]></bucketExpression>
+							</bucket>
+							<crosstabRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<frame>
+										<reportElement style="HeaderSimple" positionType="Float" x="0" y="0" width="62" height="40" uuid="498bb808-bfb8-4d8b-bf38-13403214600e"/>
+										<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+											<reportElement style="Headerbold" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="62" height="40" uuid="997fab43-b87e-4ab0-b9e4-ceffebcb3fa8"/>
+											<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None"/>
+											<textFieldExpression><![CDATA["出荷数量"]]></textFieldExpression>
+										</textField>
+									</frame>
+								</cellContents>
+							</crosstabRowHeader>
+							<crosstabTotalRowHeader>
+								<cellContents>
+									<staticText>
+										<reportElement x="0" y="0" width="-2147483648" height="-2147483648" uuid="e24f5452-3eee-4ffc-9e0f-ba93e7b65537"/>
+										<text><![CDATA[Total DELIVERY_QTY]]></text>
+									</staticText>
+								</cellContents>
+							</crosstabTotalRowHeader>
+						</rowGroup>
+						<columnGroup name="MEDDRA_VER" height="0" totalPosition="End">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MEDDRA_VER}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<columnGroup name="REPT_PERIOD" height="0" totalPosition="End">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{REPT_PERIOD}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<measure name="SOC_COUNT_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{SOC_COUNT}]]></measureExpression>
+						</measure>
+						<measure name="PT_COUNT_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{PT_COUNT}]]></measureExpression>
+						</measure>
+						<measure name="MEDDRA_VER_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{MEDDRA_VER}]]></measureExpression>
+						</measure>
+						<crosstabCell width="37" height="40">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="37" height="40" uuid="0d967069-c89c-46ef-8463-e657aea306a1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="37" height="40" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="37" height="40" uuid="0ef16750-536e-47a2-8e5e-5138d7110e61"/>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA["http://cross-browser.com/toys/diag_300x300.gif"]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="37" height="40" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="37" height="40" uuid="b9ea3408-8ae9-4a38-acb3-b57b9ee1d715"/>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA["http://cross-browser.com/toys/diag_300x300.gif"]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="DELIVERY_QTY">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="5a2a9cc7-fcfc-4df2-a389-163aeb3084ec"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="d731d070-67b4-47c0-83db-3ff94df4dc88"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="121cd1c7-49a1-49c3-bf3b-d8d46c8ec04f"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="DELIVERY_QTY" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="42919fc4-ca00-47ba-be16-c9ff02d42d1b"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="b486899c-a017-4590-86f5-091b3706b0e1"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="5067944f-04f7-4437-9a66-b6b3e2b49504"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="DELIVERY_QTY" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="ac964730-d972-4885-9888-15ce80d354f4"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="1d33a360-aedf-4cef-bab8-25eeeaa3cc08"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="7ca0e1e4-e75a-44d8-8704-8c2447212877"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+					</crosstab>
+				</frame>
+			</band>
+			<band height="210">
+				<printWhenExpression><![CDATA[$V{Total_REPT_PERIOD}> 11]]></printWhenExpression>
+				<frame>
+					<reportElement x="0" y="0" width="585" height="170" uuid="97c05644-2a95-420a-816c-77a826e1b3cc"/>
+					<crosstab horizontalPosition="Center" ignoreWidth="false">
+						<reportElement style="Crosstab 2_CH" mode="Transparent" x="0" y="0" width="585" height="170" uuid="fc9d0e59-53f8-4cb6-b00a-992602701d38">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<crosstabParameter name="PV_outputFormat"/>
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<crosstabHeaderCell>
+							<cellContents>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<textField>
+									<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="50" height="90" uuid="261402e2-20a9-431e-832c-d9e7b767eee8"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA["副作用等の種類"]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabHeaderCell>
+						<rowGroup name="SYSTEM_ORGAN_CLASS" width="0">
+							<bucket order="None" class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MDR_AE_SOC}]]></bucketExpression>
+							</bucket>
+							<crosstabRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabRowHeader>
+							<crosstabTotalRowHeader>
+								<cellContents>
+									<staticText>
+										<reportElement x="0" y="0" width="-2147483648" height="-2147483648" uuid="b7a126f5-f7b7-424d-baff-f981d955414e"/>
+										<text><![CDATA[Total SYSTEM_ORGAN_CLASS]]></text>
+									</staticText>
+								</cellContents>
+							</crosstabTotalRowHeader>
+						</rowGroup>
+						<rowGroup name="PREFERRED_TERM" width="50" totalPosition="Start">
+							<bucket order="None" class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MDR_AE_PT} == null ? null : $F{MDR_AE_PT}.isEmpty() ? null : $F{MDR_AE_PT}]]></bucketExpression>
+							</bucket>
+							<crosstabRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+									<box>
+										<pen lineStyle="Dashed"/>
+										<topPen lineWidth="0.5" lineStyle="Dashed" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+										<reportElement style="HeaderSimple" positionType="Float" x="0" y="0" width="50" height="40" isRemoveLineWhenBlank="true" uuid="d6ef3cd9-a556-4fe1-a3b9-c61a2dd78f6c">
+											<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+										</reportElement>
+										<textElement verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[$V{PREFERRED_TERM}]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabRowHeader>
+							<crosstabTotalRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<box>
+										<pen lineStyle="Dashed"/>
+										<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.5" lineStyle="Dashed" lineColor="#000000"/>
+										<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+										<reportElement style="Headerbold" x="0" y="0" width="50" height="40" uuid="c7fe88c1-43b1-480c-b2ac-6e2853e2d21d"/>
+										<textElement verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "出荷数量" : $V{SYSTEM_ORGAN_CLASS})]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabTotalRowHeader>
+						</rowGroup>
+						<columnGroup name="MEDDRA_VER" height="30" totalPosition="End" headerPosition="Stretch">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MEDDRA_VER}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<textField>
+										<reportElement style="Crosstab 2_CH" x="0" y="0" width="50" height="30" uuid="825133fe-870b-4a38-89ca-25a855ce0989"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA["副作用・感染症の症例報告を行った症例数"]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<frame>
+										<reportElement style="Crosstab 2_CH" stretchType="ContainerHeight" x="0" y="0" width="25" height="90" uuid="4c6d64cb-a745-481e-b745-13e651600e58"/>
+										<textField isBlankWhenNull="true">
+											<reportElement style="Crosstab 2_CH" positionType="Float" x="0" y="0" width="25" height="30" uuid="f15893ee-023a-4c31-a628-7f039d0b29e6">
+												<property name="com.jaspersoft.studio.unit.width" value="px"/>
+											</reportElement>
+										</textField>
+										<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+											<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerBottom" x="0" y="30" width="25" height="60" uuid="c7b6bbe4-0171-4013-a11e-04fe7773b87c">
+												<property name="com.jaspersoft.studio.unit.width" value="px"/>
+											</reportElement>
+											<textElement textAlignment="Center" verticalAlignment="Middle"/>
+											<textFieldExpression><![CDATA["備考"]]></textFieldExpression>
+										</textField>
+									</frame>
+								</cellContents>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<columnGroup name="REPT_PERIOD" height="60" totalPosition="End">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{REPT_PERIOD}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+										<reportElement style="Crosstab 2_CH" stretchType="ContainerHeight" x="0" y="0" width="25" height="60" uuid="01547280-acef-43ca-990f-d0c10d0efa3b"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[$V{START_DATE}.getYear()+"年"+$V{START_DATE}.getMonthValue()+"月" + $V{START_DATE}.getDayOfMonth() + "日\n~\n" +
+$V{END_DATE}.getYear()+"年"+$V{END_DATE}.getMonthValue()+"月" + $V{END_DATE}.getDayOfMonth() + "日"]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<textField isBlankWhenNull="true">
+										<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="25" height="60" uuid="1974ca08-6905-4100-9cc5-85fc093275a8"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA["再審査期間中の合計"]]></textFieldExpression>
+									</textField>
+								</cellContents>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<measure name="MEDDRA_VER_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{MEDDRA_VER}]]></measureExpression>
+						</measure>
+						<measure name="SOC_COUNT_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{SOC_COUNT}]]></measureExpression>
+						</measure>
+						<measure name="PT_COUNT_MEASURE" class="java.lang.Integer" calculation="Sum">
+							<measureExpression><![CDATA[(($F{PT_COUNT}==null || $F{PT_COUNT}.equals("") || $F{PT_COUNT}.isEmpty()) ? 0 : ($F{PT_COUNT}.contains("(") ? Integer.parseInt(($F{PT_COUNT}.replace(")", "").split("\\(")[0] )): Integer.parseInt($F{PT_COUNT})))]]></measureExpression>
+						</measure>
+						<measure name="PT_COUNT_MEASURE1" class="java.lang.Integer" calculation="Sum">
+							<measureExpression><![CDATA[(($F{PT_COUNT}==null || $F{PT_COUNT}.equals("") || $F{PT_COUNT}.isEmpty()) ? 0 : ($F{PT_COUNT}.contains("(") ? Integer.parseInt(($F{PT_COUNT}.replace(")", "").split("\\(")[1] )): 0))]]></measureExpression>
+						</measure>
+						<measure name="START_DATE" class="java.time.LocalDate">
+							<measureExpression><![CDATA[$V{START_DATE}]]></measureExpression>
+						</measure>
+						<measure name="END_DATE" class="java.time.LocalDate">
+							<measureExpression><![CDATA[$V{END_DATE}]]></measureExpression>
+						</measure>
+						<measure name="Total_REPT_PERIOD" class="java.lang.Integer">
+							<measureExpression><![CDATA[$V{Total_REPT_PERIOD}]]></measureExpression>
+						</measure>
+						<measure name="CUMM_COUNT" class="java.lang.Integer">
+							<measureExpression><![CDATA[(($F{CUMM_COUNT}==null || $F{CUMM_COUNT}.equals("") || $F{CUMM_COUNT}.isEmpty()) ? 0 : Integer.parseInt($F{CUMM_COUNT}))]]></measureExpression>
+						</measure>
+						<crosstabCell width="25" height="40">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" positionType="Float" x="0" y="0" width="25" height="40" isRemoveLineWhenBlank="true" uuid="bd3bb2fc-8ec8-4eb8-a6d6-6bfa874d294e">
+										<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[($V{PT_COUNT_MEASURE}==0 ? "-": $V{PT_COUNT_MEASURE})+ ($V{PT_COUNT_MEASURE1}==0 ? "":"("+$V{PT_COUNT_MEASURE1}+")")]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="25" height="40" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="Headerppt1" positionType="Float" x="0" y="0" width="25" height="40" isRemoveLineWhenBlank="true" uuid="d4c96384-613e-4f3c-8e55-710ba32469d8">
+										<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textFieldExpression><![CDATA["."]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="25" height="40" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" positionType="Float" x="0" y="0" width="25" height="40" isRemoveLineWhenBlank="true" uuid="627f36c7-f386-488c-8a75-bea8ca288530">
+										<printWhenExpression><![CDATA[(($V{PREFERRED_TERM}==null || $V{PREFERRED_TERM}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[($V{PT_COUNT_MEASURE}==0 ? "-": $V{PT_COUNT_MEASURE})+ ($V{PT_COUNT_MEASURE1}==0 ? "":"("+$V{PT_COUNT_MEASURE1}+")")]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="SYSTEM_ORGAN_CLASS">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="9484a2de-8c62-4c3c-ab89-156afa3c1f03"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="2cf1e51d-e944-49a8-891b-e11071c01741"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="61b1999d-7253-4e3e-b11a-eafecaef4692"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="SYSTEM_ORGAN_CLASS" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="616fa04e-e687-460c-b828-0e84105fbba7"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="4e46f7ef-bb6a-4317-8431-5ff176029587"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="c9943486-b364-4850-bcdb-584339bab200"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="SYSTEM_ORGAN_CLASS" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="d9500f76-0879-443d-aeb2-89e21313fddf"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="764b0aa0-d9a0-42d5-9dee-f4ed8210579e"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="660053a6-3266-4917-abb7-6e3d27c7b97b"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="25" height="40" rowTotalGroup="PREFERRED_TERM">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" x="0" y="0" width="25" height="40" uuid="c6902251-c496-41ce-9b16-228130ac8c0c"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "" :($V{SOC_COUNT_MEASURE}==null  || $V{SOC_COUNT_MEASURE}.length()<1 ? "-": $V{SOC_COUNT_MEASURE}))]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="25" height="40" rowTotalGroup="PREFERRED_TERM" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" x="0" y="0" width="25" height="40" uuid="c8d9bb73-30ab-4fb6-bc50-77de86520c46">
+										<property name="com.jaspersoft.studio.unit.width" value="px"/>
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1)) ? false : true]]></printWhenExpression>
+									</reportElement>
+								</textField>
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement x="0" y="0" width="25" height="40" isRemoveLineWhenBlank="true" uuid="e953bc9c-e2fe-4c1d-a240-c18336c7a2d0">
+										<property name="com.jaspersoft.studio.unit.width" value="px"/>
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1)) ? true : false]]></printWhenExpression>
+									</reportElement>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "http://cross-browser.com/toys/diag_300x300.gif" :"")]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="25" height="40" rowTotalGroup="PREFERRED_TERM" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="" style="HeaderSimple" x="0" y="0" width="25" height="40" uuid="4e08cbea-b427-4243-bc67-9a98b3d011c9">
+										<property name="com.jaspersoft.studio.unit.width" value="px"/>
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? false : true)]]></printWhenExpression>
+									</reportElement>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[($V{CUMM_COUNT}==0 ? "-": $V{CUMM_COUNT})]]></textFieldExpression>
+								</textField>
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement x="0" y="0" width="25" height="40" isRemoveLineWhenBlank="true" uuid="3ddbaab4-42ae-4e1e-b1b7-19fe36534688">
+										<property name="com.jaspersoft.studio.unit.width" value="px"/>
+										<printWhenExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1)) ? true : false]]></printWhenExpression>
+									</reportElement>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA[(($V{SYSTEM_ORGAN_CLASS}==null || $V{SYSTEM_ORGAN_CLASS}.length()<1) ? "http://cross-browser.com/toys/diag_300x300.gif" :"")]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+					</crosstab>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="170" width="585" height="40" isRemoveLineWhenBlank="true" uuid="4f9666ee-c87d-4f2e-97eb-809f3997d29e">
+						<property name="com.jaspersoft.studio.layout"/>
+						<printWhenExpression><![CDATA[$V{CUMM_COUNT}>=1 ? false : true]]></printWhenExpression>
+					</reportElement>
+					<crosstab horizontalPosition="Center" ignoreWidth="true">
+						<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="585" height="40" uuid="31cedb0b-69f3-4b33-9187-3847ca5d0570">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<crosstabParameter name="PV_outputFormat"/>
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<rowGroup name="DELIVERY_QTY" width="50">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{DELIVERY_QTY}]]></bucketExpression>
+							</bucket>
+							<crosstabRowHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH">
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+									<frame>
+										<reportElement style="HeaderSimple" positionType="Float" x="0" y="0" width="50" height="40" uuid="0fb11921-70b7-4eb0-9136-621a40f69cac"/>
+										<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+											<reportElement style="Headerbold" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="40" uuid="2a08893e-9f97-405f-82f9-aef255643a91">
+												<property name="com.jaspersoft.studio.unit.width" value="px"/>
+											</reportElement>
+											<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None"/>
+											<textFieldExpression><![CDATA["出荷数量"]]></textFieldExpression>
+										</textField>
+									</frame>
+								</cellContents>
+							</crosstabRowHeader>
+							<crosstabTotalRowHeader>
+								<cellContents>
+									<staticText>
+										<reportElement x="0" y="0" width="-2147483648" height="-2147483648" uuid="9f2bc189-091b-49dc-a750-9d0a2a139735"/>
+										<text><![CDATA[Total DELIVERY_QTY]]></text>
+									</staticText>
+								</cellContents>
+							</crosstabTotalRowHeader>
+						</rowGroup>
+						<columnGroup name="MEDDRA_VER" height="0" totalPosition="End">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{MEDDRA_VER}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<columnGroup name="REPT_PERIOD" height="0" totalPosition="End">
+							<bucket class="java.lang.String">
+								<bucketExpression><![CDATA[$F{REPT_PERIOD}]]></bucketExpression>
+							</bucket>
+							<crosstabColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabColumnHeader>
+							<crosstabTotalColumnHeader>
+								<cellContents mode="Opaque" style="Crosstab 2_CH"/>
+							</crosstabTotalColumnHeader>
+						</columnGroup>
+						<measure name="SOC_COUNT_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{SOC_COUNT}]]></measureExpression>
+						</measure>
+						<measure name="PT_COUNT_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{PT_COUNT}]]></measureExpression>
+						</measure>
+						<measure name="MEDDRA_VER_MEASURE" class="java.lang.String">
+							<measureExpression><![CDATA[$F{MEDDRA_VER}]]></measureExpression>
+						</measure>
+						<crosstabCell width="25" height="40">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="25" height="40" uuid="712d1dab-a8a0-4bc8-b3a3-c89858db4e61">
+										<property name="com.jaspersoft.studio.unit.width" value="px"/>
+									</reportElement>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="25" height="40" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="25" height="40" uuid="5e4f4292-3e7c-41d7-9bef-a3cd8f5bb9fd"/>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA["http://cross-browser.com/toys/diag_300x300.gif"]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="25" height="40" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+									<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="25" height="40" uuid="e4a2f79f-8d3f-4553-bd77-a570e1de69d7"/>
+									<graphicElement fill="Solid"/>
+									<imageExpression><![CDATA["http://cross-browser.com/toys/diag_300x300.gif"]]></imageExpression>
+								</image>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="DELIVERY_QTY">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="0379ffad-1873-4015-a619-11d069eaec43"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="0bcc8c93-7e2d-4bc3-beee-ff7b2c85984c"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="a5669318-7bf2-4c9f-b193-2ac7c43db10a"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="DELIVERY_QTY" columnTotalGroup="MEDDRA_VER">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="abd7bb1d-30fe-48ee-b662-a04d1039fd4a"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="a85dc07d-6c86-45b0-acd3-b393b2c8e675"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="fdab8972-f7f9-44d7-bf08-36d236b8a114"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+						<crosstabCell width="60" height="60" rowTotalGroup="DELIVERY_QTY" columnTotalGroup="REPT_PERIOD">
+							<cellContents mode="Opaque" style="Crosstab 2_CH">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="90c96a7d-2aa0-4461-8f30-5f4b4aa7cc20"/>
+									<textFieldExpression><![CDATA[$V{SOC_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="20" width="60" height="20" uuid="7b15f21f-91a5-4b4a-beb2-f85387c6858f"/>
+									<textFieldExpression><![CDATA[$V{PT_COUNT_MEASURE}]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="0" y="40" width="60" height="20" uuid="6d4cc951-bb71-4daf-aae8-aca07663ce52"/>
+									<textFieldExpression><![CDATA[$V{MEDDRA_VER_MEASURE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabCell>
+					</crosstab>
+				</frame>
+			</band>
+		</groupFooter>
+	</group>
+	<pageHeader>
+		<band height="65">
+			<textField>
+				<reportElement style="Headerbold" x="20" y="10" width="114" height="24" uuid="8330cf8a-8231-4fcc-9853-4de03c99fa9a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["別紙様式3"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Headerbold" x="0" y="44" width="570" height="20" uuid="e1a484e9-fe9e-49ab-9f61-570bddd340ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["副作用・感染症症例報告における発現状況"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="41">
+			<frame>
+				<reportElement style="HeaderSimple" x="0" y="0" width="570" height="41" uuid="0ab9e335-0078-4b9d-a3cc-baf1328699d2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="HeaderSimple" mode="Transparent" x="250" y="0" width="120" height="41" uuid="cd5ca89a-8702-4d91-8116-6bceb4fdf421">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<printWhenExpression><![CDATA[!$P{PV_outputFormat}.equals("XLSX")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["-" + $V{PAGE_NUMBER}  + "-"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="HeaderSimple" mode="Transparent" x="0" y="0" width="250" height="41" uuid="857dfdf9-92a1-42d1-a201-c93a8210494e">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["＊使用上の注意から予測できない副作用・感染症"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="HeaderSimple" mode="Transparent" x="400" y="0" width="170" height="41" uuid="ef4dd4e4-804b-401c-8829-68f428def7e2">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["'MedDRA/J Version(" +($P{PV_MEDDRA_VERSION}.length()>8 ? ($P{PV_MEDDRA_VERSION}.contains("MedDRA/J") ? $P{PV_MEDDRA_VERSION}.substring(27,31) : $P{PV_MEDDRA_VERSION}.substring(15)) : $P{PV_MEDDRA_VERSION})+")'"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="95">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[($V{Total_SOC_COUNT}==0  && ($V{Total_PT_COUNT})==0) ? true : false]]></printWhenExpression>
+			<frame>
+				<reportElement x="40" y="0" width="510" height="95" uuid="028cc024-126d-491d-880b-c5f88db97993">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="Crosstab 2_CH" x="0" y="70" width="500" height="25" uuid="ab3b939c-51f7-4153-977c-60ad2aa17d9f"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["データがありません"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="140" height="70" uuid="980231d4-53fd-49f7-9460-5d7d5b160ab7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["副作用等の種類"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Crosstab 2_CH" x="140" y="0" width="235" height="30" uuid="883a2429-ffa6-45ff-b73b-459a44592abe"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["副作用・感染症の症例報告を行った症例数"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="Crosstab 2_CH" positionType="Float" x="375" y="0" width="125" height="30" uuid="8db09b70-4637-4dc9-800d-8f30f56811ab"/>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Crosstab 2_CH" stretchType="ContainerHeight" x="140" y="30" width="115" height="40" uuid="be85e355-232f-42fc-ad7e-7893a77d350d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[!($F{REPT_PERIOD}.isEmpty() || $F{REPT_PERIOD}==null) ? $V{START_DATE}.getYear()+"年"+$V{START_DATE}.getMonthValue()+"月" + $V{START_DATE}.getDayOfMonth() + "日\n~\n" +
+$V{END_DATE}.getYear()+"年"+$V{END_DATE}.getMonthValue()+"月" + $V{END_DATE}.getDayOfMonth() + "日" : "NA"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerHeight" x="255" y="30" width="120" height="40" uuid="25ec4b8c-c7e3-4e79-8ff8-33a025402d3d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["再審査期間中の合計"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Crosstab 2_CH" positionType="Float" stretchType="ContainerBottom" x="375" y="30" width="125" height="40" uuid="24cc0239-d6f5-4b46-9212-12db33da2271"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["備考"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

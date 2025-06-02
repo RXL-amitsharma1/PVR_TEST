@@ -1,0 +1,5 @@
+.fixed-header-table thead {
+    position: sticky !important;
+    z-index: 999;
+    background: white;
+}

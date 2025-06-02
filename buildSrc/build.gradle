@@ -1,0 +1,18 @@
+repositories {
+    maven {
+        url "http://nexus-repo.eng.rxlogix.com:8080/nexus/content/repositories/common-component-snapshots"
+        allowInsecureProtocol = true
+    }
+    maven { url "https://plugins.gradle.org/m2/" }
+    maven { url "https://repo.grails.org/artifactory/core" }
+    maven { url "https://plugins.gradle.org/m2" }
+}
+dependencies {
+    implementation "org.grails:grails-gradle-plugin:6.2.1"
+    implementation "com.bertramlabs.plugins:asset-pipeline-gradle:4.3.0"
+    implementation 'org.grails.plugins:database-migration:5.0.0-SNAPSHOT-M1'
+    implementation "com.gorylenko.gradle-git-properties:gradle-git-properties:2.3.2"
+    implementation "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:5.0.0.4638"
+    implementation 'org.owasp:dependency-check-gradle:9.2.0'
+    implementation "com.gradle:develocity-gradle-plugin:3.17.5"
+}

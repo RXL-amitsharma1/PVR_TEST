@@ -1,0 +1,88 @@
+.rx-widget-menu {
+    padding: 0;
+}
+
+.rx-widget-placeholder {
+    border: 1px dashed #c2c2c2;
+    height: 470px;
+    margin-bottom: 5px;
+}
+
+.ui-menu {
+    width: 170px;
+}
+
+.ui-resizable-n {
+    cursor: ne-resize;
+    width: 5px;
+    height: 5px;
+    right: 5px;
+    top: 0;
+}
+
+.dashboardAlert {
+    color: red;
+    font-size: 50px;
+    display: none;
+}
+
+.dashboardWarning {
+    color: #ffaa00;
+    font-size: 50px;
+    display: none;
+}
+
+.dashboardSuccess {
+    color: green;
+    font-size: 50px;
+    display: none;
+}
+
+.dashboardSummaryContent {
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.etlSummary {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.editTitle {
+    color: #555555;
+    cursor: pointer
+}
+
+.reportRequestWidget {
+    display: inline !important;
+    margin-right: 12px;
+}
+
+.reportRequestSummary {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rrTitleContent {
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.rrTitleIcon {
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.pv-caselist .pv-list-table thead tr th.sorting_asc:after,
+.pv-caselist .pv-list-table thead tr th.sorting:before
+{ content:"\f063";font-weight:100;color:#007cbc;right:3px;font-size:13px;}
+.pv-caselist .pv-list-table thead tr th.sorting_desc:after {content:"\f063";font-weight: 100;color:#007cbc;top: 3px; right:3px; font-size:13px;}
+.pv-caselist .pv-list-table thead tr th.sorting_asc:after {content:"\f062"; top: 3px; right: 3px;}
+.dataTables_scrollBody .pv-list-table thead tr th.sorting_desc:after,.dataTables_scrollBody .pv-list-table thead tr th.sorting_asc:after {content: "";}
+.col-min-65{min-width:65px!important;}
+.rx-widget {
+    inset: 5px 5px !important;
+}

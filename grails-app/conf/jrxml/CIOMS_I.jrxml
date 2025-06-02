@@ -1,0 +1,2065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CIOMS_I" pageWidth="612" pageHeight="792" columnWidth="504" leftMargin="54" rightMargin="54" topMargin="10" bottomMargin="23" whenResourceMissingType="Empty" uuid="8493cb2a-e9ea-4620-9c94-875e9a39bb53">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="background.image.path" value="/home/gologuzov/work/Awais Khan/CIOMS_I.jpg"/>
+	<property name="background.image.y" value="83"/>
+	<property name="background.image.keep_ratio" value="true"/>
+	<style name="Section Header" hTextAlign="Center" vTextAlign="Bottom" fontSize="10"/>
+	<style name="Item Header" hTextAlign="Left" vTextAlign="Middle" isBlankWhenNull="true" fontSize="5">
+		<box leftPadding="3"/>
+	</style>
+	<style name="Item SubHeader" hTextAlign="Center" vTextAlign="Middle" fontSize="5"/>
+	<style name="Page Header" hTextAlign="Center" fontSize="10" isBold="true"/>
+	<style name="Checkbox Text" vTextAlign="Middle" fontSize="5">
+		<box leftPadding="2"/>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF" vTextAlign="Middle" fontSize="8" isBold="true">
+		<box bottomPadding="0"/>
+	</style>
+	<style name="Table_CH" mode="Transparent" backcolor="#FFFFFF" vTextAlign="Top" fontSize="6">
+		<pen lineStyle="Solid"/>
+		<box leftPadding="1" rightPadding="1">
+			<bottomPen lineWidth="0.8" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Transparent" backcolor="#FFFFFF" vTextAlign="Middle" isBlankWhenNull="true" fontName="Arial Unicode" fontSize="7">
+		<box leftPadding="1" rightPadding="1"/>
+	</style>
+	<style name="Item Data" hTextAlign="Left" vTextAlign="Top" isBlankWhenNull="true" fontSize="7">
+		<box leftPadding="3"/>
+	</style>
+	<style name="Item Data Unicode" style="Item Data" fontName="Arial Unicode" fontSize="7"/>
+	<style name="Checkbox Marker" style="Item Header" hTextAlign="Center" vTextAlign="Middle" markup="none" pattern="" isBlankWhenNull="true" fontSize="6">
+		<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Report Header" markup="none" fontSize="10" isBold="true"/>
+	<style name="Item Footer" style="Item Header" hTextAlign="Right" vTextAlign="Top" isBlankWhenNull="true" fontSize="6" isBold="true">
+		<box topPadding="2" leftPadding="2" rightPadding="2"/>
+	</style>
+	<style name="Checkbox Marker Small" style="Checkbox Marker" fontSize="5"/>
+	<style name="Item Data Centered" hTextAlign="Center" vTextAlign="Middle" isBlankWhenNull="true" fontSize="7"/>
+	<style name="Item Data Centered Unicode" style="Item Data Centered" fontName="Arial Unicode"/>
+	<style name="Checkbox Text Top" style="Checkbox Text" vTextAlign="Top"/>
+	<style name="Item Data Middle" style="Item Data" vTextAlign="Middle" fontSize="7"/>
+	<subDataset name="LabData" uuid="0759123b-d41f-4db6-8477-478999a2902a">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="lab_data"/>
+		<queryString language="xPath">
+			<![CDATA[/XML_START/ROW]]>
+		</queryString>
+		<field name="ROWNUM" class="java.lang.String">
+			<fieldDescription><![CDATA[ROWNUM]]></fieldDescription>
+		</field>
+		<field name="DATE" class="java.lang.String">
+			<fieldDescription><![CDATA[DATE]]></fieldDescription>
+		</field>
+		<field name="NOTES" class="java.lang.String">
+			<fieldDescription><![CDATA[NOTES]]></fieldDescription>
+		</field>
+		<field name="RESULTS" class="java.lang.String">
+			<fieldDescription><![CDATA[RESULTS]]></fieldDescription>
+		</field>
+		<field name="NORM" class="java.lang.String">
+			<fieldDescription><![CDATA[NORM]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="SuspectDrugs" uuid="0d1cab07-cda3-460a-b4e7-246fca5f7f55">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="suspect_drugs"/>
+		<queryString language="xPath">
+			<![CDATA[/XML_START/ROW]]>
+		</queryString>
+		<field name="NAME_1" class="java.lang.String">
+			<fieldDescription><![CDATA[NAME]]></fieldDescription>
+		</field>
+		<field name="DOSE_ROUTE_1" class="java.lang.String">
+			<fieldDescription><![CDATA[DOSE_ROUTE]]></fieldDescription>
+		</field>
+		<field name="INDICATIONS_1" class="java.lang.String">
+			<fieldDescription><![CDATA[INDICATIONS]]></fieldDescription>
+		</field>
+		<field name="THERAPY_DATE_DUR_1" class="java.lang.String">
+			<fieldDescription><![CDATA[THERAPY_DATE_DUR]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="OtherHistory" uuid="1a1097a6-ce62-4710-bb11-0c595053f157">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="other_history"/>
+		<queryString language="xPath">
+			<![CDATA[/XML_START/ROW]]>
+		</queryString>
+		<field name="DATE" class="java.lang.String">
+			<fieldDescription><![CDATA[DATE]]></fieldDescription>
+		</field>
+		<field name="NOTES" class="java.lang.String">
+			<fieldDescription><![CDATA[NOTES]]></fieldDescription>
+		</field>
+		<field name="DESC" class="java.lang.String">
+			<fieldDescription><![CDATA[DESC]]></fieldDescription>
+		</field>
+	</subDataset>
+	<scriptlet name="CIOMS_I_FORM_SCRIPTLET" class="com.rxlogix.dynamicReports.scriptlets.CIOMS_I_FormScriptlet">
+		<scriptletDescription><![CDATA[CIOMS I Form Scriptlet]]></scriptletDescription>
+	</scriptlet>
+	<queryString language="json">
+		<![CDATA[]]>
+	</queryString>
+	<field name="VERSION_NUM" class="java.lang.Integer">
+		<fieldDescription><![CDATA[VERSION_NUM]]></fieldDescription>
+	</field>
+	<field name="PATIENT_INITIALS_1" class="java.lang.String">
+		<fieldDescription><![CDATA[PATIENT_INITIALS_1]]></fieldDescription>
+	</field>
+	<field name="COUNTRY_1A" class="java.lang.String">
+		<fieldDescription><![CDATA[COUNTRY_1A]]></fieldDescription>
+	</field>
+	<field name="PAT_DOB_DAY_2" class="java.lang.String">
+		<fieldDescription><![CDATA[PAT_DOB_DAY_2]]></fieldDescription>
+	</field>
+	<field name="PAT_DOB_MONTH_2" class="java.lang.String">
+		<fieldDescription><![CDATA[PAT_DOB_MONTH_2]]></fieldDescription>
+	</field>
+	<field name="PAT_DOB_YEAR_2" class="java.lang.String">
+		<fieldDescription><![CDATA[PAT_DOB_YEAR_2]]></fieldDescription>
+	</field>
+	<field name="PAT_AGE_YEARS_2A" class="java.lang.String">
+		<fieldDescription><![CDATA[PAT_AGE_YEARS_2A]]></fieldDescription>
+	</field>
+	<field name="PAT_GENDER_3" class="java.lang.String">
+		<fieldDescription><![CDATA[PAT_GENDER_3]]></fieldDescription>
+	</field>
+	<field name="PAT_WEIGHT_3A" class="java.lang.String">
+		<fieldDescription><![CDATA[PAT_WEIGHT_3A]]></fieldDescription>
+	</field>
+	<field name="REACT_ONSET_DAY_4" class="java.lang.String">
+		<fieldDescription><![CDATA[REACT_ONSET_DAY_4]]></fieldDescription>
+	</field>
+	<field name="REACT_ONSET_MONTH_5" class="java.lang.String">
+		<fieldDescription><![CDATA[REACT_ONSET_MONTH_5]]></fieldDescription>
+	</field>
+	<field name="REACT_ONSET_YEAR_6" class="java.lang.String">
+		<fieldDescription><![CDATA[REACT_ONSET_YEAR_6]]></fieldDescription>
+	</field>
+	<field name="CASE_DESCRIPTION_7" class="java.lang.String">
+		<fieldDescription><![CDATA[CASE_DESCRIPTION_7]]></fieldDescription>
+	</field>
+	<field name="CASE_COMMENT_7" class="java.lang.String">
+		<fieldDescription><![CDATA[CASE_COMMENT_7]]></fieldDescription>
+	</field>
+	<field name="OTHER_SER_CRITERIA_7" class="java.lang.String">
+		<fieldDescription><![CDATA[OTHER_SER_CRITERIA_7]]></fieldDescription>
+	</field>
+	<field name="DESCRIBE_REACTION_7" class="java.lang.String">
+		<fieldDescription><![CDATA[DESCRIBE_REACTION_7]]></fieldDescription>
+	</field>
+	<field name="PAT_DIED_8" class="java.lang.String">
+		<fieldDescription><![CDATA[PAT_DIED_8]]></fieldDescription>
+	</field>
+	<field name="DATE_OF_DEATH_9" class="java.lang.String">
+		<fieldDescription><![CDATA[DATE_OF_DEATH_9]]></fieldDescription>
+	</field>
+	<field name="PAT_HOSPITALISED_10" class="java.lang.String">
+		<fieldDescription><![CDATA[PAT_HOSPITALISED_10]]></fieldDescription>
+	</field>
+	<field name="PAT_DISABILITY_11" class="java.lang.String">
+		<fieldDescription><![CDATA[PAT_DISABILITY_11]]></fieldDescription>
+	</field>
+	<field name="LIFE_THREATENING_12" class="java.lang.String">
+		<fieldDescription><![CDATA[LIFE_THREATENING_12]]></fieldDescription>
+	</field>
+	<field name="REL_TESTS_13" class="java.lang.String">
+		<fieldDescription><![CDATA[REL_TESTS_13]]></fieldDescription>
+	</field>
+	<field name="LAB_DATA_13" class="java.lang.String">
+		<fieldDescription><![CDATA[LAB_DATA_13]]></fieldDescription>
+	</field>
+	<field name="SUS_PRODUCT_NAME_ALL_14" class="java.lang.String">
+		<fieldDescription><![CDATA[SUS_PRODUCT_NAME_ALL_14]]></fieldDescription>
+	</field>
+	<field name="ADDITIONAL_14" class="java.lang.String">
+		<fieldDescription><![CDATA[ADDITIONAL_14]]></fieldDescription>
+	</field>
+	<field name="DAILY_DOSES_ALL_15" class="java.lang.String">
+		<fieldDescription><![CDATA[DAILY_DOSES_ALL_15]]></fieldDescription>
+	</field>
+	<field name="ROUTE_OF_ADMIN_ALL_16" class="java.lang.String">
+		<fieldDescription><![CDATA[ROUTE_OF_ADMIN_ALL_16]]></fieldDescription>
+	</field>
+	<field name="INDICATION_ALL_17" class="java.lang.String">
+		<fieldDescription><![CDATA[INDICATION_ALL_17]]></fieldDescription>
+	</field>
+	<field name="THERAPY_DATES_ALL_18" class="java.lang.String">
+		<fieldDescription><![CDATA[THERAPY_DATES_ALL_18]]></fieldDescription>
+	</field>
+	<field name="THERAPY_DURATION_19" class="java.lang.String">
+		<fieldDescription><![CDATA[THERAPY_DURATION_19]]></fieldDescription>
+	</field>
+	<field name="REACT_DECHAL_OUTCOME_20" class="java.lang.String">
+		<fieldDescription><![CDATA[REACT_DECHAL_OUTCOME_20]]></fieldDescription>
+	</field>
+	<field name="REACT_RECHAL_OUTCOME_21" class="java.lang.String">
+		<fieldDescription><![CDATA[REACT_RECHAL_OUTCOME_21]]></fieldDescription>
+	</field>
+	<field name="CONMEDS_PRODUCTS_DATES_22" class="java.lang.String">
+		<fieldDescription><![CDATA[CONMEDS_PRODUCTS_DATES_22]]></fieldDescription>
+	</field>
+	<field name="OTHER_RELEVANT_HISTORY_23" class="java.lang.String">
+		<fieldDescription><![CDATA[OTHER_RELEVANT_HISTORY_23]]></fieldDescription>
+	</field>
+	<field name="MANU_NAME_ADDRESS_24A" class="java.lang.String">
+		<fieldDescription><![CDATA[MANU_NAME_ADDRESS_24A]]></fieldDescription>
+	</field>
+	<field name="MFR_CONTROL_NO_24B" class="java.lang.String">
+		<fieldDescription><![CDATA[MFR_CONTROL_NO_24B]]></fieldDescription>
+	</field>
+	<field name="MANU_DATE_RECIEVED_24C" class="java.util.Date">
+		<fieldDescription><![CDATA[MANU_DATE_RECIEVED_24C]]></fieldDescription>
+	</field>
+	<field name="REPORT_SOURCE_STUDY_24D" class="java.lang.String">
+		<fieldDescription><![CDATA[REPORT_SOURCE_STUDY_24D]]></fieldDescription>
+	</field>
+	<field name="REPORT_SOURCE_LIT_24D" class="java.lang.String">
+		<fieldDescription><![CDATA[REPORT_SOURCE_LIT_24D]]></fieldDescription>
+	</field>
+	<field name="REPORT_SOURCE_HP_24D" class="java.lang.String">
+		<fieldDescription><![CDATA[REPORT_SOURCE_HP_24D]]></fieldDescription>
+	</field>
+	<field name="LITERATURE_24D" class="java.lang.String">
+		<fieldDescription><![CDATA[LITERATURE_24D]]></fieldDescription>
+	</field>
+	<field name="REPORT_SOURCE_OTHER_24D" class="java.lang.String">
+		<fieldDescription><![CDATA[REPORT_SOURCE_OTHER_24D]]></fieldDescription>
+	</field>
+	<field name="REPORT_SOURCE_OTHER_DESC_24D" class="java.lang.String">
+		<fieldDescription><![CDATA[REPORT_SOURCE_OTHER_DESC_24D]]></fieldDescription>
+	</field>
+	<field name="REPORT_TYPE_INIT_25A" class="java.lang.String">
+		<fieldDescription><![CDATA[REPORT_TYPE_INIT_25A]]></fieldDescription>
+	</field>
+	<field name="REPORT_TYPE_FOLLOWUP_25A" class="java.lang.String">
+		<fieldDescription><![CDATA[REPORT_TYPE_FOLLOWUP_25A]]></fieldDescription>
+	</field>
+	<field name="REPORTER_NAME_ADDRESS_25B" class="java.lang.String">
+		<fieldDescription><![CDATA[REPORTER_NAME_ADDRESS_25B]]></fieldDescription>
+	</field>
+	<field name="REMARKS_26" class="java.lang.String">
+		<fieldDescription><![CDATA[REMARKS_26]]></fieldDescription>
+	</field>
+	<field name="REPORT_DATE" class="java.util.Date">
+		<fieldDescription><![CDATA[REPORT_DATE]]></fieldDescription>
+	</field>
+	<field name="PATIENT_CONFIDENTIALITY" class="java.lang.String">
+		<fieldDescription><![CDATA[PATIENT_CONFIDENTIALITY]]></fieldDescription>
+	</field>
+	<field name="CIOMS_PT_OR_LLT_SWITCH" class="java.lang.Integer">
+		<fieldDescription><![CDATA[CIOMS_PT_OR_LLT_SWITCH]]></fieldDescription>
+	</field>
+	<field name="CIOMS_SER_CRITERIA_CNT" class="java.lang.Integer">
+		<fieldDescription><![CDATA[CIOMS_SER_CRITERIA_CNT]]></fieldDescription>
+	</field>
+	<field name="FLAG_CONGENITAL_AN_14" class="java.lang.String">
+		<fieldDescription><![CDATA[FLAG_CONGENITAL_AN_14]]></fieldDescription>
+	</field>
+	<field name="FLAG_OTHER_SER_14" class="java.lang.String">
+		<fieldDescription><![CDATA[FLAG_OTHER_SER_14]]></fieldDescription>
+	</field>
+	<field name="OTHER_SER_TXT_14" class="java.lang.String">
+		<fieldDescription><![CDATA[OTHER_SER_TXT_14]]></fieldDescription>
+	</field>
+	<field name="REPORT_TYPE_FOLLOWUP_NUM_25A" class="java.lang.String">
+		<fieldDescription><![CDATA[REPORT_TYPE_FOLLOWUP_NUM_25A]]></fieldDescription>
+	</field>
+	<sortField name="MFR_CONTROL_NO_24B"/>
+	<sortField name="VERSION_NUM"/>
+	<variable name="CASE_SUMMARY" class="java.lang.String">
+		<variableExpression><![CDATA[GET_CASE_SUMMARY($F{OTHER_SER_CRITERIA_7}, $F{DESCRIBE_REACTION_7}, $F{CASE_DESCRIPTION_7}, $F{CASE_COMMENT_7})]]></variableExpression>
+	</variable>
+	<variable name="IS_TRUNCATED_14" class="java.lang.Boolean">
+		<variableExpression><![CDATA[IS_FIELD_TRUNCATED($F{SUS_PRODUCT_NAME_ALL_14}, $F{ADDITIONAL_14}, "/XML_START/ROW/NAME", "; Regimen \\#\\d+")]]></variableExpression>
+	</variable>
+	<variable name="IS_TRUNCATED_17" class="java.lang.Boolean">
+		<variableExpression><![CDATA[IS_FIELD_TRUNCATED($F{INDICATION_ALL_17}, $F{ADDITIONAL_14}, "/XML_START/ROW/INDICATIONS")]]></variableExpression>
+	</variable>
+	<variable name="CONTINUE_13" class="java.lang.Boolean">
+		<variableExpression><![CDATA[XML_DATA_SIZE($F{LAB_DATA_13}) > 0]]></variableExpression>
+	</variable>
+	<variable name="CONTINUE_14" class="java.lang.Boolean">
+		<variableExpression><![CDATA[(XML_DATA_SIZE($F{ADDITIONAL_14}) > 2) || $V{IS_TRUNCATED_14} || (HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).split("\n")[0].length() > 55) || (HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).contains("\n") ? (HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).split("\n")[1].length() > 55) : false)]]></variableExpression>
+	</variable>
+	<variable name="CONTINUE_17" class="java.lang.Boolean">
+		<variableExpression><![CDATA[(XML_DATA_SIZE($F{ADDITIONAL_14}) > 2) || $V{IS_TRUNCATED_17}]]></variableExpression>
+	</variable>
+	<variable name="CONTINUE_23" class="java.lang.Boolean">
+		<variableExpression><![CDATA[XML_DATA_SIZE($F{OTHER_RELEVANT_HISTORY_23}) > 2]]></variableExpression>
+	</variable>
+	<variable name="CONTINUE_REL_TESTS_13" class="java.lang.Boolean">
+		<variableExpression><![CDATA[$F{REL_TESTS_13} != null && $F{REL_TESTS_13}.trim().length() > 0]]></variableExpression>
+	</variable>
+	<variable name="CONTINUE_24D" class="java.lang.Boolean">
+		<variableExpression><![CDATA[$F{LITERATURE_24D} != null && $F{LITERATURE_24D}.trim().length() > 0]]></variableExpression>
+	</variable>
+	<variable name="PRINT_SECOND_PAGE" class="java.lang.Boolean">
+		<variableExpression><![CDATA[$V{CONTINUE_13} || $V{CONTINUE_REL_TESTS_13} || $V{CONTINUE_14} || $V{CONTINUE_17} || $V{CONTINUE_23} || $V{CONTINUE_24D}]]></variableExpression>
+	</variable>
+	<variable name="IS_CONFIDENTIAL" class="java.lang.Boolean" resetType="Group" resetGroup="Case Number">
+		<variableExpression><![CDATA[EXACT($F{PATIENT_CONFIDENTIALITY}, "1") || EXACT($F{PAT_DOB_MONTH_2}, "PRIVACY")]]></variableExpression>
+	</variable>
+	<variable name="IS_PRIVACY" class="java.lang.Boolean" resetType="Group" resetGroup="Case Number">
+		<variableExpression><![CDATA[EXACT($F{REACT_ONSET_MONTH_5}, "PRIVACY")]]></variableExpression>
+	</variable>
+	<group name="Case Number" isStartNewPage="true" isResetPageNumber="true">
+		<groupExpression><![CDATA[$F{MFR_CONTROL_NO_24B}+$F{VERSION_NUM}.toString()]]></groupExpression>
+		<groupHeader>
+			<band height="85">
+				<textField bookmarkLevel="1">
+					<reportElement style="Report Header" x="408" y="0" width="96" height="16" uuid="94fdd732-d534-4006-9c05-e36e5547cd7e"/>
+					<box bottomPadding="1" rightPadding="3"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+					<textFieldExpression><![CDATA["CIOMS FORM"]]></textFieldExpression>
+					<anchorNameExpression><![CDATA[$V{REPORT_COUNT} == 0 ? $P{PV_REPORT_TITLE} : null]]></anchorNameExpression>
+				</textField>
+				<frame>
+					<reportElement x="0" y="16" width="504" height="69" uuid="0d506169-beb6-4338-b23b-0116f0a10a3e">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textField bookmarkLevel="2">
+						<reportElement key="" style="Report Header" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="252" height="69" uuid="9119cdd9-61a8-4af1-84f4-9a10f0ca8f01"/>
+						<box padding="0">
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA["SUSPECT ADVERSE REACTION REPORT"]]></textFieldExpression>
+						<anchorNameExpression><![CDATA[$F{MFR_CONTROL_NO_24B}]]></anchorNameExpression>
+					</textField>
+					<frame>
+						<reportElement x="252" y="0" width="252" height="69" uuid="84b3ffe5-3e7b-4227-9115-5ad32ae9b13f">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<box>
+							<leftPen lineWidth="1.0"/>
+						</box>
+						<frame>
+							<reportElement x="0" y="0" width="252" height="23" uuid="bb77f5dc-38b9-4132-a577-a7df4ad79223"/>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</frame>
+						<frame>
+							<reportElement x="0" y="23" width="252" height="23" uuid="2aec2d3b-e10c-457e-a01c-763b80f8adeb"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</frame>
+						<frame>
+							<reportElement x="0" y="46" width="252" height="23" uuid="764b0df8-b764-4fdd-957b-2f438b50546f">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<frame>
+								<reportElement x="0" y="0" width="79" height="23" uuid="2f6e0d1b-8e2d-46da-a0dc-fe0fd434ed6a"/>
+							</frame>
+							<frame>
+								<reportElement x="79" y="0" width="173" height="23" uuid="fad60eb3-05ab-41e7-ace5-097e25f5ce20">
+									<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<frame>
+									<reportElement x="0" y="0" width="17" height="23" uuid="adc1f67f-2932-41f4-bc53-6e027b84add4"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement style="Section Header" positionType="Float" x="17" y="0" width="12" height="23" uuid="6e028304-a8fe-4ecb-80c3-588922a26251"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="29" y="0" width="12" height="23" uuid="bad29e17-a6a3-4922-a482-bbb5ac2d3b70"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="41" y="0" width="12" height="23" uuid="74c903f7-56a5-4e4f-a2a7-1138730e9371"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="53" y="0" width="12" height="23" uuid="36178ae3-6c10-4e2c-ace4-a6f5c101eb9b"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="65" y="0" width="12" height="23" uuid="c44f0f9e-3192-4583-a024-900241d38a70"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="77" y="0" width="12" height="23" uuid="e03e1089-bd8b-47f6-95f4-e5a38937c46a"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="89" y="0" width="12" height="23" uuid="302b2b98-ed83-4062-9397-24eed7533a6e"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="101" y="0" width="12" height="23" uuid="1d017c41-7910-4417-88e7-ef403963c97e"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="113" y="0" width="12" height="23" uuid="66fce9b8-9fab-4cf6-be0e-43c6bfd082cc"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="125" y="0" width="12" height="23" uuid="4fc265b9-5c6c-473b-900b-a840ea2c9651"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="137" y="0" width="12" height="23" uuid="66e8e08b-9474-4805-8638-bd70a333ace6"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="149" y="0" width="12" height="23" uuid="43ab6d8e-7945-4385-970b-e75ef7c75def"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+								<frame>
+									<reportElement x="161" y="0" width="12" height="23" uuid="1f77480a-3b48-44b6-979c-9c205e752717"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+								</frame>
+							</frame>
+						</frame>
+					</frame>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<pageHeader>
+		<band height="40">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} > 1]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="506" height="40" uuid="3248f13a-8f53-41e4-851c-dc144a98a4e0"/>
+				<line>
+					<reportElement x="0" y="26" width="506" height="1" uuid="d415537b-3daf-4be9-b524-551bd7ea9f78"/>
+				</line>
+				<staticText>
+					<reportElement key="" style="Page Header" x="0" y="27" width="506" height="13" uuid="6dfcd965-14b4-4ab4-ad68-affc03fc2d97"/>
+					<text><![CDATA[ADDITIONAL INFORMATION]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="6" width="40" height="20" uuid="6a4e948f-4306-4e30-b497-7f275cac9b51"/>
+					<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="251" y="13" width="254" height="13" uuid="c15faf10-f281-4aa5-8b29-1a4be1599136"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA["Mfr Control Number: " + $F{MFR_CONTROL_NO_24B}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="Case Number">
+					<reportElement x="40" y="6" width="35" height="20" uuid="cf4ca953-bc82-4248-ba74-2ddb32c76ec6"/>
+					<textFieldExpression><![CDATA["of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="662">
+			<staticText>
+				<reportElement style="Section Header" x="0" y="1" width="504" height="20" uuid="f5b7a1c8-b7aa-46a7-b15c-e0d6c6b4fa2b"/>
+				<text><![CDATA[I. REACTION INFORMATION]]></text>
+			</staticText>
+			<frame>
+				<reportElement style="Section Header" x="0" y="21" width="504" height="155" uuid="456e622a-4250-4609-a6fe-240092ddd894">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="396" height="155" uuid="254e0489-e8a8-46d1-9fe1-9f1e814b4ace">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<frame>
+						<reportElement x="0" y="0" width="396" height="36" uuid="4bfdf43e-50a3-4e4a-ad8b-485607c710c0">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<frame>
+							<reportElement key="" x="0" y="0" width="63" height="36" uuid="bcadebb3-e783-46e5-9800-5cfe553168f6">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box rightPadding="0">
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item SubHeader" x="0" y="0" width="63" height="16" uuid="a7097eb3-b0ac-4a43-9a32-2049081f6e77"/>
+								<text><![CDATA[1. PATIENT INITIALS
+(first, last)]]></text>
+							</staticText>
+							<textField>
+								<reportElement style="Item Data Centered Unicode" x="0" y="16" width="63" height="20" uuid="52da8281-3a3a-4181-8bde-2db586817d6d"/>
+								<textFieldExpression><![CDATA[$V{IS_CONFIDENTIAL} ? "PRIVACY" : $F{PATIENT_INITIALS_1}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="63" y="0" width="69" height="36" uuid="b6d2e21b-e345-49f4-802a-994b68424cab">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item SubHeader" x="0" y="0" width="69" height="8" uuid="38df66cb-09eb-4171-8c66-72e8dc8cf8eb"/>
+								<text><![CDATA[1a. COUNTRY]]></text>
+							</staticText>
+							<textField>
+								<reportElement style="Item Data Centered" x="0" y="8" width="69" height="28" uuid="550d60b4-4334-4511-95b9-5b8fc45b993c"/>
+								<textFieldExpression><![CDATA[$F{COUNTRY_1A}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="132" y="0" width="82" height="36" uuid="7d233039-3c8a-49cd-8b1d-b26d17a6bfa6">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item SubHeader" positionType="FixRelativeToBottom" x="0" y="0" width="82" height="8" uuid="c78aaca1-4b94-440d-ae77-361ee12006ee"/>
+								<text><![CDATA[2. DATE OF BIRTH]]></text>
+							</staticText>
+							<frame>
+								<reportElement x="0" y="8" width="82" height="8" uuid="2133fca2-da6c-4c58-be4d-86533dbe3e8e">
+									<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="1.0"/>
+								</box>
+								<staticText>
+									<reportElement style="Item SubHeader" x="0" y="0" width="28" height="8" uuid="9a2d32b4-4614-4f38-a45d-c57df381fd2b"/>
+									<box>
+										<rightPen lineWidth="1.0"/>
+									</box>
+									<text><![CDATA[Day]]></text>
+								</staticText>
+								<staticText>
+									<reportElement style="Item SubHeader" x="28" y="0" width="27" height="8" uuid="3d70af88-e898-411b-bb66-ce39fe93848e"/>
+									<box>
+										<rightPen lineWidth="1.0"/>
+									</box>
+									<text><![CDATA[Month]]></text>
+								</staticText>
+								<staticText>
+									<reportElement style="Item SubHeader" x="55" y="0" width="27" height="8" uuid="eb74b3aa-0ffa-44d0-96e2-7b660a49a168"/>
+									<text><![CDATA[Year]]></text>
+								</staticText>
+							</frame>
+							<frame>
+								<reportElement x="0" y="16" width="82" height="20" uuid="b193a617-89b2-46d5-a227-7cd7c9086042">
+									<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement style="Item Data Centered" x="0" y="0" width="28" height="20" uuid="ce3969cb-7ed8-4509-9163-f4c204d068bc"/>
+									<box>
+										<rightPen lineWidth="1.0"/>
+									</box>
+									<textFieldExpression><![CDATA[$V{IS_CONFIDENTIAL} ? "" : $F{PAT_DOB_DAY_2}]]></textFieldExpression>
+								</textField>
+								<textField isStretchWithOverflow="true">
+									<reportElement style="Item Data Centered" x="28" y="0" width="27" height="20" uuid="8c166bf5-ba69-4e55-8758-aab8835f0060"/>
+									<box>
+										<rightPen lineWidth="1.0"/>
+									</box>
+									<textFieldExpression><![CDATA[$V{IS_CONFIDENTIAL} ? "" : $F{PAT_DOB_MONTH_2}]]></textFieldExpression>
+								</textField>
+								<textField isStretchWithOverflow="true">
+									<reportElement key="" style="Item Data Centered" x="55" y="0" width="27" height="20" uuid="026c9ef5-2652-4951-bb6a-bb606f5d9668"/>
+									<textFieldExpression><![CDATA[$V{IS_CONFIDENTIAL} ? "" : $F{PAT_DOB_YEAR_2}]]></textFieldExpression>
+								</textField>
+							</frame>
+							<staticText>
+								<reportElement key="" style="Item Data Centered" x="0" y="16" width="82" height="20" uuid="81d074bf-f3c9-4f18-8831-786d345e6c6d">
+									<printWhenExpression><![CDATA[$V{IS_CONFIDENTIAL}]]></printWhenExpression>
+								</reportElement>
+								<text><![CDATA[PRIVACY]]></text>
+							</staticText>
+						</frame>
+						<frame>
+							<reportElement x="214" y="0" width="30" height="36" uuid="9a6f6b50-850b-4c05-ba7a-ebfa2a14323c">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item SubHeader" x="0" y="0" width="30" height="8" uuid="6d365396-66e5-49ce-ae41-4f0e8399dcb9"/>
+								<text><![CDATA[2a AGE]]></text>
+							</staticText>
+							<textField>
+								<reportElement style="Item Data Centered" x="0" y="8" width="30" height="28" uuid="4111f778-6391-4d42-b24a-4921df3ffcb7"/>
+								<textElement>
+									<font size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{PAT_AGE_YEARS_2A}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="244" y="0" width="33" height="36" uuid="637fd50f-bb1d-4f8d-8715-be4684a661fa">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item SubHeader" x="0" y="0" width="33" height="8" uuid="f8ffdb0b-206a-4efa-90c7-f65ac561fde9"/>
+								<text><![CDATA[3. SEX]]></text>
+							</staticText>
+							<textField>
+								<reportElement style="Item Data Centered" x="0" y="8" width="33" height="28" uuid="55b403f3-3fa0-4abc-a6e1-71d5e6096ab0"/>
+								<textFieldExpression><![CDATA[$F{PAT_GENDER_3}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="277" y="0" width="39" height="36" uuid="aa52fe7e-820b-455d-9428-702993c55835">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item SubHeader" x="0" y="0" width="39" height="8" uuid="06ac6e9b-5557-417f-9aca-cfd5056f1cb7"/>
+								<text><![CDATA[3a. WEIGHT]]></text>
+							</staticText>
+							<textField>
+								<reportElement style="Item Data Centered" x="0" y="8" width="39" height="28" uuid="ec4f635f-abc7-4454-b731-7ecd2c742801"/>
+								<textFieldExpression><![CDATA[$F{PAT_WEIGHT_3A}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="316" y="0" width="80" height="36" uuid="ddc36d43-0464-4c6d-ba16-a90882506dae">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item SubHeader" x="0" y="0" width="80" height="8" uuid="16298edf-001e-46ae-bd67-8cae9cfb7240"/>
+								<text><![CDATA[4-6 REACTION ONSET]]></text>
+							</staticText>
+							<frame>
+								<reportElement x="0" y="8" width="80" height="28" uuid="8e3fc3ef-4161-40ee-acfa-bc4f7e53a793">
+									<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<frame>
+									<reportElement x="0" y="0" width="28" height="28" uuid="566bcd89-da8b-4e77-931d-47d535e267e8">
+										<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+									</reportElement>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<staticText>
+										<reportElement style="Item SubHeader" x="0" y="0" width="28" height="8" uuid="ac1ad451-a72e-4cb3-8050-90dc44e566de"/>
+										<text><![CDATA[Day]]></text>
+									</staticText>
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Item Data Centered" x="0" y="8" width="28" height="20" uuid="b37e1754-8b64-4727-bd6c-d8b5a9dc0376"/>
+										<textFieldExpression><![CDATA[$F{REACT_ONSET_DAY_4}]]></textFieldExpression>
+									</textField>
+								</frame>
+								<frame>
+									<reportElement x="28" y="0" width="26" height="28" uuid="ee033fcc-2a63-4fba-ad3c-445a3061050d">
+										<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+									</reportElement>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<staticText>
+										<reportElement style="Item SubHeader" x="0" y="0" width="26" height="8" uuid="ea667dfa-ab3e-466e-bb7d-0cc2514c3170"/>
+										<text><![CDATA[Month]]></text>
+									</staticText>
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Item Data Centered" x="0" y="8" width="26" height="20" uuid="a3c42149-689f-47ae-af18-1225e83c0efb"/>
+										<textFieldExpression><![CDATA[!$V{IS_PRIVACY}? $F{REACT_ONSET_MONTH_5} : ""]]></textFieldExpression>
+									</textField>
+								</frame>
+								<frame>
+									<reportElement x="54" y="0" width="26" height="28" uuid="0cad2481-d856-438a-ac6c-341dfc56c0cd">
+										<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+									</reportElement>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<staticText>
+										<reportElement style="Item SubHeader" x="0" y="0" width="26" height="8" uuid="d01a7dfe-638d-4cd3-a591-dea2b1da33fd"/>
+										<text><![CDATA[Year]]></text>
+									</staticText>
+									<textField>
+										<reportElement style="Item Data Centered" x="0" y="8" width="26" height="20" uuid="860ab107-c3f2-4dc6-9c84-a7a3ed732ab9"/>
+										<textFieldExpression><![CDATA[$F{REACT_ONSET_YEAR_6}]]></textFieldExpression>
+									</textField>
+								</frame>
+							</frame>
+							<staticText>
+								<reportElement key="" style="Item Data Centered" x="0" y="16" width="80" height="20" uuid="b659ab9d-fa92-4825-a9ee-83f2b8824842">
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+									<printWhenExpression><![CDATA[$V{IS_PRIVACY}]]></printWhenExpression>
+								</reportElement>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[PRIVACY]]></text>
+							</staticText>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement x="0" y="36" width="396" height="119" uuid="5c828063-5467-4abc-ac2a-a1a98ab062fe">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement key="CASE_SUMMARY" style="Item Data Unicode" x="0" y="16" width="396" height="90" uuid="18ca82f8-157a-460a-8ac1-e14ea1aa4c01">
+								<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+							</reportElement>
+							<textElement markup="none"/>
+							<textFieldExpression><![CDATA[$V{CASE_SUMMARY}]]></textFieldExpression>
+						</textField>
+						<textField evaluationTime="Page">
+							<reportElement style="Item Footer" mode="Transparent" x="0" y="108" width="396" height="10" uuid="988db155-3f88-416a-88a4-de65013bbea0"/>
+							<textFieldExpression><![CDATA[(IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "CASE_SUMMARY") || $V{CONTINUE_13})  ? "(Continued on Additional Information Page)" : ""]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Item Header" x="0" y="0" width="396" height="16" uuid="9c0d31c2-5ec0-4d6b-bdb1-0b51981f5434"/>
+							<textFieldExpression><![CDATA["7 + 13 DESCRIBE REACTION(S) (including relevant tests/lab data)" +"\n"+"Event Verbatim "+( $F{CIOMS_PT_OR_LLT_SWITCH}==0? "[LOWER LEVEL TERM]": "[PREFERRED TERM]" )+" (Related symptoms if any separated by commas)"]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="396" y="0" width="108" height="155" uuid="e5b1d125-4951-470e-82ec-33be23681933">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement style="Item Header" x="18" y="0" width="90" height="36" uuid="5f3427d2-4917-4d74-b2ce-f0390ef78230"/>
+						<text><![CDATA[CHECK ALL
+APPROPRIATE TO
+ADVERSE REACTION]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="0" y="0" width="18" height="36" uuid="a13b6c5a-e89a-4a00-b79e-8d10970c46da"/>
+						<box topPadding="2" leftPadding="0"/>
+						<textElement textAlignment="Center">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[8-12]]></text>
+					</staticText>
+					<frame>
+						<reportElement x="6" y="36" width="102" height="119" uuid="39e488e6-7fd3-45af-9ad2-a2258f301897"/>
+						<textField>
+							<reportElement style="Checkbox Text Top" x="12" y="0" width="90" height="19" isPrintWhenDetailOverflows="true" uuid="8957874d-a947-499b-915c-9f47d64d0226"/>
+							<textFieldExpression><![CDATA["PATIENT DIED"+ ("1".equals($F{PAT_DIED_8}) && !($F{DATE_OF_DEATH_9}.isEmpty() || $F{DATE_OF_DEATH_9}==null) ? "\nDate: " + T($F{DATE_OF_DEATH_9}) : "")]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement style="Checkbox Text Top" x="12" y="22" width="90" height="22" uuid="0a745007-7792-4c64-915f-7ec84faddc00"/>
+							<text><![CDATA[INVOLVED OR
+PROLONGED INPATIENT
+HOSPITALISATION]]></text>
+						</staticText>
+						<textField>
+							<reportElement style="Checkbox Marker" x="0" y="22" width="10" height="10" uuid="9474d9ad-c20b-4efe-b9de-2895a9fa9ed8"/>
+							<textFieldExpression><![CDATA["1".equals($F{PAT_HOSPITALISED_10})?"X":""]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Marker" x="0" y="46" width="10" height="10" uuid="86acd838-47f3-48f4-a619-1b7119ad81ae">
+								<printWhenExpression><![CDATA[$F{CIOMS_SER_CRITERIA_CNT}==1]]></printWhenExpression>
+							</reportElement>
+							<textFieldExpression><![CDATA["1".equals($F{PAT_DISABILITY_11})?"X":""]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Marker" x="0" y="73" width="10" height="10" uuid="c14077a4-e5ae-4b76-92be-6fbac89215c6">
+								<printWhenExpression><![CDATA[$F{CIOMS_SER_CRITERIA_CNT}==1]]></printWhenExpression>
+							</reportElement>
+							<textFieldExpression><![CDATA["1".equals($F{LIFE_THREATENING_12})?"X":""]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Marker" x="0" y="90" width="10" height="10" uuid="fdc3e6ef-9533-4c5a-8915-592557afdc20">
+								<printWhenExpression><![CDATA[$F{CIOMS_SER_CRITERIA_CNT}==1]]></printWhenExpression>
+							</reportElement>
+							<textFieldExpression><![CDATA["1".equals($F{FLAG_CONGENITAL_AN_14})?"X":""]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Marker" x="0" y="104" width="10" height="10" uuid="dabaae06-893a-4917-9ffe-5e042b228269"/>
+							<textFieldExpression><![CDATA[$F{CIOMS_SER_CRITERIA_CNT}==0 ? ("1".equals($F{LIFE_THREATENING_12})?"X":"") : ("1".equals($F{FLAG_OTHER_SER_14})?"X":"")]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Marker" x="0" y="0" width="10" height="10" uuid="987b3a84-1df5-4e10-9658-5fae641ee873"/>
+							<textFieldExpression><![CDATA["1".equals($F{PAT_DIED_8})?"X":""]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Text Top" x="12" y="46" width="90" height="73" uuid="b211027d-428b-40e6-a698-97488fc33d1f"/>
+							<textFieldExpression><![CDATA[($F{CIOMS_SER_CRITERIA_CNT}==0 ? "\n\n\n" : "")+("INVOLVED PERSISTENT\nOR SIGNIFICANT\nDISABILITY OR\nINCAPACITY")+($F{CIOMS_SER_CRITERIA_CNT}==0 ? "\n\n\n\n" : "\n\n")+"LIFE THREATENING"+($F{CIOMS_SER_CRITERIA_CNT}==1 ? "\n\n\nCONGENITAL ANOMALY\n\nOTHER"+($F{OTHER_SER_TXT_14}.isEmpty()?"" : ": "+$F{OTHER_SER_TXT_14}) : "")]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Marker" x="0" y="63" width="10" height="10" uuid="074c2d4c-8d43-470b-be03-2393877e8fd5">
+								<printWhenExpression><![CDATA[$F{CIOMS_SER_CRITERIA_CNT}==0]]></printWhenExpression>
+							</reportElement>
+							<textFieldExpression><![CDATA["1".equals($F{PAT_DISABILITY_11})?"X":""]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+			</frame>
+			<staticText>
+				<reportElement style="Section Header" x="0" y="176" width="504" height="20" uuid="fc736f44-f641-40b5-ac54-e380e668f88c"/>
+				<text><![CDATA[II SUSPECT DRUG(S) INFORMATION]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="196" width="504" height="122" uuid="a951d92e-c237-4750-83d3-f8af2aa706ee"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<frame>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="396" height="122" uuid="05c5ad18-bda8-4905-97f3-5e8a6cc6fb5e">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					</reportElement>
+					<frame>
+						<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="396" height="32" printWhenGroupChanges="Case Number" uuid="3969dae4-0070-461a-8b1e-644029b16621">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<staticText>
+							<reportElement style="Item Header" x="0" y="0" width="396" height="10" uuid="958aa9a1-fe1f-4902-a275-7a976611470b"/>
+							<text><![CDATA[14. SUSPECT DRUG(S) (include generic name)]]></text>
+						</staticText>
+						<textField>
+							<reportElement key="SUS_PRODUCT_NAME_ALL_14" style="Item Data Unicode" stretchType="RelativeToTallestObject" x="0" y="10" width="265" height="22" uuid="16f0b61c-0415-4a24-8bcd-64291eda31aa">
+								<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+							</reportElement>
+							<textElement markup="none"/>
+							<textFieldExpression><![CDATA[HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).split("\n")[0].substring(0,Math.min(55, HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).split("\n")[0].length())) + (HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).contains("\n") ? ("\n" + HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).split("\n")[1].substring(0,Math.min(55, HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).split("\n")[1].length()))) : "")]]></textFieldExpression>
+						</textField>
+						<textField evaluationTime="Page">
+							<reportElement style="Item Footer" mode="Transparent" x="265" y="21" width="130" height="10" isRemoveLineWhenBlank="true" uuid="43a781f7-c6f6-4e86-9601-c67ffd0e796d"/>
+							<textFieldExpression><![CDATA[(IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "SUS_PRODUCT_NAME_ALL_14", "DAILY_DOSES_ALL_15", "ROUTE_OF_ADMIN_ALL_16") || $V{CONTINUE_14})  ? "(Continued on Additional Information Page)" : ""]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement positionType="Float" x="0" y="32" width="396" height="30" uuid="b38a78ba-700a-4b1e-aaff-a7ab6b53aa0d">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<frame>
+							<reportElement x="0" y="0" width="238" height="30" uuid="782ed3fa-cc5f-403e-af0b-8a85dbaeb6ec">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item Header" x="0" y="0" width="238" height="10" uuid="0edc83b0-b6a1-4b05-93c4-71924fb66f32"/>
+								<text><![CDATA[15. DAILY DOSE(S)]]></text>
+							</staticText>
+							<textField>
+								<reportElement key="DAILY_DOSES_ALL_15" style="Item Data Unicode" x="0" y="10" width="238" height="19" uuid="ed44426e-9fc1-4f36-9e57-40bdc6fb1058">
+									<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+								</reportElement>
+								<textFieldExpression><![CDATA[HEAD_ROWS($F{DAILY_DOSES_ALL_15})]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="238" y="0" width="158" height="30" uuid="5da0a3ad-5be9-4393-a28a-8b366b6ad26a">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item Header" x="0" y="0" width="158" height="10" uuid="d6f059e6-4097-48a7-9798-7eb554770bfa"/>
+								<text><![CDATA[16. ROUTE(S) OF ADMINISTRATION]]></text>
+							</staticText>
+							<textField isStretchWithOverflow="true">
+								<reportElement key="ROUTE_OF_ADMIN_ALL_16" style="Item Data Unicode" x="0" y="10" width="158" height="20" uuid="53f44913-ccc8-4708-9183-d6bf2127daa3">
+									<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+								</reportElement>
+								<textFieldExpression><![CDATA[HEAD_ROWS($F{ROUTE_OF_ADMIN_ALL_16})]]></textFieldExpression>
+							</textField>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement positionType="Float" x="0" y="62" width="396" height="30" uuid="e1f5871f-42b3-46e3-84a9-108963b72890">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<staticText>
+							<reportElement style="Item Header" x="0" y="0" width="396" height="10" uuid="f72f7021-0ae3-44e4-a511-7e66b99982b5"/>
+							<text><![CDATA[17. INDICATION(S) FOR USE]]></text>
+						</staticText>
+						<textField>
+							<reportElement key="INDICATION_ALL_17" style="Item Data Unicode" x="0" y="10" width="265" height="20" uuid="e5e4025b-8672-4460-b83a-4df55b60c9a3">
+								<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+							</reportElement>
+							<textFieldExpression><![CDATA[HEAD_ROWS($F{INDICATION_ALL_17})]]></textFieldExpression>
+						</textField>
+						<textField evaluationTime="Page">
+							<reportElement style="Item Footer" mode="Transparent" x="265" y="18" width="130" height="10" isRemoveLineWhenBlank="true" uuid="e739e310-9314-4ed3-9eaa-af9f44e5611f"/>
+							<textFieldExpression><![CDATA[(IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "INDICATION_ALL_17", "THERAPY_DATES_ALL_18", "THERAPY_DURATION_19") || $V{CONTINUE_17})  ? "(Continued on Additional Information Page)" : ""]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement positionType="Float" x="0" y="92" width="396" height="30" uuid="24e462f0-946f-4760-9db2-b96be858f71f"/>
+						<box>
+							<topPen lineWidth="1.0"/>
+						</box>
+						<frame>
+							<reportElement x="0" y="0" width="238" height="30" uuid="ee374fd7-d705-43b2-a169-f9501adf8eca">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item Header" x="0" y="0" width="238" height="10" uuid="5074828d-c46d-4c13-bef8-2b04d2db4b93"/>
+								<text><![CDATA[18. THERAPY DATES(from/to)]]></text>
+							</staticText>
+							<textField>
+								<reportElement key="THERAPY_DATES_ALL_18" style="Item Data" x="0" y="10" width="238" height="20" uuid="d22592d8-3e39-449d-b68b-0984d9395522">
+									<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+								</reportElement>
+								<textFieldExpression><![CDATA[HEAD_ROWS($F{THERAPY_DATES_ALL_18})]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="238" y="0" width="158" height="30" uuid="ebd7113e-59f0-4a17-9b9c-ff1e2ecb704a">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="Item Header" x="0" y="0" width="158" height="10" uuid="2b4726e7-1dba-4fef-a767-820548f80bf9"/>
+								<text><![CDATA[19. THERAPY DURATION]]></text>
+							</staticText>
+							<textField>
+								<reportElement key="THERAPY_DURATION_19" style="Item Data" x="0" y="10" width="158" height="20" uuid="506240d4-8b00-479c-b3b4-60068c64711a">
+									<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+								</reportElement>
+								<textFieldExpression><![CDATA[HEAD_ROWS($F{THERAPY_DURATION_19})]]></textFieldExpression>
+							</textField>
+						</frame>
+					</frame>
+				</frame>
+				<frame>
+					<reportElement stretchType="RelativeToTallestObject" x="396" y="0" width="108" height="122" uuid="5fe13c34-ee87-4421-ad74-5a68fed3dd21">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<frame>
+						<reportElement x="0" y="0" width="108" height="61" uuid="fdc67e22-e4b1-4306-8d71-2cc9c4d92f1d"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<staticText>
+							<reportElement style="Item Header" x="0" y="0" width="13" height="10" uuid="0547e121-c929-4606-9cdd-17725e443ad1"/>
+							<text><![CDATA[20.]]></text>
+						</staticText>
+						<staticText>
+							<reportElement style="Item Header" x="13" y="0" width="70" height="24" uuid="67172fd3-5c8c-4e1d-bde3-4deefc18590a"/>
+							<text><![CDATA[DID REACTION ABATE AFTER STOPPING DRUG?]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="" style="Checkbox Text" x="23" y="39" width="17" height="8" uuid="1c98a3a4-d03b-4170-804e-3376f30931a0"/>
+							<text><![CDATA[YES]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="" style="Checkbox Text" x="49" y="39" width="14" height="8" uuid="1dd6bcfb-9e2c-4e76-8b3a-929b0680db88"/>
+							<text><![CDATA[NO]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="" style="Checkbox Text" x="71" y="39" width="14" height="8" uuid="d28171dc-7b2b-4fff-bb46-0f218e8a9dc5"/>
+							<text><![CDATA[NA]]></text>
+						</staticText>
+						<textField>
+							<reportElement style="Checkbox Marker Small" x="15" y="39" width="8" height="8" uuid="358b04d3-1743-474a-b246-3c629fde95d8"/>
+							<textFieldExpression><![CDATA["1".equals($F{REACT_DECHAL_OUTCOME_20})?"X":""]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Marker Small" x="41" y="39" width="8" height="8" uuid="a30af86a-ef6a-423b-bf9e-edbe0a209097"/>
+							<textFieldExpression><![CDATA["0".equals($F{REACT_DECHAL_OUTCOME_20})?"X":""]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Marker Small" x="63" y="39" width="8" height="8" uuid="7576f037-a23d-4b24-aaf1-9cbb8c50034c"/>
+							<textFieldExpression><![CDATA["2".equals($F{REACT_DECHAL_OUTCOME_20})?"X":""]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="0" y="61" width="108" height="61" uuid="2996a33b-dcfb-444e-8d05-1544b4bddd17"/>
+						<box>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<staticText>
+							<reportElement style="Item Header" x="0" y="0" width="13" height="10" uuid="c3103c6b-b33e-422e-b211-18bdbe13ea48"/>
+							<text><![CDATA[21.]]></text>
+						</staticText>
+						<staticText>
+							<reportElement style="Item Header" x="13" y="0" width="70" height="24" uuid="c7067c50-2be7-4de3-acc3-7cba6bf7c78f"/>
+							<text><![CDATA[DID REACTION REAPPEAR AFTER
+REINTRODUCTION?]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="" style="Checkbox Text" x="23" y="40" width="17" height="8" uuid="694e72c7-810a-4727-99f0-f420662b673d"/>
+							<text><![CDATA[YES]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="" style="Checkbox Text" x="49" y="40" width="14" height="8" uuid="2e128e82-072c-4249-b292-39ba986b20b5"/>
+							<text><![CDATA[NO]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="" style="Checkbox Text" x="71" y="40" width="14" height="8" uuid="414f7271-790d-4a60-9aed-41c60e56056a"/>
+							<text><![CDATA[NA]]></text>
+						</staticText>
+						<textField>
+							<reportElement style="Checkbox Marker Small" x="15" y="40" width="8" height="8" uuid="cc254440-2fa9-46c6-9de5-8fca5ddd8fc7"/>
+							<textFieldExpression><![CDATA["1".equals($F{REACT_RECHAL_OUTCOME_21})?"X":""]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Marker Small" x="41" y="40" width="8" height="8" uuid="7fb8451f-ed88-491e-8819-34cdf095fe7a"/>
+							<textFieldExpression><![CDATA["0".equals($F{REACT_RECHAL_OUTCOME_21})?"X":""]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement style="Checkbox Marker Small" x="63" y="40" width="8" height="8" uuid="01ac3fcc-707f-4f24-92e0-65ab6f88b2bb"/>
+							<textFieldExpression><![CDATA["2".equals($F{REACT_RECHAL_OUTCOME_21})?"X":""]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+			</frame>
+			<staticText>
+				<reportElement style="Section Header" x="0" y="318" width="504" height="20" uuid="587dc856-e253-4c11-9353-7e1b3325d18d"/>
+				<text><![CDATA[III CONCOMITANT DRUG(S) AND HISTORY]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="338" width="504" height="150" uuid="be220b27-9922-4852-a9fb-575af5174da1">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="504" height="75" uuid="c50f5df0-889a-487c-aeda-216e13d895cf">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement style="Item Header" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="504" height="12" uuid="3ae26c7a-d150-4a13-b11c-ac982ac32465"/>
+						<text><![CDATA[22. CONCOMITANT DRUG(S) AND DATES OF ADMINISTRATION (exclude those used to treat reaction)]]></text>
+					</staticText>
+					<textField>
+						<reportElement key="CONMEDS_PRODUCTS_DATES_22" style="Item Data Unicode" x="0" y="12" width="504" height="51" uuid="3ef95cb0-56bc-4546-a8ac-0feeced66641">
+							<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+						</reportElement>
+						<textFieldExpression><![CDATA[$F{CONMEDS_PRODUCTS_DATES_22}]]></textFieldExpression>
+					</textField>
+					<textField evaluationTime="Page">
+						<reportElement style="Item Footer" mode="Transparent" x="0" y="65" width="504" height="10" isRemoveLineWhenBlank="true" uuid="bf7700bf-dd7d-4c35-9cf7-2991326836e2"/>
+						<textFieldExpression><![CDATA[IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "CONMEDS_PRODUCTS_DATES_22") ? "(Continued on Additional Information Page)" : ""]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="75" width="504" height="75" uuid="6332e6d9-a584-45b3-94e6-cd78a5f9ad77"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textField evaluationTime="Page">
+						<reportElement style="Item Footer" positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" x="0" y="64" width="504" height="10" isRemoveLineWhenBlank="true" uuid="e576dd78-3e4d-49ed-9b07-6e95d633b26a"/>
+						<textFieldExpression><![CDATA[($V{CONTINUE_23} || IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "OTHER_RELEVANT_HISTORY_23"))? "(Continued on Additional Information Page)" : ""]]></textFieldExpression>
+					</textField>
+					<componentElement>
+						<reportElement x="0" y="0" width="504" height="64" uuid="f3f83030-2418-44a8-ae50-99b5a2f6d9b9">
+							<property name="net.sf.jasperreports.export.headertoolbar.table.name" value="OTHER RELEVANT HISTORY"/>
+						</reportElement>
+						<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+							<datasetRun subDataset="OtherHistory" uuid="c3151dcf-bebe-4a4f-a338-2d23d10f4f3e">
+								<dataSourceExpression><![CDATA[XML_DATA_SOURCE( $F{OTHER_RELEVANT_HISTORY_23}, true )]]></dataSourceExpression>
+							</datasetRun>
+							<jr:columnGroup width="500" uuid="355feef4-40c4-45b1-a802-400be0126b16">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [3]"/>
+								<jr:columnHeader height="10">
+									<staticText>
+										<reportElement style="Item Header" x="0" y="0" width="500" height="10" uuid="c372210d-51b1-4872-9784-2e5d83319ae8"/>
+										<text><![CDATA[23. OTHER RELEVANT HISTORY. (e.g. diagnostics, allergies, pregnancy with last month of period, etc.)]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:column width="150" uuid="9435c9d1-ec90-4507-89ae-cbe32bdfc742">
+									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+									<jr:columnHeader style="Table_CH" height="10">
+										<box leftPadding="0">
+											<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										</box>
+										<staticText>
+											<reportElement style="Table_CH" x="0" y="0" width="149" height="10" uuid="4ab494c6-762c-4f1c-af52-fe08e6420dc7"/>
+											<box>
+												<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+												<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+												<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+												<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											</box>
+											<text><![CDATA[From/To Dates]]></text>
+										</staticText>
+									</jr:columnHeader>
+									<jr:detailCell style="Table_TD" height="12">
+										<textField>
+											<reportElement key="OTHER_RELEVANT_HISTORY_23.DATE" style="Table_TD" x="0" y="0" width="148" height="12" uuid="b81af61e-d7ce-4b1f-a89d-c6ac211b0094">
+												<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+											</reportElement>
+											<textFieldExpression><![CDATA[$F{DATE}]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+								<jr:column width="95" uuid="0a3ad539-fdcd-4615-b565-452c6a77581f">
+									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+									<jr:columnHeader style="Table_CH" height="10">
+										<box leftPadding="0">
+											<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										</box>
+										<staticText>
+											<reportElement style="Table_CH" x="0" y="0" width="94" height="10" uuid="148690e6-3b57-4192-9279-58b25015eb56"/>
+											<box>
+												<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+												<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+												<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+												<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											</box>
+											<text><![CDATA[Type of History / Notes]]></text>
+										</staticText>
+									</jr:columnHeader>
+									<jr:detailCell style="Table_TD" height="12">
+										<textField>
+											<reportElement key="OTHER_RELEVANT_HISTORY_23.NOTES" style="Table_TD" x="0" y="0" width="93" height="12" uuid="85354a5f-8d60-4a0a-ac09-8f3c9e1f433f">
+												<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+											</reportElement>
+											<textFieldExpression><![CDATA[$F{NOTES}]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+								<jr:column width="255" uuid="1e75ba4c-091b-4589-93e7-b9ea416080e7">
+									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+									<jr:columnHeader style="Table_CH" height="10">
+										<box leftPadding="0">
+											<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										</box>
+										<staticText>
+											<reportElement style="Table_CH" x="0" y="0" width="254" height="10" uuid="0aed4188-11a0-4453-9fa8-010cff8c8868"/>
+											<box>
+												<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+												<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+												<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+												<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											</box>
+											<text><![CDATA[Description]]></text>
+										</staticText>
+									</jr:columnHeader>
+									<jr:detailCell style="Table_TD" height="12">
+										<textField>
+											<reportElement key="OTHER_RELEVANT_HISTORY_23.DESC" style="Table_TD" x="0" y="0" width="253" height="12" uuid="94750895-f8be-433f-bca5-fa64ed415970">
+												<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+											</reportElement>
+											<textFieldExpression><![CDATA[$F{DESC}]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+							</jr:columnGroup>
+						</jr:table>
+					</componentElement>
+				</frame>
+			</frame>
+			<staticText>
+				<reportElement style="Section Header" x="0" y="488" width="504" height="17" uuid="c5a4b4d0-2d9a-43ce-bae3-516aa2b37589"/>
+				<text><![CDATA[IV. MANUFACTURER INFORMATION]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="505" width="504" height="157" uuid="3eee5126-a814-48a9-9536-84d4189f611e">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="252" height="157" uuid="fa744b72-d412-442c-bb61-16adef408dad">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<frame>
+						<reportElement x="0" y="0" width="252" height="64" uuid="a99264ae-94bc-4d15-9ba7-2ec49116c7f7"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<staticText>
+							<reportElement style="Item Header" x="0" y="0" width="252" height="12" uuid="96ed1794-4aae-4853-a607-5d90496a2cbd"/>
+							<text><![CDATA[24a. NAME AND ADDRESS OF MANUFACTURER]]></text>
+						</staticText>
+						<textField>
+							<reportElement key="MANU_NAME_ADDRESS_24A" style="Item Data Unicode" x="0" y="12" width="252" height="42" uuid="aef15091-3111-4bc4-a415-3474a67c74ef">
+								<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+							</reportElement>
+							<textFieldExpression><![CDATA[$F{MANU_NAME_ADDRESS_24A}]]></textFieldExpression>
+						</textField>
+						<textField evaluationTime="Page">
+							<reportElement style="Item Footer" mode="Transparent" x="0" y="54" width="252" height="10" isRemoveLineWhenBlank="true" uuid="fe64c01b-e181-4cca-a4b1-1b807cd5e56c"/>
+							<textFieldExpression><![CDATA[IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "MANU_NAME_ADDRESS_24A") ? "(Continued on Additional Information Page)" : ""]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="0" y="64" width="252" height="93" uuid="fa56382f-5db5-4724-ac1a-581e19be3cd3">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="1.0"/>
+						</box>
+						<frame>
+							<reportElement x="0" y="0" width="97" height="93" uuid="761cac3d-88d3-4a8f-871b-4c6b41c8e919">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<frame>
+								<reportElement x="0" y="0" width="97" height="30" uuid="44e472c4-e68d-453e-99c5-618de3e287e3"/>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</frame>
+							<frame>
+								<reportElement x="0" y="30" width="97" height="36" uuid="e378e991-a30b-4726-b988-0c5c02157bae">
+									<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement style="Item Header" x="0" y="0" width="97" height="16" uuid="5f747648-1092-4c1e-b9cc-e9588daa2854"/>
+									<text><![CDATA[24c. DATE RECEIVED
+BY MANUFACTURER]]></text>
+								</staticText>
+								<textField>
+									<reportElement style="Item Data Middle" x="0" y="16" width="97" height="20" uuid="55146651-f956-4fd7-afb5-a5bcc7f54a30"/>
+									<textFieldExpression><![CDATA[UPPER(DATEFORMAT($F{MANU_DATE_RECIEVED_24C}, "dd-MMM-yyyy"))]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="0" y="66" width="97" height="27" uuid="473e0b60-ed36-4ef5-969f-cdceea8600fb">
+									<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement style="Item Header" x="0" y="0" width="97" height="8" uuid="442dec0e-8069-42ad-899d-136da83f50ec"/>
+									<text><![CDATA[DATE OF THIS REPORT]]></text>
+								</staticText>
+								<textField>
+									<reportElement style="Item Data Middle" x="0" y="8" width="97" height="19" uuid="b0eb20ad-6fca-439d-8e8a-184208ecb7d5"/>
+									<textFieldExpression><![CDATA[UPPER(DATEFORMAT($F{REPORT_DATE}, "dd-MMM-yyyy"))]]></textFieldExpression>
+								</textField>
+							</frame>
+						</frame>
+						<frame>
+							<reportElement x="97" y="0" width="154" height="93" uuid="04d20a3a-83cc-48d7-abdf-4469d3fa34f4">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							</reportElement>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<frame>
+								<reportElement x="0" y="0" width="154" height="30" uuid="47e3ab10-04ef-49c2-bc21-3093a4621c20">
+									<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement style="Item Header" x="0" y="0" width="154" height="8" uuid="59de89be-8848-49dc-8620-6d952c160488"/>
+									<text><![CDATA[24b. MFR. CONTROL NO.]]></text>
+								</staticText>
+								<textField>
+									<reportElement style="Item Data Middle" x="0" y="8" width="154" height="22" uuid="2afc5fb9-b07a-4c04-8a6a-8e6829b5fae7"/>
+									<textElement>
+										<font isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{MFR_CONTROL_NO_24B}]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="0" y="30" width="154" height="36" uuid="3ef9ce89-697b-4890-b856-47ab0e1552b3"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement style="Item Header" x="0" y="0" width="154" height="8" uuid="c92a7011-926f-4bc9-bd6a-d8ddb9400d04"/>
+									<text><![CDATA[24d. REPORT SOURCE]]></text>
+								</staticText>
+								<staticText>
+									<reportElement key="" style="Checkbox Text" x="16" y="22" width="54" height="14" uuid="ada8701c-7e8b-4d80-8745-522367685368"/>
+									<textElement verticalAlignment="Top">
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<text><![CDATA[HEALTH PROFESSIONAL]]></text>
+								</staticText>
+								<staticText>
+									<reportElement key="" style="Checkbox Text" x="16" y="10" width="54" height="10" uuid="633583dd-fbc5-4550-8133-d6fac6b3da6a"/>
+									<text><![CDATA[STUDY]]></text>
+								</staticText>
+								<staticText>
+									<reportElement key="" style="Checkbox Text" x="80" y="10" width="54" height="10" uuid="16990b84-77d4-4402-81bb-3c7f0bc22fad"/>
+									<text><![CDATA[LITERATURE]]></text>
+								</staticText>
+								<textField>
+									<reportElement style="Checkbox Marker" x="7" y="10" width="9" height="10" uuid="37c9b2ec-4030-428c-88b0-1b588e69a49b"/>
+									<textFieldExpression><![CDATA["1".equals($F{REPORT_SOURCE_STUDY_24D})?"X":""]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement style="Checkbox Marker" x="7" y="22" width="9" height="10" uuid="ec2903a0-4cb4-4bfe-b934-9630c97ad3bb"/>
+									<textFieldExpression><![CDATA["1".equals($F{REPORT_SOURCE_HP_24D})?"X":""]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement style="Checkbox Marker" x="71" y="10" width="9" height="10" uuid="edb9bde2-338e-4b61-977d-fd5adef1366c"/>
+									<textFieldExpression><![CDATA["1".equals($F{REPORT_SOURCE_LIT_24D})?"X":""]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement style="Checkbox Marker" x="71" y="22" width="9" height="10" uuid="bef54ead-83fc-428e-bcad-4792caec63bb"/>
+									<textFieldExpression><![CDATA["1".equals($F{REPORT_SOURCE_OTHER_24D})?"X":""]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement key="" style="Checkbox Text" x="80" y="22" width="74" height="10" uuid="fd7cb5e4-9adb-4f71-b42d-e3354a5a9d24"/>
+									<textFieldExpression><![CDATA["OTHER: " + ($F{REPORT_SOURCE_OTHER_DESC_24D} !=null ? $F{REPORT_SOURCE_OTHER_DESC_24D} : "")]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="0" y="66" width="154" height="27" uuid="dffbc4f6-405a-4722-a286-27d7e8eec0bf"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement key="" style="Checkbox Text" x="16" y="12" width="29" height="10" uuid="91d3fa6d-8052-4abe-910c-1642e3d74fe7"/>
+									<text><![CDATA[INITIAL]]></text>
+								</staticText>
+								<staticText>
+									<reportElement style="Item Header" x="0" y="0" width="154" height="10" uuid="103f9692-135d-4a83-8b59-faadeb28f1a4"/>
+									<text><![CDATA[25a. REPORT TYPE]]></text>
+								</staticText>
+								<textField>
+									<reportElement key="" style="Checkbox Marker" x="7" y="12" width="9" height="10" uuid="f88b5cc4-53d3-46b8-ac70-7153dc2ba508"/>
+									<textFieldExpression><![CDATA["1".equals($F{REPORT_TYPE_INIT_25A})?"X":""]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement style="Checkbox Marker" x="47" y="12" width="9" height="10" uuid="64fcf141-1a0d-48ed-b697-8a9f79c60f6c"/>
+									<textFieldExpression><![CDATA["1".equals($F{REPORT_TYPE_FOLLOWUP_25A})?"X":""]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement key="" style="Checkbox Text" x="56" y="12" width="78" height="10" uuid="3749b344-515a-4ece-ae90-b7f04b401876"/>
+									<textFieldExpression><![CDATA["FOLLOW-UP : "+("1".equals($F{REPORT_TYPE_FOLLOWUP_25A}) && $F{REPORT_TYPE_FOLLOWUP_NUM_25A} != null && !$F{REPORT_TYPE_FOLLOWUP_NUM_25A}.trim().isEmpty() ? $F{REPORT_TYPE_FOLLOWUP_NUM_25A} : "")]]></textFieldExpression>
+								</textField>
+							</frame>
+						</frame>
+					</frame>
+				</frame>
+				<frame>
+					<reportElement x="252" y="0" width="252" height="157" uuid="5771fb1d-9f46-4133-adfe-d84ef54dc000">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<frame>
+						<reportElement x="0" y="0" width="252" height="64" uuid="c21aee92-ffd3-4b2e-959b-e7dac66480a9"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<staticText>
+							<reportElement style="Item Header" x="0" y="0" width="252" height="12" uuid="cd2e96ff-bc77-4cfb-8994-29f9f16db64e"/>
+							<text><![CDATA[26. REMARKS]]></text>
+						</staticText>
+						<textField>
+							<reportElement style="Item Data Unicode" x="0" y="12" width="252" height="52" uuid="56f9aa74-f772-421e-b12c-9aabdcc076a9"/>
+							<textFieldExpression><![CDATA[$F{REMARKS_26}]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="0" y="64" width="252" height="93" uuid="0136be3d-aa8d-4e24-b14d-e2f629d2c537"/>
+						<box>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<staticText>
+							<reportElement style="Item Header" x="0" y="0" width="252" height="12" uuid="e14ab3fc-7f7b-43ba-b234-21c7e007e23b"/>
+							<text><![CDATA[25b. NAME AND ADDRESS OF REPORTER]]></text>
+						</staticText>
+						<textField>
+							<reportElement key="REPORTER_NAME_ADDRESS_25B" style="Item Data Unicode" x="0" y="12" width="252" height="70" uuid="323c0d56-859b-4596-b590-ec26ec8bfa6d">
+								<property name="net.sf.jasperreports.text.measurer.factory" value="com.rxlogix.dynamicReports.util.KeyFieldMeasurerFactory"/>
+							</reportElement>
+							<textFieldExpression><![CDATA[$F{REPORTER_NAME_ADDRESS_25B}]]></textFieldExpression>
+						</textField>
+						<textField evaluationTime="Page">
+							<reportElement style="Item Footer" mode="Transparent" x="0" y="83" width="252" height="10" isRemoveLineWhenBlank="true" uuid="ad67f8f6-f568-43b4-af3a-ff58ad8d4ff8"/>
+							<textFieldExpression><![CDATA[IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "REPORTER_NAME_ADDRESS_25B") ? "(Continued on Additional Information Page)" : ""]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+			</frame>
+		</band>
+		<band height="263">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+			<printWhenExpression><![CDATA[IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "CASE_SUMMARY", "SUS_PRODUCT_NAME_ALL_14", "DAILY_DOSES_ALL_15", "ROUTE_OF_ADMIN_ALL_16", "INDICATION_ALL_17", "THERAPY_DATES_ALL_18", "THERAPY_DURATION_19",  "CONMEDS_PRODUCTS_DATES_22", "OTHER_RELEVANT_HISTORY_23")  || $V{PRINT_SECOND_PAGE}]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="504" height="48" isRemoveLineWhenBlank="true" uuid="38bd6660-3ef7-405e-adf1-b66869a68d60">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<printWhenExpression><![CDATA[IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "CASE_SUMMARY")]]></printWhenExpression>
+				</reportElement>
+				<staticText>
+					<reportElement style="Table_TH" x="0" y="0" width="504" height="24" uuid="9b7a89d6-badf-40a4-8f36-4036a97744ec"/>
+					<textElement textAlignment="Left" markup="html"/>
+					<text><![CDATA[7 + 13. DESCRIBE REACTION(S) continued]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Item Data Unicode" x="0" y="24" width="504" height="24" isPrintWhenDetailOverflows="true" uuid="4c4abda8-d390-4145-9fb0-928289b65bfd"/>
+					<textFieldExpression><![CDATA[SUB_STRING($V{CASE_SUMMARY}.replace("\r", ""),GET_FIELD_OFFSET($P{JASPER_REPORTS_CONTEXT}, "CASE_SUMMARY"))]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="48" width="504" height="43" isRemoveLineWhenBlank="true" uuid="b23bd7be-5595-43c5-ac5a-a872340d9ee0">
+					<printWhenExpression><![CDATA[$V{CONTINUE_13}]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="5"/>
+				<componentElement>
+					<reportElement key="" x="0" y="0" width="504" height="32" uuid="39b37bb8-b231-45b7-bba7-5b7c334de7c2">
+						<property name="net.sf.jasperreports.export.headertoolbar.table.name" value="Lab Data"/>
+					</reportElement>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+						<datasetRun subDataset="LabData" uuid="45d5ba10-598a-4d75-9ac7-73de815660b2">
+							<dataSourceExpression><![CDATA[XML_DATA_SOURCE( $F{LAB_DATA_13}, false, 0)]]></dataSourceExpression>
+						</datasetRun>
+						<jr:columnGroup width="506" uuid="86476d4d-70fe-489e-a12b-c33f3e7fc7bc">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [5]"/>
+							<jr:columnHeader height="12">
+								<staticText>
+									<reportElement style="Table_TH" x="0" y="0" width="506" height="12" uuid="2c1764d4-917e-4ba7-8b4e-e3e1cb09129d"/>
+									<textElement markup="html"/>
+									<text><![CDATA[13. Lab Data]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="40" uuid="09718d82-9e2d-4e04-98ac-c66d3303380e">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+								<jr:columnHeader style="Table_CH" height="10">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="38" height="10" uuid="df3518a7-6a7b-4adb-8d24-ce0b933666d4"/>
+										<box>
+											<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<bottomPen lineStyle="Solid"/>
+											<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										</box>
+										<text><![CDATA[#]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="38" height="12" uuid="4378f49f-63da-4c3f-b3db-d01f973aa15e"/>
+										<textFieldExpression><![CDATA[$F{ROWNUM}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="75" uuid="2c2a17f6-5dea-48c4-8d43-f5ab56cc818f">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+								<jr:columnHeader style="Table_CH" height="10">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="73" height="10" uuid="4dc2e996-bd02-46d8-80bb-1b38ea360c0c"/>
+										<box>
+											<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<bottomPen lineStyle="Solid"/>
+											<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										</box>
+										<text><![CDATA[Date]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="73" height="12" uuid="dd4124e3-8f45-47d0-8560-c2ab0f578f8a"/>
+										<textFieldExpression><![CDATA[$F{DATE}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="165" uuid="6651eea2-c8c0-4d9e-9e24-cfe9b6f24fec">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+								<jr:columnHeader style="Table_CH" height="10">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="163" height="10" uuid="38ae9ce8-4380-4648-867a-490acddcf93a"/>
+										<box>
+											<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+											<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										</box>
+										<text><![CDATA[Test / Assessment / Notes]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="163" height="12" uuid="b2897a41-0566-4227-a463-f476d684ff47"/>
+										<textFieldExpression><![CDATA[$F{NOTES}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="112" uuid="b14b0cbe-a13f-4805-b3ee-88551030d510">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+								<jr:columnHeader style="Table_CH" height="10">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="110" height="10" uuid="d287019e-bf01-424a-b9d8-72575df43d84"/>
+										<text><![CDATA[Results]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="110" height="12" uuid="cb240434-ee86-4f35-9916-2962dcaeeb07"/>
+										<textFieldExpression><![CDATA[$F{RESULTS}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="114" uuid="688fca56-532e-4591-98ca-a3758fd546fe">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+								<jr:columnHeader style="Table_CH" height="10">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="112" height="10" uuid="e3cd9f6f-5799-470e-9c20-2bee25916f43"/>
+										<text><![CDATA[Normal High / Low]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="112" height="12" uuid="54f29951-74ae-494d-86a2-053d6f7e2784"/>
+										<textFieldExpression><![CDATA[$F{NORM}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+					</jr:table>
+				</componentElement>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="91" width="504" height="43" isRemoveLineWhenBlank="true" uuid="a2d423f1-c29b-403f-a9f5-7623e4ae8703">
+					<printWhenExpression><![CDATA[$V{CONTINUE_REL_TESTS_13}]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="5"/>
+				<staticText>
+					<reportElement style="Table_TH" x="0" y="0" width="504" height="10" uuid="86887a93-0125-43f4-8cc4-4ad86661ac9d"/>
+					<box leftPadding="0"/>
+					<textElement textAlignment="Left" markup="html">
+						<font size="7"/>
+					</textElement>
+					<text><![CDATA[13. Relevant Tests]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="" style="Item Data Unicode" x="0" y="10" width="504" height="12" uuid="ced2b757-8cf2-4ce1-9644-b065ad4a49da"/>
+					<textFieldExpression><![CDATA[$F{REL_TESTS_13}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="134" width="504" height="43" isRemoveLineWhenBlank="true" uuid="88594687-a8f1-4041-8dbf-e8bf987ffd3b">
+					<printWhenExpression><![CDATA[$V{CONTINUE_14} || $V{CONTINUE_17} || IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "SUS_PRODUCT_NAME_ALL_14", "DAILY_DOSES_ALL_15", "ROUTE_OF_ADMIN_ALL_16", "INDICATION_ALL_17", "THERAPY_DATES_ALL_18", "THERAPY_DURATION_19")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="5"/>
+				<componentElement>
+					<reportElement x="0" y="0" width="504" height="41" uuid="c5e96f13-fb2b-4853-bba4-85dee20352e2">
+						<property name="net.sf.jasperreports.export.headertoolbar.table.name" value="SUSPECT DRUG(S)"/>
+					</reportElement>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+						<datasetRun subDataset="SuspectDrugs" uuid="ef9d8584-ef3f-4934-97ea-9e9689898aee">
+							<dataSourceExpression><![CDATA[XML_DATA_SOURCE( $F{ADDITIONAL_14}, false, (($V{IS_TRUNCATED_14} || (HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).split("\n")[0].length() > 55) || (HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).contains("\n") ? (HEAD_ROWS($F{SUS_PRODUCT_NAME_ALL_14}).split("\n")[1].length() > 55) : false) || $V{IS_TRUNCATED_17} ||IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "SUS_PRODUCT_NAME_ALL_14", "DAILY_DOSES_ALL_15", "ROUTE_OF_ADMIN_ALL_16", "INDICATION_ALL_17", "THERAPY_DATES_ALL_18", "THERAPY_DURATION_19")) ? 0 : 2))]]></dataSourceExpression>
+						</datasetRun>
+						<jr:columnGroup width="506" uuid="dc2cbb2d-b7d6-4598-88df-63ea4decee01">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [4]"/>
+							<jr:columnHeader style="Table_TH" height="12">
+								<staticText>
+									<reportElement style="Table_TH" x="0" y="0" width="506" height="12" uuid="b0649499-3c4b-453b-9d94-851e05d7a2b5"/>
+									<text><![CDATA[14-19. SUSPECT DRUG(S) continued]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="175" uuid="02455f86-3ff3-4021-943c-f6d839108787">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+								<jr:columnHeader style="Table_CH" height="20">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="173" height="20" uuid="4f391f12-574a-447f-bf3a-a087bbfdbbb6"/>
+										<text><![CDATA[14. SUSPECT DRUG(S) (include generic name)]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="173" height="12" uuid="ebcb400d-5e1a-49c8-8913-52540ad5f384"/>
+										<textFieldExpression><![CDATA[$F{NAME_1}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="103" uuid="75a87305-a174-4272-895c-2f3628bb51a1">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+								<jr:columnHeader style="Table_CH" height="20">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="101" height="20" uuid="aafef3a2-5d45-4694-a7cf-6df772e6751c"/>
+										<textElement markup="html"/>
+										<text><![CDATA[15. DAILY DOSE(S);<br>16. ROUTE(S) OF ADMIN]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="101" height="12" uuid="869972e1-9f3b-4c2d-bab6-bb03fc3b96be"/>
+										<textFieldExpression><![CDATA[$F{DOSE_ROUTE_1}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="116" uuid="7760ca8a-e46d-4418-8832-119a4127e1c7">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+								<jr:columnHeader style="Table_CH" height="20">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="114" height="20" uuid="139d85e2-09bd-4ac4-9050-7130739ef3b0"/>
+										<text><![CDATA[17. INDICATION(S) FOR USE]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="114" height="12" uuid="10737fbf-7223-4b1f-941d-86aa693e0cc0"/>
+										<textFieldExpression><![CDATA[$F{INDICATIONS_1}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="112" uuid="f506639b-a576-47d8-824d-3e05f1156eae">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+								<jr:columnHeader style="Table_CH" height="20">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="110" height="20" uuid="f9942538-4af2-49a9-bab0-927ace775dbf"/>
+										<textElement markup="html"/>
+										<text><![CDATA[18. THERAPY DATES (from/to);<br>19. THERAPY DURATION]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="110" height="12" uuid="8e7509f8-e55f-447a-a2da-64bfbdd683d0"/>
+										<textFieldExpression><![CDATA[$F{THERAPY_DATE_DUR_1}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+					</jr:table>
+				</componentElement>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="177" width="504" height="43" isRemoveLineWhenBlank="true" uuid="e3b235df-462d-42d7-9409-a6802496259e">
+					<printWhenExpression><![CDATA[IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "CONMEDS_PRODUCTS_DATES_22")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="5"/>
+				<staticText>
+					<reportElement style="Table_TH" x="0" y="0" width="504" height="10" uuid="21838a52-4e5c-47f5-b6fb-d27f3b04108b"/>
+					<box leftPadding="0"/>
+					<textElement textAlignment="Left" markup="html">
+						<font size="7"/>
+					</textElement>
+					<text><![CDATA[22. CONCOMITANT DRUG(S) AND DATES OF ADMINISTRATION continued]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="" style="Item Data Unicode" x="0" y="10" width="504" height="12" uuid="6be6ce43-c62f-4228-a8cb-956c1dd02ee4"/>
+					<textFieldExpression><![CDATA[SUB_STRING($F{CONMEDS_PRODUCTS_DATES_22}.replace("\r", ""), GET_FIELD_OFFSET($P{JASPER_REPORTS_CONTEXT}, "CONMEDS_PRODUCTS_DATES_22"))]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="220" width="504" height="43" isRemoveLineWhenBlank="true" uuid="6a3edbb4-d115-4450-af24-75defc649e97">
+					<printWhenExpression><![CDATA[$V{CONTINUE_23} || IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "OTHER_RELEVANT_HISTORY_23")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="5"/>
+				<componentElement>
+					<reportElement x="0" y="0" width="504" height="32" uuid="a745f754-1d1f-46a4-ab58-ca680633f3ed">
+						<property name="net.sf.jasperreports.export.headertoolbar.table.name" value="OTHER RELEVANT HISTORY"/>
+					</reportElement>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+						<datasetRun subDataset="OtherHistory" uuid="43c1a84b-eac8-481b-882d-12a5cbc63547">
+							<dataSourceExpression><![CDATA[XML_DATA_SOURCE( $F{OTHER_RELEVANT_HISTORY_23}, false, (GET_FIELD_OFFSET($P{JASPER_REPORTS_CONTEXT}, "OTHER_RELEVANT_HISTORY_23")))]]></dataSourceExpression>
+						</datasetRun>
+						<jr:columnGroup width="508" uuid="90eddb19-eda4-4420-825a-3ab45eeb6086">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [3]"/>
+							<jr:columnHeader height="10">
+								<staticText>
+									<reportElement style="Table_TH" x="0" y="0" width="508" height="10" uuid="05239f11-5d97-4de9-8061-ca79e78dae3e"/>
+									<text><![CDATA[23. OTHER RELEVANT HISTORY continued]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="150" uuid="4cc85324-94ad-4c5f-833c-141e320f2c58">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+								<jr:columnHeader style="Table_CH" height="10">
+									<box>
+										<topPen lineWidth="0.0"/>
+										<leftPen lineWidth="0.0"/>
+										<bottomPen lineWidth="1.0"/>
+										<rightPen lineWidth="0.0"/>
+									</box>
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="148" height="10" uuid="6063c255-4539-4ffa-8bd0-2a3d934e7080"/>
+										<text><![CDATA[From/To Dates]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="148" height="12" uuid="f3106487-1a37-4cee-b3ce-b7b64675b032"/>
+										<textFieldExpression><![CDATA[$F{DATE}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="95" uuid="e273b870-b7a4-4e46-8362-5de86916bc6d">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+								<jr:columnHeader style="Table_CH" height="10">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="93" height="10" uuid="bd68fa2e-c29c-467e-8633-7c1ccd08e57c"/>
+										<text><![CDATA[Type of History / Notes]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="93" height="12" uuid="126fa7c9-3c39-4505-9e5a-5e789c7f93e6"/>
+										<textFieldExpression><![CDATA[$F{NOTES}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="263" uuid="1e741d46-eb15-4845-9ed6-b17a83f0d518">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+								<jr:columnHeader style="Table_CH" height="10">
+									<staticText>
+										<reportElement style="Table_CH" x="0" y="0" width="261" height="10" uuid="45bb0331-0ca7-4d2d-832c-13ca3666f840"/>
+										<text><![CDATA[Description]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="12">
+									<textField isStretchWithOverflow="true">
+										<reportElement style="Table_TD" x="0" y="0" width="261" height="12" uuid="538fa49a-c74b-44b1-a41c-7b6760419283"/>
+										<textFieldExpression><![CDATA[$F{DESC}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+					</jr:table>
+				</componentElement>
+			</frame>
+		</band>
+		<band height="43">
+			<printWhenExpression><![CDATA[IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "MANU_NAME_ADDRESS_24A")]]></printWhenExpression>
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="504" height="43" isRemoveLineWhenBlank="true" uuid="80de65d7-a866-4fc3-926c-376173e0131a">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<printWhenExpression><![CDATA[IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "MANU_NAME_ADDRESS_24A")]]></printWhenExpression>
+				</reportElement>
+				<staticText>
+					<reportElement style="Table_TH" x="0" y="0" width="504" height="22" uuid="17fdcdaa-1e88-4b81-ab79-64c90b20e77e"/>
+					<textElement textAlignment="Left" markup="html"/>
+					<text><![CDATA[24a. NAME AND ADDRESS OF MANUFACTURER continued]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Item Data Unicode" x="0" y="22" width="504" height="21" isPrintWhenDetailOverflows="true" uuid="6f6deabe-6abe-4b37-b352-3374d91d148d"/>
+					<textFieldExpression><![CDATA[SUB_STRING($F{MANU_NAME_ADDRESS_24A}.replace("\r", ""), GET_FIELD_OFFSET($P{JASPER_REPORTS_CONTEXT}, "MANU_NAME_ADDRESS_24A"))]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="86">
+			<printWhenExpression><![CDATA[IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "REPORTER_NAME_ADDRESS_25B")  || $V{PRINT_SECOND_PAGE}]]></printWhenExpression>
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="504" height="43" isRemoveLineWhenBlank="true" uuid="649744e4-62cd-4c2f-9f22-092a3ab03ff0">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<printWhenExpression><![CDATA[$V{CONTINUE_24D}]]></printWhenExpression>
+				</reportElement>
+				<staticText>
+					<reportElement style="Table_TH" x="0" y="0" width="504" height="22" uuid="4b45d2cc-bf2a-4c02-beaa-e501230b0d6c"/>
+					<textElement textAlignment="Left" markup="html"/>
+					<text><![CDATA[24d. Report Source Literature]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Item Data Unicode" x="0" y="22" width="504" height="21" isPrintWhenDetailOverflows="true" uuid="8e947e58-10df-40a8-bfbf-fc17d38db926"/>
+					<textFieldExpression><![CDATA[$F{LITERATURE_24D}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="43" width="504" height="43" isRemoveLineWhenBlank="true" uuid="07f1c6a5-f6b4-424b-837c-2ade4b7970ba">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<printWhenExpression><![CDATA[IS_FIELD_PARTIALLY_RENDERED($P{JASPER_REPORTS_CONTEXT}, "REPORTER_NAME_ADDRESS_25B")]]></printWhenExpression>
+				</reportElement>
+				<staticText>
+					<reportElement style="Table_TH" x="0" y="0" width="504" height="22" uuid="f2c7792b-a8f9-4727-9ae9-2f42a6a1e017"/>
+					<textElement textAlignment="Left" markup="html"/>
+					<text><![CDATA[25b. NAME AND ADDRESS OF REPORTER continued]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Item Data Unicode" x="0" y="22" width="504" height="21" isPrintWhenDetailOverflows="true" uuid="ef0892af-e268-439e-8d2d-fb7141662d28"/>
+					<textFieldExpression><![CDATA[SUB_STRING($F{REPORTER_NAME_ADDRESS_25B}.replace("\r", ""), GET_FIELD_OFFSET($P{JASPER_REPORTS_CONTEXT}, "REPORTER_NAME_ADDRESS_25B")) + "\n"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="12">
+			<textField>
+				<reportElement style="Item Data" positionType="FixRelativeToBottom" x="0" y="0" width="504" height="12" uuid="bac1562d-60ee-4726-b5a3-9fb06749433a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[UPPER(DATEFORMAT(new Date(),"dd-MMM-yyyy HH:mm"))]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

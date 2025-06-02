@@ -1,0 +1,20 @@
+{
+  "sProcessing":   "処理中...",
+  "sLengthMenu":   "_MENU_ 件表示",
+  "sEmptyTable":   "テーブルにデータが存在しません",
+  "sZeroRecords":  "データはありません。",
+  "sInfo":         " _TOTAL_ 件中 _START_ 件目から _END_ 件目まで表示",
+  "sInfoEmpty":    " 0 件中 0 件目から 0 件目まで表示",
+  "sInfoFiltered": "（全 _MAX_ 件より抽出）",
+  "sInfoPostFix":  "",
+  "sSearch":       "",
+  "searchPlaceholder":  "検索:",
+  "sUrl":          "",
+
+  "oPaginate": {
+    "sFirst": "<i class='md md-chevron-double-left'></i>",
+    "sPrevious": "<i class='md md-chevron-left'></i>",
+    "sNext": "<i class='md md-chevron-right'></i>",
+    "sLast": "<i class='md md-chevron-double-right'></i>"
+  }
+}

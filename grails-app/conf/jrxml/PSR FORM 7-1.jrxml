@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="541" leftMargin="15" rightMargin="27" topMargin="27" bottomMargin="27" uuid="e5199f60-d4c4-44cc-8945-deca1419b45b">
+	<property name="net.sf.jasperreports.data.adapter" value="repo:/templates/13234/data/adapter.xml"/>
+	<property name="ireport.jasperserver.url" value="http://10.100.22.130:8080/reports/"/>
+	<property name="ireport.jasperserver.user" value="admin"/>
+	<property name="ireport.jasperserver.report.resource" value="/templates/13234/data/PSR FORM 7-1.jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/templates/13234/reportUnit"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="net.sf.jasperreports.export.docx.flexible.row.height" value="true"/>
+	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
+	<property name="net.sf.jasperreports.export.pdf.size.page.to.content" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.rows" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.columns" value="true"/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.wrap.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.font.size.fix.enabled" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.collapse.row.span" value="false"/>
+	<property name="net.sf.jasperreports.export.ignore.page.margins" value="true"/>
+	<style name="htmlFont" fontName="MS Mincho">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{PV_outputFormat} == null || "HTML".equals($P{PV_outputFormat})]]></conditionExpression>
+			<style fontSize="14"/>
+		</conditionalStyle>
+	</style>
+	<style name="Header" style="htmlFont" fontName="MS Mincho">
+		<paragraph lineSpacing="Fixed" lineSpacingSize="10.0" leftIndent="2" spacingBefore="2"/>
+	</style>
+	<style name="HeaderBox" style="htmlFont" fontName="MS Mincho">
+		<box>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+		<paragraph lineSpacing="Fixed" lineSpacingSize="10.0" leftIndent="2" spacingBefore="2"/>
+	</style>
+	<style name="HeaderTextBox" style="htmlFont" fontName="MS Mincho">
+		<box bottomPadding="3">
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+		<paragraph lineSpacing="Fixed" lineSpacingSize="10.0" leftIndent="2" spacingBefore="2"/>
+	</style>
+	<style name="HeadersBold" style="Header" isBold="true"/>
+	<style name="HeadersBoldBox" style="HeaderBox" isBold="true"/>
+	<parameter name="PV_outputFormat" class="java.lang.String"/>
+	<queryString language="csv">
+		<![CDATA[]]>
+	</queryString>
+	<field name="TEXT_1" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_1]]></fieldDescription>
+	</field>
+	<field name="TEXT_2" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_2]]></fieldDescription>
+	</field>
+	<field name="TEXT_3" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_3]]></fieldDescription>
+	</field>
+	<field name="TEXT_4" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_4]]></fieldDescription>
+	</field>
+	<field name="TEXT_5" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_5]]></fieldDescription>
+	</field>
+	<field name="TEXT_6" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_6]]></fieldDescription>
+	</field>
+	<field name="TEXT_7" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_7]]></fieldDescription>
+	</field>
+	<field name="TEXT_8" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_8]]></fieldDescription>
+	</field>
+	<field name="TEXT_9" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_9]]></fieldDescription>
+	</field>
+	<field name="TEXT_10" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_10]]></fieldDescription>
+	</field>
+	<field name="TEXT_11" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_11]]></fieldDescription>
+	</field>
+	<field name="TEXT_12" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_12]]></fieldDescription>
+	</field>
+	<field name="TEXT_13" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_13]]></fieldDescription>
+	</field>
+	<field name="TEXT_14" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_14]]></fieldDescription>
+	</field>
+	<field name="TEXT_15" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_15]]></fieldDescription>
+	</field>
+	<field name="TEXT_16" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_16]]></fieldDescription>
+	</field>
+	<field name="TEXT_17" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_17]]></fieldDescription>
+	</field>
+	<field name="TEXT_18" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_18]]></fieldDescription>
+	</field>
+	<field name="TEXT_19" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_19]]></fieldDescription>
+	</field>
+	<field name="TEXT_20" class="java.lang.String">
+		<fieldDescription><![CDATA[TEXT_20]]></fieldDescription>
+	</field>
+	<variable name="FIELD_9Var" class="java.time.LocalDate">
+		<variableExpression><![CDATA[$F{TEXT_9}.isEmpty() ? java.time.LocalDate.now()  : java.time.LocalDate.parse($F{TEXT_9})]]></variableExpression>
+	</variable>
+	<variable name="FIELD_10Var" class="java.time.LocalDate">
+		<variableExpression><![CDATA[$F{TEXT_10}.isEmpty() ? java.time.LocalDate.now()  : java.time.LocalDate.parse($F{TEXT_10})]]></variableExpression>
+	</variable>
+	<variable name="FIELD_17Var" class="java.time.LocalDate">
+		<variableExpression><![CDATA[$F{TEXT_17}.isEmpty() ? java.time.LocalDate.now()  : java.time.LocalDate.parse($F{TEXT_17})]]></variableExpression>
+	</variable>
+	<variable name="FIELD_12Var" class="java.time.LocalDate">
+		<variableExpression><![CDATA[$F{TEXT_12}.isEmpty() ? java.time.LocalDate.now()  : java.time.LocalDate.parse($F{TEXT_12})]]></variableExpression>
+	</variable>
+	<detail>
+		<band height="610">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement style="HeaderBox" positionType="Float" x="55" y="60" width="455" height="200" uuid="6bbe5a91-051f-4c75-b9ea-94ef7033ea0f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<frame>
+					<reportElement style="HeaderBox" positionType="Float" x="30" y="0" width="425" height="100" uuid="3f8aeb35-807f-43ef-84be-dff114df10e4">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<frame>
+						<reportElement style="HeaderBox" positionType="Float" x="200" y="0" width="225" height="100" uuid="73a549f9-7d74-4b01-a1b4-c00d5b4a9cf5">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<frame>
+							<reportElement positionType="Float" x="0" y="0" width="225" height="50" uuid="9ebb661f-f53a-446d-b9e1-61bf106cced5">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textField>
+								<reportElement style="HeadersBoldBox" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="100" height="50" uuid="8db104c1-d427-478d-b932-7470423d0f2d">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA["承認番号"]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="HeaderTextBox" positionType="Float" stretchType="ContainerHeight" x="100" y="0" width="125" height="50" uuid="ae82941d-32c1-4a25-aa48-ae4dfb27bd6d">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{TEXT_3}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement style="HeaderBox" positionType="Float" x="0" y="50" width="225" height="50" uuid="ef6a0003-f6ce-4794-8b1c-2a7cf0e57e59">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+							<textField>
+								<reportElement style="HeadersBoldBox" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="100" height="50" uuid="56183d7e-e6ba-4390-abd3-b5a54a039c53">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA["承認年月日"]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="HeaderTextBox" positionType="Float" stretchType="ContainerHeight" x="100" y="0" width="125" height="50" uuid="b83a5c4b-4e49-4627-a212-119731772c4d">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{TEXT_4}]]></textFieldExpression>
+							</textField>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="200" height="100" uuid="7c99b4b7-4dbc-402e-9e89-006c6737f968"/>
+						<textField>
+							<reportElement style="HeadersBoldBox" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="100" height="100" uuid="16be6fbd-3666-46dc-816b-154828ce3003">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA["販売名"]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="HeaderTextBox" positionType="Float" stretchType="ContainerHeight" x="100" y="0" width="100" height="100" uuid="3e6118bd-e370-4013-ab03-5f394b8a34cd">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Left" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{TEXT_1}]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+				<frame>
+					<reportElement style="HeaderBox" positionType="Float" x="30" y="100" width="425" height="100" uuid="109829af-8d70-498f-b469-60ad295db3dd">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<frame>
+						<reportElement style="HeaderBox" positionType="Float" x="200" y="0" width="225" height="100" uuid="5a2b31bc-7155-43a8-a8aa-70f5cd98c713">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<frame>
+							<reportElement style="HeaderBox" positionType="Float" x="0" y="0" width="225" height="50" uuid="c0717e0d-1575-4f35-8e8e-6575222da416">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textField>
+								<reportElement style="HeadersBoldBox" stretchType="ContainerHeight" x="0" y="0" width="100" height="50" uuid="d16e65e1-ab35-48f9-90a4-ab0c689c416d">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA["薬効分類"]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="HeaderTextBox" stretchType="ContainerHeight" x="100" y="0" width="125" height="50" uuid="b55733e5-a2db-4bae-b550-344689f98abf">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{TEXT_5}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement style="HeaderBox" positionType="Float" x="0" y="50" width="225" height="50" uuid="f1408215-069d-47aa-a773-7a28642f0748">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textField>
+								<reportElement style="HeadersBoldBox" stretchType="ContainerHeight" x="0" y="0" width="100" height="50" uuid="695f4519-ea6c-4eac-a442-628d07f76823">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA["国際誕生日"]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="HeaderTextBox" stretchType="ContainerHeight" x="100" y="0" width="125" height="50" uuid="e16ef8b1-7411-4336-b16d-8e874a24c786">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{TEXT_6}]]></textFieldExpression>
+							</textField>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="200" height="100" uuid="2f9dca2a-2915-4062-a69f-1504716cb3fa"/>
+						<textField>
+							<reportElement style="HeadersBoldBox" stretchType="ContainerHeight" x="0" y="0" width="100" height="100" uuid="4baaaf96-b904-480b-a7b6-aa450916a2bd">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA["一般的名称"]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="HeaderTextBox" stretchType="ContainerHeight" x="100" y="0" width="100" height="100" uuid="bfaef04e-2bbb-4b2b-be4a-08a17368c29d">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Left" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{TEXT_2}]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+				<frame>
+					<reportElement style="HeaderBox" positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="30" height="200" uuid="20e2a916-e54e-4480-9ee1-c79caf391133">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement style="HeadersBoldBox" stretchType="ContainerHeight" x="0" y="0" width="30" height="200" uuid="c13dd382-dcaf-45d1-a781-62e487aa8363">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+						<textFieldExpression><![CDATA["医\n薬\n品\nの\n名\n称"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement style="HeaderBox" positionType="Float" x="55" y="260" width="455" height="30" uuid="432ea388-c3d5-4651-870e-4c230750abe2">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="HeadersBoldBox" stretchType="RelativeToTallestObject" x="0" y="0" width="130" height="30" uuid="bff28a1e-4736-4ae5-918d-d66018b1f45a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["効能又は効果"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="HeaderTextBox" stretchType="RelativeToTallestObject" x="130" y="0" width="325" height="30" uuid="9b95df4b-3259-4968-be63-01f91941b7c5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{TEXT_7}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement style="HeaderBox" positionType="Float" x="55" y="290" width="455" height="30" uuid="28a0749e-344b-4edb-a6ec-44f6dae883db">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="HeadersBoldBox" stretchType="RelativeToTallestObject" x="0" y="0" width="130" height="30" uuid="f44fff72-d619-411d-b4fa-b62b4e0c2bd7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["用法及び用量"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="HeaderTextBox" stretchType="RelativeToTallestObject" x="130" y="0" width="325" height="30" uuid="a75377c1-1164-4038-b99a-73f8cc81b2e7"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{TEXT_8}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement style="HeaderBox" positionType="Float" x="55" y="320" width="455" height="30" uuid="c9e021c1-3736-4956-8a18-86808fb0ef6d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="HeadersBoldBox" stretchType="RelativeToTallestObject" x="0" y="0" width="130" height="30" uuid="69d3e9d6-331a-44d9-a075-3433bbb3c299"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["調査単位期間"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="HeaderTextBox" stretchType="RelativeToTallestObject" x="130" y="0" width="325" height="30" uuid="9309b95a-528d-44b1-ba47-23bb0f66dbd2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[(($F{TEXT_9}.isEmpty()) || ($F{TEXT_10}.isEmpty())) ? "" : 
+$V{FIELD_9Var}.getYear()+"年"+$V{FIELD_9Var}.getMonthValue()+"月" + $V{FIELD_9Var}.getDayOfMonth() + "日"
++ " ~ " + 
+$V{FIELD_10Var}.getYear()+"年"+$V{FIELD_10Var}.getMonthValue()+"月" + $V{FIELD_10Var}.getDayOfMonth() + "日"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement style="HeaderBox" positionType="Float" x="55" y="380" width="455" height="30" uuid="cb6d17c7-2999-4465-8735-b967bd15b08a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="HeadersBoldBox" stretchType="RelativeToTallestObject" x="0" y="0" width="130" height="30" uuid="dfdff6d2-2321-4628-b212-d2beed1fc657"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["副作用別発現症例一覧"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="HeaderTextBox" stretchType="RelativeToTallestObject" x="130" y="0" width="325" height="30" uuid="b4fb213b-52e8-45bf-96f0-60463f5b1fbd"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["別紙のとおり。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement style="HeaderBox" positionType="Float" x="55" y="410" width="455" height="30" uuid="f5db9e93-ecf4-4c3a-8950-4bf195c3d211">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="HeadersBoldBox" stretchType="RelativeToTallestObject" x="0" y="0" width="130" height="30" uuid="a85e756e-e2d7-4896-ad05-5631fb1f14ce"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["集積結果を踏まえた安全確保措置及び今後の安全対策"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="HeaderTextBox" stretchType="RelativeToTallestObject" x="130" y="0" width="325" height="30" uuid="02ddcf77-c2c9-4240-a08f-e586df22ead7"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{TEXT_14}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement style="HeaderBox" positionType="Float" x="55" y="350" width="455" height="30" uuid="262b3037-aac7-4f35-8b5a-c0b845078642">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="HeadersBoldBox" stretchType="RelativeToTallestObject" x="0" y="0" width="130" height="30" uuid="ddc7792b-d9a8-4b0b-ade8-26c7a79b3dd2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["含量及び剤形"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="HeaderTextBox" stretchType="RelativeToTallestObject" x="130" y="0" width="100" height="30" uuid="25d1b7b7-c086-4c34-a202-6c339076b82f"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{TEXT_11}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="HeadersBoldBox" stretchType="RelativeToTallestObject" x="230" y="0" width="100" height="30" uuid="37315e50-739d-4384-b00d-5800303da3cb"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["報告起算日"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="HeaderTextBox" stretchType="RelativeToTallestObject" x="330" y="0" width="125" height="30" uuid="8054aa08-10d4-4195-ba80-b6e724d5f698"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{TEXT_12}.isEmpty() ? "" :
+$V{FIELD_12Var}.getYear()+"年"+$V{FIELD_12Var}.getMonthValue()+"月" + $V{FIELD_12Var}.getDayOfMonth() + "日"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement style="HeaderBox" positionType="Float" x="55" y="440" width="455" height="30" uuid="0c601b69-14a7-40e0-bc5c-3ba8539e8ae9">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="HeadersBoldBox" stretchType="RelativeToTallestObject" x="0" y="0" width="130" height="30" uuid="de464bd6-ee10-43b0-9732-af71c0691246"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["備考"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="HeaderTextBox" stretchType="RelativeToTallestObject" x="130" y="0" width="325" height="30" uuid="09179bd8-bde5-4dfc-9404-cc483c5cb53b"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{TEXT_15}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement style="HeadersBold" positionType="Float" x="55" y="10" width="130" height="20" uuid="b8bcaedc-8105-4ad5-9c97-9ecae9638a5b"/>
+				<textFieldExpression><![CDATA["別紙様式第７"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeadersBold" positionType="Float" x="55" y="30" width="455" height="20" uuid="1d4a0bf7-271a-4a4a-b2a5-7496ea9954e8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["医薬品未知・非重篤副作用定期報告書"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Header" positionType="Float" x="55" y="477" width="455" height="20" uuid="98301a25-0727-4acf-bed4-b4be10c022dc">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["上記により未知・非重篤副作用定期報告を行います。"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Header" positionType="Float" mode="Transparent" x="55" y="497" width="130" height="20" uuid="8c3be767-7652-456a-bc7f-97ddc625ab1d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{TEXT_17}.isEmpty() ? "" :
+$V{FIELD_17Var}.getYear()+"年"+$V{FIELD_17Var}.getMonthValue()+"月" + $V{FIELD_17Var}.getDayOfMonth() + "日"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Header" positionType="Float" x="55" y="562" width="455" height="40" uuid="b85f6783-3af5-479d-8574-3031622c389d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{TEXT_20}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement style="Header" positionType="Float" x="55" y="517" width="455" height="40" uuid="51038d79-d915-44c6-8d07-e6839dee9103">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement style="Header" x="0" y="0" width="455" height="20" uuid="571dbcf8-4bfa-476e-b3c2-00a3613125b7">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA["住所：" + $F{TEXT_18}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Header" x="0" y="20" width="455" height="20" uuid="18dfd98f-a2c7-4995-a9fe-07e30b308cfa">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA["氏名：" + $F{TEXT_19}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40">
+			<printWhenExpression><![CDATA[!$P{PV_outputFormat}.equals("XLSX")]]></printWhenExpression>
+			<textField>
+				<reportElement style="Header" x="185" y="5" width="170" height="30" uuid="7e245b45-7495-4d49-abab-fe021785c93e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["-" + $V{PAGE_NUMBER} + "-"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="70">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT}<1]]></printWhenExpression>
+			<textField>
+				<reportElement style="HeadersBold" positionType="Float" x="55" y="0" width="130" height="20" uuid="a76c6256-57e3-4a7b-aaba-2436ab2ee48c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["別紙様式第７"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" style="HeadersBold" positionType="Float" x="55" y="20" width="455" height="20" uuid="e03a1755-4c9b-410b-b021-606a16c3c3a4">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["医薬品未知・非重篤副作用定期報告書"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="HeadersBoldBox" positionType="Float" x="55" y="40" width="455" height="30" uuid="aa3237a1-0b80-4e68-8eb0-0b4e81eef02c">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["データがありません"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

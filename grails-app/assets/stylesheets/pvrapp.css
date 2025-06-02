@@ -1,0 +1,1007 @@
+.ui-front {
+  z-index: 10000 !important;
+}
+.as-label {
+  font-weight: bold;
+  padding: 0;
+}
+
+.as-bold {
+  font-weight: bold;
+}
+
+.label-mysize {
+  width: 25px;
+}
+
+.add-padding {
+  padding-left: 15px;
+}
+
+.add-margin {
+  margin-left: 20px;
+}
+
+.add-margin-right {
+  margin-right: 5px;
+}
+
+.add-margin-top {
+  margin-top: 5px;
+}
+
+.add-margin-bottom {
+  margin-bottom: 5px;
+}
+
+.top-right-corner {
+  margin-top: 28px;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.to-center {
+  text-align: center;
+}
+
+.select-box {
+  height: 133px !important;
+  font-size: 11px;
+}
+
+.bottom-button {
+  margin-bottom: 5px;
+  width: 800px;
+}
+
+.no-bold {
+  font-weight: normal;
+  margin: 0;
+}
+
+.queryPageContainer {
+  width: 900px;
+}
+/* QueryPage. End*/
+
+/* Create new template specific classes. Begin*/
+.as-tab-header {
+  font-size: 24px !important;
+}
+
+.tab-container {
+  width: 800px;
+}
+
+.alert-addfield {
+  margin-bottom: 5px;
+  font-size: 12px;
+  padding: 2px 5px;
+}
+
+.gridStyle {
+  border: 1px solid rgb(212, 212, 212);
+  width: 100%;
+}
+
+.setHeightPicker {
+  height: 22px;
+}
+
+.setWidthPicker {
+  width: 50px;
+  margin-left: 15px;
+  padding: 0;
+}
+
+.runLaterPageContainer {
+  width: 420px;
+}
+
+.rxSimpleContainerNoBorder {
+  margin-left: 200px;
+}
+
+.setMarginRight {
+  margin-left: 85px;
+}
+
+.setWidth {
+  width: 220px;
+  margin: 10px;
+}
+
+.setWidth2x {
+  width: 440px;
+  margin: 10px;
+}
+
+.rowHeightAlertMessage {
+  height: 33px;
+}
+
+.additionalFieldInputs {
+  margin-top: 3px;
+}
+
+.click {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.radioAll {
+  margin-left: 5px;
+}
+
+input[type="radio checkbox"] {
+  margin-right: 3px;
+}
+
+/* To Fix PVR-2907. It Wraps long words in dataTable which may or may not have white space in them*/
+table.dataTable td,
+.forceLineWrap {
+  /* Forces wrapping of long words which may or may not have white space in them */
+
+  /* These are technically the same, but use both */
+  margin-top: 18px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  /*word-break: break-all;*/
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/*Used to word break the date on space on IE11.*/
+.forceLineWrapDate {
+  -ms-word-break: normal !important;
+}
+
+.searchToolbar {
+  display: block;
+}
+
+/* Data tables specific classes. End */
+
+/* Jasper and Export related. Begin */
+#reportDiv {
+  margin-top: 20px;
+  border-top: 1px solid #dddddd;
+  overflow-x: scroll;
+}
+
+.jrPage,
+.jrPage table {
+  width: 100% !important;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.jrPage td {
+  padding-top: 2px !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+#reportDiv > table > tbody > tr:first-child > td:first-child {
+  width: 0 !important;
+}
+
+#reportDiv > table > tbody > tr:first-child > td:last-child {
+  width: 0 !important;
+}
+
+.hideDicIcon {
+  display: none;
+  cursor: pointer;
+}
+
+/*Spinner message*/
+#spinnerMessage {
+  width: 400px;
+  -moz-border-radius: 5px; /* Firefox */
+  -webkit-border-radius: 5px; /* Safari, Chrome */
+  border-radius: 5px; /* CSS3 */
+
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  padding: 10px;
+  padding-top: 30px;
+  height: 120px;
+  position: fixed;
+  margin-top: -25px;
+  margin-left: -200px;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  font-size: 14px;
+  color: #808080;
+}
+
+.fourColumnsSnaking {
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+}
+.threeColumnsSnaking {
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+
+.twoColumnsSnaking {
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+
+.error {
+  width: 100%;
+  height: 800px;
+  padding: 10px;
+}
+
+.errorDetail {
+  font-size: 12px;
+  font-family: Helvetica, sans-serif;
+}
+
+div.viewCaseLink {
+  padding-top: 3px;
+  cursor: pointer;
+  float: right;
+}
+#caseList .addComment {
+  cursor: pointer;
+  height: 24px;
+}
+
+#taskListTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+}
+
+#taskListTable thead {
+  background-color: #f9f9f8;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+#taskListTable th {
+  font-size: 14px;
+}
+
+/*
+.templateContainer .select2-default, .expressionQuery .select2-default, #templateSet .select2-default {
+    color: #444 !important;
+}
+*/
+
+/* http://stackoverflow.com/questions/7301989/need-to-remove-href-values-when-printing-in-chrome */
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
+
+.timezone-button {
+  width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.timezone-select-div {
+  width: 65%;
+}
+
+/* For the refresh button on Execution Status page and report/index page*/
+.reloaderBtn {
+  margin-left: 10px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+/*To disable New Case Series link in Nav bar and disable edit and delete link on Case Series list page */
+.disableLink {
+  cursor: not-allowed;
+  background-color: #eee;
+  opacity: 1;
+}
+
+#s2id_roles > .select2-choices {
+  max-height: 135px;
+}
+
+/* PR Calendar specific classes. Begin */
+.calendar {
+  max-width: 4000px;
+  margin: 40px auto;
+  padding: 0 10px;
+}
+
+.legendLabel {
+  margin-right: 15px;
+  font-size: 12px;
+}
+
+.legendColorBox {
+  display: inline-block;
+  width: 20px;
+  margin-right: 5px;
+}
+
+#legend {
+  margin-top: 10px;
+}
+
+.fc-icon-reload:before {
+  font-family: "FontAwesome";
+  content: "\f021";
+}
+
+.fc-view thead > tr > th:first-child {
+  border-radius: 15px 0 0 0;
+}
+
+.fc-view thead > tr > th:last-child {
+  border-radius: 0 15px 0 0;
+}
+
+.fc-view table thead tr td {
+  border: none !important;
+}
+
+.fc-head {
+  background-color: transparent !important;
+}
+
+.fc-view tbody > tr:last-child > td:first-child {
+  border-radius: 0 0 0 15px;
+}
+
+.fc-view tbody > tr:last-child > td:last-child {
+  border-radius: 0 0 15px 0;
+}
+
+.fc-view {
+  border: 1px solid #eee;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 7px 7px 10px #aaa;
+}
+
+td.fc-today {
+  border-radius: 0 !important;
+}
+
+/* To add scroller on PR Calendar */
+.fc-more-popover .fc-event-container {
+  padding: 10px !important;
+  overflow: scroll !important;
+  height: 170px !important;
+}
+
+.fc-today {
+  background-color: #f9cd48 !important;
+}
+
+#createEventModal .modal-footer {
+  text-align: center;
+}
+
+#createActionItem img {
+  margin-right: 10px !important;
+}
+
+.modal-dialog.modal-sm {
+  padding-top: 15%;
+}
+
+#calendar .fc-event {
+  cursor: pointer;
+}
+
+.deletedRecord {
+  color: #ef5350;
+}
+
+.margin-10 {
+  margin: 10px;
+}
+/* PR Calendar specific classes. End*/
+
+/* Calendar Widget specific classes. Start */
+.widget-calendar {
+  width: 100%;
+  margin: 10px auto;
+  font-size: 10px;
+}
+.widget-calendar .fc-toolbar h2 {
+  font-size: 0.9em;
+  white-space: normal !important;
+}
+
+.widget-calendar th.fc-widget-header {
+  font-size: 0.8em;
+  white-space: normal !important;
+}
+
+/* Calendar Widget specific classes. End */
+
+/*Reporting Destinations Select box Start*/
+div.destinations
+  .select2-container-multi
+  .select2-choices
+  .select2-search-choice {
+  white-space: pre-wrap;
+}
+
+div.destinations
+  .select2-container-multi
+  .select2-choices
+  .select2-search-choice
+  span {
+  background-color: #f8c62f;
+  padding: 0 5px;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 23px;
+  line-height: 23px;
+  cursor: pointer;
+}
+
+div.destinations
+  .select2-container-multi
+  .select2-choices
+  .select2-search-choice:hover
+  span {
+  display: inline;
+}
+
+div.destinations
+  .select2-container-multi
+  .select2-choices
+  .select2-search-choice
+  span.primary {
+  display: inline;
+  background-color: #a5dd5d !important;
+}
+
+div.destinations
+  .select2-container-multi
+  .select2-choices
+  .select2-search-choice
+  div {
+  display: inline;
+  margin-right: 20px;
+}
+
+/*Reporting Destinations Select box End*/
+
+#caseList button.addCase,
+#caseList button.removeCasesBtn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin-left: -6px;
+}
+
+.morecontent span {
+  display: none;
+}
+.morelink {
+  display: block;
+}
+
+.fieldNameFilter {
+  font-weight: 100;
+}
+
+.word-wrapper {
+  word-wrap: break-word;
+}
+
+/* 5 Columns */
+div.aggregateReportsStatusWidget .col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+div.aggregateReportsStatusWidget .col-xs-5 {
+  width: 20%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  div.aggregateReportsStatusWidget .col-sm-5 {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  div.aggregateReportsStatusWidget .col-md-5 {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  div.aggregateReportsStatusWidget .col-lg-5 {
+    width: 20%;
+    float: left;
+  }
+}
+
+div#case-list-conainter span.caseNumberElement a {
+  /*white-space: nowrap;*/
+}
+
+.userOwnershipTitle {
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+}
+
+td.current-day span {
+  border: none !important;
+}
+
+td.current-day span:hover {
+  background: none !important;
+}
+
+.favorite {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.favorite.glyphicon-star-empty {
+  color: #cccccc;
+}
+
+.glyphicon-star:hover {
+  cursor: pointer;
+}
+
+.padding-right-20 {
+  padding-right: 20px !important;
+}
+
+.filter-panel {
+  z-index: 1000;
+  border-radius: 0;
+  border: 1px solid black;
+  overflow: visible;
+}
+
+.filter-panel .select2-input {
+  height: 50px;
+}
+
+.filter-panel label {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.filter-panel-heading {
+  background: rgba(250, 250, 250, 0.5) !important;
+}
+
+.copyPasteEmailButton {
+  position: absolute;
+  top: 10px;
+  font-size: 19px !important;
+  right: 5px;
+  cursor: pointer;
+}
+
+.small-loading {
+  background: url(../images/loading.gif) no-repeat center;
+  background-size: 30px;
+  height: 30px;
+}
+
+.dmsFolder {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.boxsizingBorder {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.case-quality-datatable-toolbar {
+  display: inline-block;
+}
+
+.case-quality-datatable-toolbar .btn[type="checkbox"] {
+  margin-top: 12px;
+}
+
+.case-quality-datatable-toolbar label {
+  margin-top: 8px;
+  margin-left: 2px;
+}
+
+#rxTableQualityReports tbody td {
+  word-wrap: break-word;
+}
+
+.editProfile {
+  float: right;
+  margin-top: -22px;
+}
+
+.noWrapDiv {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid-column;
+  display: table;
+}
+
+.table-remove {
+  color: #700;
+  cursor: pointer;
+}
+
+.table-add {
+  color: #070;
+  cursor: pointer;
+}
+
+.ui-dialog {
+  z-index: 10001 !important;
+}
+@media (max-height: 799px) {
+  .copy-paste-modal-height-fix {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 370px;
+  }
+}
+
+@media (min-height: 800px) {
+  .copy-paste-modal-height-fix {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 570px;
+  }
+}
+
+.popupBox {
+  border-radius: 5px;
+  border: 1px solid #bbbbbb;
+  padding: 5px;
+  width: 500px;
+  background: #ffffff;
+}
+
+.submittable_icon {
+  font-weight: bold;
+}
+
+#sendToDmsCheckbox {
+  margin: 20px auto 5px 40px;
+}
+
+#createActionItem {
+  cursor: pointer;
+}
+
+div.addContainerTopmost .addExpressionButton {
+  display: block !important;
+}
+
+.sec-title label {
+  font-size: 12px;
+}
+.sec-value {
+  font-size: 12px;
+}
+
+.repeatInterval {
+  font-weight: normal;
+}
+
+.p-t-0 {
+  padding-top: 0;
+}
+
+.last-login-date-time-box {
+  font-size: 8px;
+  float: right;
+  border-radius: 4px;
+}
+
+.login-user-fullname {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+footer.page-footer .footer-copyright {
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+footer.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+a.policy-link {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+a.policy-link:hover {
+  color: white;
+}
+
+/* !imp To handle icsrProfiles extra fields on sections */
+div.icsrProfileSections div.templateContainer > div.templateWrapperRow {
+    width: 25%
+}
+
+div.icsrProfileSections div.queryWrapperRow {
+    width: 75%;
+}
+
+div.icsrProfileSections div.queryWrapperRow > div.row > div.col-md-6 {
+    width: 33.3333%;
+}
+
+div.templateQuery-div {
+  background-color: #ffffff;
+  transition: background-color 1s;
+  transition-timing-function: ease;
+  border-radius: 7px;
+  padding: 7px;
+  margin-bottom: 4px;
+  border: 1px solid #e8e8e8;
+}
+
+div.templateQuery-div:hover {
+  background-color: #d4e9ef;
+}
+
+div.queryRCA-div:hover {
+  background-color: #d4e9ef;
+}
+
+div.queryRCA-div:hover {
+  background-color: #d4e9ef;
+}
+
+#templateQueryList {
+  margin-top: 1em;
+}
+
+div.templateQuery-placeholder {
+  height: 150px;
+  border: 1px dotted green;
+  background-color: whitesmoke;
+  border-radius: 2px;
+}
+
+div.queryRCA-placeholder {
+  height: 150px;
+  border: 1px dotted green;
+  background-color: whitesmoke;
+  border-radius: 2px;
+}
+
+div.tenants > .selected-tenant {
+  padding-left: 5px;
+  border-radius: 2px;
+  min-width: 120px;
+}
+
+div.tenants > .selected-tenant > a {
+  color: #ffffff !important;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.section-scroll {
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.action-list-width {
+  min-width: 80px !important;
+}
+
+/*Added for ViewCases state button*/
+button.statusButton {
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+button.statusButton:hover {
+  white-space: unset;
+  text-overflow: unset;
+}
+
+.three-row-dot-overflow {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.two-row-dot-overflow{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.five-row-dot-overflow{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+.one-row-dot-overflow {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.nowrap {
+  white-space: nowrap;
+}
+
+.basicDataTable {
+  .dt-search {
+    margin-top: -38px;
+    /*margin-right: 100px;*/
+    z-index: 1;
+  }
+}
+
+.basicDataTable .top {
+  padding-right: 80px;
+  padding-left: 180px;
+}
+
+div.dt-container {
+  div.dt-layout-cell.dt-start {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    label {
+      font-weight: 200;
+    }
+    div {
+      padding-right: 0.5em;
+    }
+
+    div.dt-paging {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+  div.dt-layout-cell.dt-end {
+    position: relative;
+    display: flex;
+    justify-content: right;
+
+    div > label {
+      padding-right: 0.5em;
+      color: #333333;
+    }
+  }
+
+  .dt-search {
+    input {
+      border: 1px solid #d2d2d2;
+      border-radius: 4px;
+      background-color: #fff;
+      box-shadow: none;
+      color: #444444;
+      font-size: 14px;
+      padding-top: 0px;
+      padding-right: 5px;
+      padding-bottom: 0px;
+      padding-left: 5px;
+      height: 24px;
+    }
+  }
+  table {
+    tr {
+      .select2-container--default .select2-selection--single {
+        background-color: transparent;
+      }
+    }
+  }
+}
+.parent-with-hidden-child .hidden-child {
+  visibility: hidden;
+}
+.select2-selection__expandable +.select2-container .select2-selection__rendered {
+  max-height: 45px;
+  overflow: auto !important;
+}
+.select2-selection__choice__remove {
+  float: right;
+  margin-left: 5px;
+}
+.parent-with-hidden-child:hover .hidden-child {
+  visibility: visible;
+}
+
+#sharedWithFilter {
+  width: 250px;
+  float: right;
+  margin-right: 7px;
+
+  input {
+    height: 22px;
+    margin-top: 0;
+  }
+}
+
+.filterDiv {
+  float: right;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  width:150px;
+  text-align: center;
+}
+
+.pv-switch .switch-slider:after {
+  content: attr(data-off); /* default to "No" */
+}
+
+.pv-switch input:checked + .switch-slider:after {
+  content: attr(data-on); /* dynamically update to "Yes" */
+}
+
+.disabled-link {
+  pointer-events: none; /* Disable click events */
+  opacity: 0.65;        /* Grey out the element */
+  background-color: #d6d6d6 !important; /* Light grey background */
+  color: #000000 !important; /* Black text */
+  border-color: #d6d6d6 !important; /* Ensure button border is grey */
+  cursor: not-allowed;  /* Show 'not-allowed' cursor */
+}

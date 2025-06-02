@@ -1,0 +1,15 @@
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.left-indent {
+    padding-left: 8px;
+}
+
+.showPopover {
+    cursor: pointer;
+}

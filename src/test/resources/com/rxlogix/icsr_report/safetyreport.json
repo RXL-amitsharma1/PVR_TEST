@@ -1,0 +1,915 @@
+{
+  "templateType": {
+    "enumType": "com.rxlogix.enums.TemplateTypeEnum",
+    "name": "CASE_LINE"
+  },
+  "fixedTemplate": null,
+  "userTemplates": [
+    {
+      "reportTemplate": {
+        "id": 28217118
+      },
+      "user": {
+        "id": 6198
+      }
+    }
+  ],
+  "shareWithUsers": [
+    {
+      "id": 6198,
+      "username": "admin",
+      "fullName": "Admin User"
+    }
+  ],
+  "ownerId": 6200,
+  "fixedTemplateId": null,
+  "lastUpdated": "2019-11-06T18:17:48Z",
+  "ciomsI": false,
+  "hasBlanks": false,
+  "ciomsITemplate": false,
+  "sectionsName": "SafetyReport (SafetyReportSection)",
+  "shareWithGroups": [],
+  "templateUserStates": [],
+  "renamedRowCols": null,
+  "fieldsToValidate": [
+    "CLL_TEMPLATE_REPORT_FIELD_NAME",
+    "CLL_TEMPLATE_J_REPORT_FIELD_NAME",
+    "auditLogService",
+    "pageBreakByGroup",
+    "columnShowTotal",
+    "columnShowSubTotal",
+    "columnShowDistinct",
+    "suppressRepeatingValuesColumnList",
+    "renamedGrouping",
+    "renamedRowCols",
+    "JSONQuery",
+    "columnList",
+    "groupingList",
+    "rowColumnList",
+    "serviceColumnList",
+    "customExpressionListedness",
+    "queryExpressionValues",
+    "hasMany",
+    "mapping",
+    "constraints",
+    "namedQueries",
+    "log",
+    "instanceControllersDomainBindingApi",
+    "instanceConvertersApi",
+    "transients",
+    "org_grails_datastore_mapping_dirty_checking_DirtyCheckable__$changedProperties",
+    "org_grails_datastore_gorm_GormValidateable__skipValidate",
+    "org_grails_datastore_gorm_GormValidateable__errors",
+    "$defaultDatabindingWhiteList"
+  ],
+  "groupingList": [
+    {
+      "blindedValue": false,
+      "advancedSorting": null,
+      "sortEnumValue": null,
+      "renameValue": null,
+      "stackId": -1,
+      "argusName": "cm.CASE_NUM",
+      "customFieldId": null,
+      "redactedValue": false,
+      "customExpression": null,
+      "suppressLabel": false,
+      "reportField": {
+        "id": 7893,
+        "name": "masterCaseNum",
+        "description": null,
+        "dataType": "java.lang.String",
+        "fieldGroup": "CaseInformation",
+        "listDomainClass": null,
+        "transform": "masterCaseNum",
+        "isText": false,
+        "isAutocomplete": false
+      },
+      "customField": null,
+      "newLegendValue": null,
+      "reportFieldInfoListId": 28137118,
+      "sortLevel": -1,
+      "customFieldGroupName": null,
+      "suppressRepeatingValues": false,
+      "reportFieldName": "masterCaseNum",
+      "columnWidth": 0,
+      "setId": 0,
+      "commaSeparatedValue": false,
+      "reportFieldId": 7893,
+      "datasheet": null
+    }
+  ],
+  "selectedFieldsFullInfo": [
+    {
+      "nameWithIndex": "masterCreateTime_0",
+      "type": {
+        "enumType": "com.rxlogix.enums.TemplateFieldTypeEnum",
+        "name": "COLUMN_FIELD"
+      },
+      "reportFieldInfo": {
+        "id": 28017118,
+        "suppressRepeatingValues": false,
+        "suppressLabel": false,
+        "sort": null,
+        "reportField": {
+          "id": 7899
+        },
+        "stackId": -1,
+        "columnWidth": 0,
+        "customField": null,
+        "redactedValue": false,
+        "commaSeparatedValue": false,
+        "sortLevel": -1,
+        "renameValue": null,
+        "customExpression": null,
+        "newLegendValue": null,
+        "setId": 0,
+        "reportFieldInfoList": {
+          "id": 27997118
+        },
+        "argusName": "cm.DATE_FIRST_CREATE",
+        "advancedSorting": null,
+        "datasheet": null,
+        "blindedValue": false
+      }
+    },
+    {
+      "nameWithIndex": "cifTxtDateReceipt_1",
+      "type": {
+        "enumType": "com.rxlogix.enums.TemplateFieldTypeEnum",
+        "name": "COLUMN_FIELD"
+      },
+      "reportFieldInfo": {
+        "id": 28037118,
+        "suppressRepeatingValues": false,
+        "suppressLabel": false,
+        "sort": null,
+        "reportField": {
+          "id": 7734
+        },
+        "stackId": -1,
+        "columnWidth": 0,
+        "customField": null,
+        "redactedValue": false,
+        "commaSeparatedValue": false,
+        "sortLevel": -1,
+        "renameValue": null,
+        "customExpression": null,
+        "newLegendValue": null,
+        "setId": 0,
+        "reportFieldInfoList": {
+          "id": 27997118
+        },
+        "argusName": "cf.DATE_RECEIPT",
+        "advancedSorting": null,
+        "datasheet": null,
+        "blindedValue": false
+      }
+    },
+    {
+      "nameWithIndex": "masterLastUpdateTime_2",
+      "type": {
+        "enumType": "com.rxlogix.enums.TemplateFieldTypeEnum",
+        "name": "COLUMN_FIELD"
+      },
+      "reportFieldInfo": {
+        "id": 28057118,
+        "suppressRepeatingValues": false,
+        "suppressLabel": false,
+        "sort": null,
+        "reportField": {
+          "id": 7917
+        },
+        "stackId": -1,
+        "columnWidth": 0,
+        "customField": null,
+        "redactedValue": false,
+        "commaSeparatedValue": false,
+        "sortLevel": -1,
+        "renameValue": null,
+        "customExpression": null,
+        "newLegendValue": null,
+        "setId": 0,
+        "reportFieldInfoList": {
+          "id": 27997118
+        },
+        "argusName": "cf.DATE_LAST_UPDATE",
+        "advancedSorting": null,
+        "datasheet": null,
+        "blindedValue": false
+      }
+    },
+    {
+      "nameWithIndex": "masterRptTypeId_3",
+      "type": {
+        "enumType": "com.rxlogix.enums.TemplateFieldTypeEnum",
+        "name": "COLUMN_FIELD"
+      },
+      "reportFieldInfo": {
+        "id": 28077118,
+        "suppressRepeatingValues": false,
+        "suppressLabel": false,
+        "sort": null,
+        "reportField": {
+          "id": 7946
+        },
+        "stackId": -1,
+        "columnWidth": 0,
+        "customField": null,
+        "redactedValue": false,
+        "commaSeparatedValue": false,
+        "sortLevel": -1,
+        "renameValue": null,
+        "customExpression": null,
+        "newLegendValue": null,
+        "setId": 0,
+        "reportFieldInfoList": {
+          "id": 27997118
+        },
+        "argusName": "cm.SOURCE_TYPE_ID",
+        "advancedSorting": null,
+        "datasheet": null,
+        "blindedValue": false
+      }
+    },
+    {
+      "nameWithIndex": "csfFlagReportNullification_4",
+      "type": {
+        "enumType": "com.rxlogix.enums.TemplateFieldTypeEnum",
+        "name": "COLUMN_FIELD"
+      },
+      "reportFieldInfo": {
+        "id": 28097118,
+        "suppressRepeatingValues": false,
+        "suppressLabel": false,
+        "sort": null,
+        "reportField": {
+          "id": 8181
+        },
+        "stackId": -1,
+        "columnWidth": 0,
+        "customField": null,
+        "redactedValue": false,
+        "commaSeparatedValue": false,
+        "sortLevel": -1,
+        "renameValue": null,
+        "customExpression": null,
+        "newLegendValue": null,
+        "setId": 0,
+        "reportFieldInfoList": {
+          "id": 27997118
+        },
+        "argusName": "gcmr.FLAG_REPORT_NULLIFICATION",
+        "advancedSorting": null,
+        "datasheet": null,
+        "blindedValue": false
+      }
+    },
+    {
+      "nameWithIndex": "caseFollowupPvrAmendment_5",
+      "type": {
+        "enumType": "com.rxlogix.enums.TemplateFieldTypeEnum",
+        "name": "COLUMN_FIELD"
+      },
+      "reportFieldInfo": {
+        "id": 28117118,
+        "suppressRepeatingValues": false,
+        "suppressLabel": false,
+        "sort": null,
+        "reportField": {
+          "id": 10020
+        },
+        "stackId": -1,
+        "columnWidth": 0,
+        "customField": null,
+        "redactedValue": false,
+        "commaSeparatedValue": false,
+        "sortLevel": -1,
+        "renameValue": null,
+        "customExpression": null,
+        "newLegendValue": null,
+        "setId": 0,
+        "reportFieldInfoList": {
+          "id": 27997118
+        },
+        "argusName": "cfoll.AMENDMENT",
+        "advancedSorting": null,
+        "datasheet": null,
+        "blindedValue": false
+      }
+    },
+    {
+      "nameWithIndex": "masterCaseNum_6",
+      "type": {
+        "enumType": "com.rxlogix.enums.TemplateFieldTypeEnum",
+        "name": "GROUPING_FIELD"
+      },
+      "reportFieldInfo": {
+        "id": 28157118,
+        "suppressRepeatingValues": false,
+        "suppressLabel": false,
+        "sort": null,
+        "reportField": {
+          "id": 7893
+        },
+        "stackId": -1,
+        "columnWidth": 0,
+        "customField": null,
+        "redactedValue": false,
+        "commaSeparatedValue": false,
+        "sortLevel": -1,
+        "renameValue": null,
+        "customExpression": null,
+        "newLegendValue": null,
+        "setId": 0,
+        "reportFieldInfoList": {
+          "id": 28137118
+        },
+        "argusName": "cm.CASE_NUM",
+        "advancedSorting": null,
+        "datasheet": null,
+        "blindedValue": false
+      }
+    },
+    {
+      "nameWithIndex": "masterVersionNum_7",
+      "type": {
+        "enumType": "com.rxlogix.enums.TemplateFieldTypeEnum",
+        "name": "SERVICE_COLUMN_FIELD"
+      },
+      "reportFieldInfo": {
+        "id": 28197118,
+        "suppressRepeatingValues": false,
+        "suppressLabel": false,
+        "sort": null,
+        "reportField": {
+          "id": 7959
+        },
+        "stackId": -1,
+        "columnWidth": 0,
+        "customField": null,
+        "redactedValue": false,
+        "commaSeparatedValue": false,
+        "sortLevel": -1,
+        "renameValue": null,
+        "customExpression": null,
+        "newLegendValue": null,
+        "setId": 0,
+        "reportFieldInfoList": {
+          "id": 28177118
+        },
+        "argusName": "cm.VERSION_NUM",
+        "advancedSorting": null,
+        "datasheet": null,
+        "blindedValue": false
+      }
+    }
+  ],
+  "useFixedTemplate": false,
+  "autoTimeStampOff": false,
+  "tags": [],
+  "qualityChecked": false,
+  "factoryDefault": false,
+  "name": "SafetyReport",
+  "showChartSheet": false,
+  "POIInputsKeys": [],
+  "nameWithDescription": "SafetyReport (SafetyReportSection) - Owner: Sergey Gologuzov",
+  "fieldNameWithIndex": [
+    "masterCreateTime_0",
+    "cifTxtDateReceipt_1",
+    "masterLastUpdateTime_2",
+    "masterRptTypeId_3",
+    "csfFlagReportNullification_4",
+    "caseFollowupPvrAmendment_5",
+    "masterCaseNum_6",
+    "masterVersionNum_7"
+  ],
+  "fieldNameIndexTuple": [
+    [
+      "masterCreateTime",
+      0
+    ],
+    [
+      "cifTxtDateReceipt",
+      1
+    ],
+    [
+      "masterLastUpdateTime",
+      2
+    ],
+    [
+      "masterRptTypeId",
+      3
+    ],
+    [
+      "csfFlagReportNullification",
+      4
+    ],
+    [
+      "caseFollowupPvrAmendment",
+      5
+    ],
+    [
+      "masterCaseNum",
+      6
+    ],
+    [
+      "masterVersionNum",
+      7
+    ]
+  ],
+  "description": "SafetyReportSection",
+  "suppressRepeatingValuesColumnList": null,
+  "allSelectedFieldsInfo": [
+    {
+      "id": 28017118,
+      "suppressRepeatingValues": false,
+      "suppressLabel": false,
+      "sort": null,
+      "reportField": {
+        "id": 7899
+      },
+      "stackId": -1,
+      "columnWidth": 0,
+      "customField": null,
+      "redactedValue": false,
+      "commaSeparatedValue": false,
+      "sortLevel": -1,
+      "renameValue": null,
+      "customExpression": null,
+      "newLegendValue": null,
+      "setId": 0,
+      "reportFieldInfoList": {
+        "id": 27997118
+      },
+      "argusName": "cm.DATE_FIRST_CREATE",
+      "advancedSorting": null,
+      "datasheet": null,
+      "blindedValue": false
+    },
+    {
+      "id": 28037118,
+      "suppressRepeatingValues": false,
+      "suppressLabel": false,
+      "sort": null,
+      "reportField": {
+        "id": 7734
+      },
+      "stackId": -1,
+      "columnWidth": 0,
+      "customField": null,
+      "redactedValue": false,
+      "commaSeparatedValue": false,
+      "sortLevel": -1,
+      "renameValue": null,
+      "customExpression": null,
+      "newLegendValue": null,
+      "setId": 0,
+      "reportFieldInfoList": {
+        "id": 27997118
+      },
+      "argusName": "cf.DATE_RECEIPT",
+      "advancedSorting": null,
+      "datasheet": null,
+      "blindedValue": false
+    },
+    {
+      "id": 28057118,
+      "suppressRepeatingValues": false,
+      "suppressLabel": false,
+      "sort": null,
+      "reportField": {
+        "id": 7917
+      },
+      "stackId": -1,
+      "columnWidth": 0,
+      "customField": null,
+      "redactedValue": false,
+      "commaSeparatedValue": false,
+      "sortLevel": -1,
+      "renameValue": null,
+      "customExpression": null,
+      "newLegendValue": null,
+      "setId": 0,
+      "reportFieldInfoList": {
+        "id": 27997118
+      },
+      "argusName": "cf.DATE_LAST_UPDATE",
+      "advancedSorting": null,
+      "datasheet": null,
+      "blindedValue": false
+    },
+    {
+      "id": 28077118,
+      "suppressRepeatingValues": false,
+      "suppressLabel": false,
+      "sort": null,
+      "reportField": {
+        "id": 7946
+      },
+      "stackId": -1,
+      "columnWidth": 0,
+      "customField": null,
+      "redactedValue": false,
+      "commaSeparatedValue": false,
+      "sortLevel": -1,
+      "renameValue": null,
+      "customExpression": null,
+      "newLegendValue": null,
+      "setId": 0,
+      "reportFieldInfoList": {
+        "id": 27997118
+      },
+      "argusName": "cm.SOURCE_TYPE_ID",
+      "advancedSorting": null,
+      "datasheet": null,
+      "blindedValue": false
+    },
+    {
+      "id": 28097118,
+      "suppressRepeatingValues": false,
+      "suppressLabel": false,
+      "sort": null,
+      "reportField": {
+        "id": 8181
+      },
+      "stackId": -1,
+      "columnWidth": 0,
+      "customField": null,
+      "redactedValue": false,
+      "commaSeparatedValue": false,
+      "sortLevel": -1,
+      "renameValue": null,
+      "customExpression": null,
+      "newLegendValue": null,
+      "setId": 0,
+      "reportFieldInfoList": {
+        "id": 27997118
+      },
+      "argusName": "gcmr.FLAG_REPORT_NULLIFICATION",
+      "advancedSorting": null,
+      "datasheet": null,
+      "blindedValue": false
+    },
+    {
+      "id": 28117118,
+      "suppressRepeatingValues": false,
+      "suppressLabel": false,
+      "sort": null,
+      "reportField": {
+        "id": 10020
+      },
+      "stackId": -1,
+      "columnWidth": 0,
+      "customField": null,
+      "redactedValue": false,
+      "commaSeparatedValue": false,
+      "sortLevel": -1,
+      "renameValue": null,
+      "customExpression": null,
+      "newLegendValue": null,
+      "setId": 0,
+      "reportFieldInfoList": {
+        "id": 27997118
+      },
+      "argusName": "cfoll.AMENDMENT",
+      "advancedSorting": null,
+      "datasheet": null,
+      "blindedValue": false
+    },
+    {
+      "id": 28157118,
+      "suppressRepeatingValues": false,
+      "suppressLabel": false,
+      "sort": null,
+      "reportField": {
+        "id": 7893
+      },
+      "stackId": -1,
+      "columnWidth": 0,
+      "customField": null,
+      "redactedValue": false,
+      "commaSeparatedValue": false,
+      "sortLevel": -1,
+      "renameValue": null,
+      "customExpression": null,
+      "newLegendValue": null,
+      "setId": 0,
+      "reportFieldInfoList": {
+        "id": 28137118
+      },
+      "argusName": "cm.CASE_NUM",
+      "advancedSorting": null,
+      "datasheet": null,
+      "blindedValue": false
+    },
+    {
+      "id": 28197118,
+      "suppressRepeatingValues": false,
+      "suppressLabel": false,
+      "sort": null,
+      "reportField": {
+        "id": 7959
+      },
+      "stackId": -1,
+      "columnWidth": 0,
+      "customField": null,
+      "redactedValue": false,
+      "commaSeparatedValue": false,
+      "sortLevel": -1,
+      "renameValue": null,
+      "customExpression": null,
+      "newLegendValue": null,
+      "setId": 0,
+      "reportFieldInfoList": {
+        "id": 28177118
+      },
+      "argusName": "cm.VERSION_NUM",
+      "advancedSorting": null,
+      "datasheet": null,
+      "blindedValue": false
+    }
+  ],
+  "dateCreated": "2019-11-06T18:17:48Z",
+  "isDeleted": false,
+  "instanceIdentifierForAuditLog": "SafetyReport",
+  "columnListId": 27997118,
+  "customExpressionListedness": null,
+  "templateFooter": null,
+  "columnShowDistinct": true,
+  "groupingListId": 28137118,
+  "modifiedBy": "sgologuzov",
+  "columnShowTotal": false,
+  "JSONQuery": null,
+  "reassessListedness": null,
+  "owner": {
+    "id": 6200,
+    "username": "sgologuzov",
+    "fullName": "Sergey Gologuzov"
+  },
+  "rowColumnListId": null,
+  "editable": true,
+  "reassessForProduct": false,
+  "pageBreakByGroup": false,
+  "columnShowSubTotal": false,
+  "columnList": [
+    {
+      "blindedValue": false,
+      "advancedSorting": null,
+      "sortEnumValue": null,
+      "renameValue": null,
+      "stackId": -1,
+      "argusName": "cm.DATE_FIRST_CREATE",
+      "customFieldId": null,
+      "redactedValue": false,
+      "customExpression": null,
+      "suppressLabel": false,
+      "reportField": {
+        "id": 7899,
+        "name": "masterCreateTime",
+        "description": null,
+        "dataType": "java.util.Date",
+        "fieldGroup": "CaseInformation",
+        "listDomainClass": null,
+        "transform": "masterCreateTime",
+        "isText": false,
+        "isAutocomplete": false
+      },
+      "customField": null,
+      "newLegendValue": null,
+      "reportFieldInfoListId": 27997118,
+      "sortLevel": -1,
+      "customFieldGroupName": null,
+      "suppressRepeatingValues": false,
+      "reportFieldName": "masterCreateTime",
+      "columnWidth": 0,
+      "setId": 0,
+      "commaSeparatedValue": false,
+      "reportFieldId": 7899,
+      "datasheet": null
+    },
+    {
+      "blindedValue": false,
+      "advancedSorting": null,
+      "sortEnumValue": null,
+      "renameValue": null,
+      "stackId": -1,
+      "argusName": "cf.DATE_RECEIPT",
+      "customFieldId": null,
+      "redactedValue": false,
+      "customExpression": null,
+      "suppressLabel": false,
+      "reportField": {
+        "id": 7734,
+        "name": "cifTxtDateReceipt",
+        "description": null,
+        "dataType": "java.util.Date",
+        "fieldGroup": "CaseInformation",
+        "listDomainClass": null,
+        "transform": "cifTxtDateReceipt",
+        "isText": false,
+        "isAutocomplete": false
+      },
+      "customField": null,
+      "newLegendValue": null,
+      "reportFieldInfoListId": 27997118,
+      "sortLevel": -1,
+      "customFieldGroupName": null,
+      "suppressRepeatingValues": false,
+      "reportFieldName": "cifTxtDateReceipt",
+      "columnWidth": 0,
+      "setId": 0,
+      "commaSeparatedValue": false,
+      "reportFieldId": 7734,
+      "datasheet": null
+    },
+    {
+      "blindedValue": false,
+      "advancedSorting": null,
+      "sortEnumValue": null,
+      "renameValue": null,
+      "stackId": -1,
+      "argusName": "cf.DATE_LAST_UPDATE",
+      "customFieldId": null,
+      "redactedValue": false,
+      "customExpression": null,
+      "suppressLabel": false,
+      "reportField": {
+        "id": 7917,
+        "name": "masterLastUpdateTime",
+        "description": null,
+        "dataType": "java.util.Date",
+        "fieldGroup": "CaseInformation",
+        "listDomainClass": null,
+        "transform": "masterLastUpdateTime",
+        "isText": false,
+        "isAutocomplete": false
+      },
+      "customField": null,
+      "newLegendValue": null,
+      "reportFieldInfoListId": 27997118,
+      "sortLevel": -1,
+      "customFieldGroupName": null,
+      "suppressRepeatingValues": false,
+      "reportFieldName": "masterLastUpdateTime",
+      "columnWidth": 0,
+      "setId": 0,
+      "commaSeparatedValue": false,
+      "reportFieldId": 7917,
+      "datasheet": null
+    },
+    {
+      "blindedValue": false,
+      "advancedSorting": null,
+      "sortEnumValue": null,
+      "renameValue": null,
+      "stackId": -1,
+      "argusName": "cm.SOURCE_TYPE_ID",
+      "customFieldId": null,
+      "redactedValue": false,
+      "customExpression": null,
+      "suppressLabel": false,
+      "customField": null,
+      "reportField": {
+        "id": 7946,
+        "name": "masterRptTypeId",
+        "description": null,
+        "dataType": "java.lang.String",
+        "fieldGroup": "CaseInformation",
+        "listDomainClass": "com.rxlogix.TableColumnSelectableList",
+        "transform": "masterRptTypeId",
+        "isText": false,
+        "isAutocomplete": false
+      },
+      "newLegendValue": null,
+      "reportFieldInfoListId": 27997118,
+      "sortLevel": -1,
+      "customFieldGroupName": null,
+      "suppressRepeatingValues": false,
+      "reportFieldName": "masterRptTypeId",
+      "columnWidth": 0,
+      "setId": 0,
+      "commaSeparatedValue": false,
+      "reportFieldId": 7946,
+      "datasheet": null
+    },
+    {
+      "blindedValue": false,
+      "advancedSorting": null,
+      "sortEnumValue": null,
+      "renameValue": null,
+      "stackId": -1,
+      "argusName": "gcmr.FLAG_REPORT_NULLIFICATION",
+      "customFieldId": null,
+      "redactedValue": false,
+      "customExpression": null,
+      "suppressLabel": false,
+      "reportField": {
+        "id": 8181,
+        "name": "csfFlagReportNullification",
+        "description": null,
+        "dataType": "java.lang.String",
+        "fieldGroup": "ReportInformation",
+        "listDomainClass": "com.rxlogix.TableColumnSelectableList",
+        "transform": "csfFlagReportNullification",
+        "isText": false,
+        "isAutocomplete": false
+      },
+      "customField": null,
+      "newLegendValue": null,
+      "reportFieldInfoListId": 27997118,
+      "sortLevel": -1,
+      "customFieldGroupName": null,
+      "suppressRepeatingValues": false,
+      "reportFieldName": "csfFlagReportNullification",
+      "columnWidth": 0,
+      "setId": 0,
+      "commaSeparatedValue": false,
+      "reportFieldId": 8181,
+      "datasheet": null
+    },
+    {
+      "blindedValue": false,
+      "advancedSorting": null,
+      "sortEnumValue": null,
+      "renameValue": null,
+      "stackId": -1,
+      "argusName": "cfoll.AMENDMENT",
+      "customFieldId": null,
+      "redactedValue": false,
+      "customExpression": null,
+      "suppressLabel": false,
+      "reportField": {
+        "id": 10020,
+        "name": "caseFollowupPvrAmendment",
+        "description": null,
+        "dataType": "java.lang.Number",
+        "fieldGroup": "CaseInformation",
+        "listDomainClass": null,
+        "transform": "caseFollowupPvrAmendment",
+        "isText": false,
+        "isAutocomplete": false
+      },
+      "customField": null,
+      "newLegendValue": null,
+      "reportFieldInfoListId": 27997118,
+      "sortLevel": -1,
+      "customFieldGroupName": null,
+      "suppressRepeatingValues": false,
+      "reportFieldName": "caseFollowupPvrAmendment",
+      "columnWidth": 0,
+      "setId": 0,
+      "commaSeparatedValue": false,
+      "reportFieldId": 10020,
+      "datasheet": null
+    }
+  ],
+  "serviceColumnList": [
+    {
+      "blindedValue": false,
+      "advancedSorting": null,
+      "sortEnumValue": null,
+      "renameValue": null,
+      "stackId": -1,
+      "argusName": "cm.VERSION_NUM",
+      "customFieldId": null,
+      "redactedValue": false,
+      "customExpression": null,
+      "suppressLabel": false,
+      "customField": null,
+      "reportField": {
+        "id": 7959,
+        "name": "masterVersionNum",
+        "description": null,
+        "dataType": "java.lang.Number",
+        "fieldGroup": "CaseInformation",
+        "listDomainClass": null,
+        "transform": "masterVersionNum",
+        "isText": false,
+        "isAutocomplete": false
+      },
+      "newLegendValue": null,
+      "reportFieldInfoListId": 28177118,
+      "sortLevel": -1,
+      "customFieldGroupName": null,
+      "suppressRepeatingValues": false,
+      "reportFieldName": "masterVersionNum",
+      "columnWidth": 0,
+      "setId": 0,
+      "commaSeparatedValue": false,
+      "reportFieldId": 7959,
+      "datasheet": null
+    }
+  ],
+  "showTemplateFooter": false,
+  "serviceColumnListId": 28177118,
+  "userGroupTemplates": [],
+  "rowColumnList": null,
+  "createdBy": "sgologuzov",
+  "renamedGrouping": null,
+  "originalTemplateId": 0,
+  "lastExecuted": null,
+  "category": null,
+  "categoryId": null,
+  "queryExpressionValues": []
+}

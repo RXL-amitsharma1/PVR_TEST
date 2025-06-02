@@ -1,0 +1,536 @@
+import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+
+plugins {
+    id "java"
+    id "jacoco"
+    id "groovy"
+    id "com.bertramlabs.asset-pipeline"
+    id "idea"
+    id "application"
+    id "eclipse"
+    id "war"
+    id "org.grails.grails-web"
+    id "org.grails.grails-gsp"
+    id "com.gorylenko.gradle-git-properties"
+//    id "org.sonarqube"
+//    id 'org.owasp.dependencycheck'
+//    id "com.github.erdi.webdriver-binaries"
+}
+
+group "com.rxlogix"
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://repo1.maven.org/maven2" }
+    maven { url "https://repository.jboss.org/maven2/" }
+    maven { url "https://repo.grails.org/artifactory/core" }
+    maven { url "https://nexus.jmix.io/repository/releases/"}
+    maven {
+        url "http://repo.opennms.org/maven2/"
+        allowInsecureProtocol = true
+    }
+    maven { url "https://maven.artifacts.atlassian.com/"}
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "http://nexus-repo.eng.rxlogix.com:8080/nexus/content/repositories/common-component-snapshots"
+        allowInsecureProtocol = true
+    }
+    maven { url "http://nexus-repo.eng.rxlogix.com:8080/nexus/content/repositories/build.shibboleth"
+        allowInsecureProtocol = true
+    }
+    //Added for HTTPS issue and repo down issue of build.shibboleth.net.
+    maven { url "https://artifacts.alfresco.com/nexus/content/repositories/public" }
+//    FOR SSL certificate issue https://blog.mindorks.com/handle-ssl-https-certification-path-exception-for-java-applications-1b13c751f1e7
+    maven { url "https://build.shibboleth.net/nexus/content/repositories/releases" }
+    maven { url "https://build.shibboleth.net/nexus/content/repositories/snapshots" }
+    maven { url "https://build.shibboleth.net/nexus/content/groups/public" }
+    maven { url "http://nexus-repo.eng.rxlogix.com:8080/nexus/content/repositories/thirdparty"
+        allowInsecureProtocol = true
+    }
+    maven { url "https://plugins.gradle.org/m2" }
+
+
+}
+
+configurations {
+    all.collect { configuration ->
+        configuration.exclude group: 'org.bouncycastle', module: 'bcprov-jdk14'
+        configuration.exclude group: 'bouncycastle', module: 'bcprov-jdk14'
+        configuration.exclude group: 'bouncycastle', module: 'bcmail-jdk14'
+        configuration.exclude group: 'bouncycastle', module: 'bctsp-jdk14'
+        configuration.exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on'
+        configuration.exclude group: 'log4j', module: 'log4j'
+//        configuration.exclude group: 'com.h2database', module: 'h2'
+        configuration.exclude group: 'org.apache.velocity', module: 'velocity'
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'grails-app/migrations'
+        }
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework:spring-framework-bom:5.3.39-rxlogix-1" // Desired Spring version
+    }
+}
+
+dependencies {
+    implementation("org.grails:grails-core")
+    implementation("org.grails:grails-logging")
+    implementation("org.grails:grails-plugin-databinding")
+    implementation("org.grails:grails-plugin-i18n")
+    implementation("org.grails:grails-plugin-interceptors")
+    implementation("org.grails:grails-plugin-rest")
+    implementation("org.grails:grails-plugin-services")
+    implementation("org.grails:grails-plugin-url-mappings")
+    implementation("org.grails:grails-web-boot")
+    implementation("org.grails.plugins:gsp")
+    implementation("org.grails.plugins:hibernate5")
+    implementation("org.grails.plugins:scaffolding")
+    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.boot:spring-boot-starter-logging")
+    implementation("org.springframework.boot:spring-boot-starter-tomcat")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    compileOnly("io.micronaut:micronaut-inject-groovy")
+    implementation("com.bertramlabs.plugins:asset-pipeline-grails:4.5.0")
+    implementation group: 'org.graalvm.sdk', name: 'graal-sdk', version: '24.1.0'
+    runtimeOnly("org.apache.tomcat:tomcat-jdbc")
+    runtimeOnly("org.fusesource.jansi:jansi:1.18")
+    implementation 'org.hibernate:hibernate-ehcache:5.6.15.Final'
+
+    implementation("org.springframework.cloud:spring-cloud-starter-bootstrap:3.1.9") { //Added for password encryption using cipher feature.
+        exclude group: 'org.springframework.security', module: 'spring-security-rsa'
+    }
+    implementation group: 'com.fasterxml.woodstox', name: 'woodstox-core', version: '6.6.2'
+    //Required for logback groovy format. https://stackoverflow.com/questions/74445304/is-there-a-reason-why-logback-groovy-is-discarded-in-1-2-9
+    // Added LogbackGroovyEnvironmentPostProcessor to fix startup issue of removing init context and overriding with spring default logging.
+    runtimeOnly 'io.github.virtualdogbert:logback-groovy-config:1.12.5'
+    implementation 'org.testng:testng:7.5.1'
+    implementation 'io.methvin:directory-watcher:0.16.1'
+
+//    implementation 'org.slf4j:slf4j-api'
+//    implementation 'org.slf4j:slf4j-log4j12:1.7.36'
+//    implementation 'ch.qos.reload4j:reload4j:1.2.25'
+    // https://mvnrepository.com/artifact/org.slf4j/log4j-over-slf4j
+    implementation 'org.slf4j:log4j-over-slf4j:1.7.36'
+
+    implementation 'com.bucket4j:bucket4j_jdk17-core:8.14.0'
+    implementation 'org.mnode.ical4j:ical4j:4.0.2'
+    implementation 'joda-time:joda-time:2.12.7'
+    implementation "org.apache.poi:poi-ooxml-full:5.3.0"
+    implementation group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.4'
+    implementation group: 'org.apache.commons', name: 'commons-csv', version: '1.11.0'
+    implementation group: 'org.apache.chemistry.opencmis', name: 'chemistry-opencmis-client-impl', version: '1.1.0'
+    implementation 'org.apache.cxf:cxf-rt-frontend-jaxrs:3.5.10'
+    implementation group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: '3.5.10'
+    implementation 'org.apache.olingo:odata-server-core:4.7.1'
+
+//    implementation "org.docx4j:docx4j-JAXB-MOXy:11.4.11"
+    implementation group: 'org.docx4j', name: 'docx4j-ImportXHTML', version: '8.3.11'
+    implementation group: 'org.docx4j', name: 'docx4j-JAXB-ReferenceImpl', version: '8.3.11'
+    implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.30'
+
+    implementation('org.springframework.session:spring-session-hazelcast')
+    implementation 'jcifs:jcifs:1.3.17'
+
+    implementation "ar.com.fdvs:DynamicJasper-core-fonts:2.1"
+
+//  Note:  https://github.com/dynamicreports/dynamicreports/pull/36 as mentioned bug was introduced in 5.0.0 and 5.1.0 is not compatible right now so have created custom build on top of 5.0.0 (http://10.100.3.6:8080/nexus/content/repositories/thirdparty/net/sourceforge/dynamicreports/) and code is available at https://rxlogix-my.sharepoint.com/personal/sachin_verma_rxlogix_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fsachin%5Fverma%5Frxlogix%5Fcom%2FDocuments%2FWork%2FRx%2DDynamicReports%2DCustom%2DCode
+    implementation "net.sourceforge.dynamicreports:dynamicreports-adhoc:5.0.1.2-Rx", {
+        exclude group: 'com.lowagie', module : 'itext'
+    }
+    implementation "net.sourceforge.dynamicreports:dynamicreports-googlecharts:5.0.1.2-Rx", {
+        exclude group: 'com.lowagie', module : 'itext'
+    }
+    implementation 'net.sf.jasperreports:jasperreports:6.4.0.2-Rx', {
+        exclude group: 'com.lowagie', module : 'itext'
+    }
+
+    implementation( group: 'org.apache.xmlgraphics', name: 'batik-bridge'){
+        version{
+            strictly "[1.17]"
+        }
+    }
+
+    implementation "xalan:xalan:2.7.3"
+    implementation "xalan:serializer:2.7.3"
+    implementation "org.javassist:javassist:3.30.2-GA"
+
+    implementation 'io.github.zyro23:grails-spring-websocket:2.6.0-RC1'
+    //compile 'org.grails.plugins:grails-localizations:0.1.3'
+    implementation 'org.jsoup:jsoup:1.17.2'
+    implementation('org.grails.plugins:cxf:3.1.2') {
+        exclude group: 'xalan', module: 'xalan'
+    }
+    implementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+    implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '4.0.5'
+
+    implementation 'org.grails.plugins:spring-security-core:6.0.3'
+    implementation 'org.grails.plugins:spring-security-ldap:6.0.0.M1'
+
+    implementation 'io.github.grails-spring-security-saml:spring-security-saml:5.1.0'
+    implementation 'org.springframework.security:spring-security-saml2-service-provider'
+
+    implementation group: 'org.apache.santuario', name: 'xmlsec', version: '2.2.6'
+    implementation 'com.google.guava:guava:33.3.1-jre'
+
+    implementation 'org.grails.plugins:spring-security-rest:5.0.0'
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.78'
+    implementation('org.grails.plugins:quartz:3.0.0')
+    implementation 'org.grails.plugins:mail:4.0.0'
+    implementation 'org.grails.plugins:grails-melody-plugin:6.0-JDK11-M3'
+    implementation 'net.bull.javamelody:javamelody-core:1.99.2'
+
+    implementation 'org.codehaus.groovy.modules.http-builder:http-builder:1.0-M1-snapshot', {
+        exclude group:'net.sourceforge.nekohtml', module: 'nekohtml'
+        exclude group:'commons-httpclient', module: 'commons-httpclient'
+    }
+    implementation 'org.codehaus.plexus:plexus-utils:3.0.24'
+    implementation 'org.liquibase:liquibase-core:4.19.0'
+    implementation 'org.grails.plugins:database-migration:5.0.0-SNAPSHOT-M1'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.11.0'
+    implementation('org.grails.plugins:quartz-monitor:6.0-jdk11-M3')
+
+    implementation "com.rxlogix:pv-dictionary:7.0-M16"
+
+    implementation 'com.rxlogix:RxLogix-Debug-Console:6.0-M2.1'
+    implementation 'org.grails.plugins:grails-console:6.0-M2'
+    implementation 'org.grails.plugins:x-frame-options:6.x-JDK11-M1'
+    implementation group: 'org.codehaus.gpars', name: 'gpars', version: '1.2.1'
+    implementation fileTree(dir: 'lib', include: '*.jar')
+    implementation 'org.apache.httpcomponents:httpmime:4.5.14'
+
+    implementation group: 'org.grails', name: 'grails-datastore-gorm-async', version: '8.1.2'
+    implementation 'org.grails.plugins:grails-datastore-rest-client:6.1.13-g6x-rx-1'
+
+//    implementation 'org.grails.plugins:external-config:1.3.0'
+    implementation 'dk.glasius:external-config:4.0.0'
+    implementation 'com.rxlogix:pv-error-logger-client:7.0-JDK11-M2'
+    implementation group: 'com.rxlogix', name: 'ui', version: '6.0-JDK11-M24'
+    implementation group: 'xerces', name: 'xercesImpl', version: '2.12.2'
+    implementation 'com.rxlogix:RxEncoder:2.0.2'
+    implementation 'com.github.ua-parser:uap-java:1.6.1'
+    implementation 'org.xmlunit:xmlunit-core:2.10.0'
+//    implementation 'org.grails.plugins:swagger:1.0.1'
+//    implementation group: 'io.swagger', name: 'swagger-annotations', version: '1.6.14'
+    implementation 'org.grails.plugins:audit-logging:PVR_PVS_7.0-M25'
+    implementation "com.rxlogix:rxlogix-export:PVR_PVS_Audit_7.0-JDK11-M5"
+    implementation 'com.github.librepdf:openpdf:1.3.30.jaspersoft.2'
+
+    // Third party dependencies for lib/htmlunit-2.27-custom.jar
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.3.1'
+    implementation 'org.eclipse.jetty.websocket:websocket-client:9.4.56.v20240826'
+    implementation "commons-io:commons-io:2.16.1"
+
+    // Third party dependencies for lib/htmlunit-3.10.1-custom.jar
+    implementation group: 'org.htmlunit', name: 'htmlunit-core-js', version: '3.10.0'
+    implementation group: 'org.htmlunit', name: 'neko-htmlunit', version: '3.10.0'
+    implementation group: 'org.htmlunit', name: 'htmlunit-cssparser', version: '3.10.0'
+    implementation group: 'org.htmlunit', name: 'htmlunit-xpath', version: '3.10.0'
+    implementation group: 'org.htmlunit', name: 'htmlunit-csp', version: '3.10.0'
+    implementation group: 'org.apache.commons', name: 'commons-text', version: '1.11.0'
+    implementation group: 'commons-logging', name: 'commons-logging', version: '1.3.0'
+    implementation group: 'commons-net', name: 'commons-net', version: '3.10.0'
+    implementation group: 'org.brotli', name: 'dec', version: '0.1.2'
+    //end
+
+    runtimeOnly "net.sourceforge.cssparser:cssparser:0.9.30"
+    runtimeOnly("org.apache.xmlgraphics:xmlgraphics-commons:2.9")
+
+    profile "org.grails.profiles:web"
+    implementation 'org.grails.plugins:mail-oauth:6.0-JDK11-1.0-M4'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.1.0'
+
+
+    implementation 'org.grails.plugins:grails-scim:2.0-M2'
+    implementation 'io.projectreactor:reactor-core:3.6.6'
+    implementation 'org.passay:passay:1.6.4'
+
+
+    //the below lib is used for converting html to pdf
+    implementation 'org.xhtmlrenderer:flying-saucer-pdf:9.4.0',{
+        exclude group: "com.github.librepdf", module : "openpdf"
+    }
+    implementation 'com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer:20240325.1'
+    //dcm to pdf
+//    implementation 'javax.media.jai:com.springsource.javax.media.jai.core:1.1.3'
+    implementation 'net.sourceforge.jexcelapi:jxl:2.6.12'
+    implementation 'org.grails.plugins:pv-dynamicConfigUpdater:6.0-JDK11-M6'
+    implementation 'com.github.pjfanning:excel-streaming-reader:5.0.2'
+
+    //the below lib is used for converting psd file to pdf file
+    implementation 'org.apache.commons:commons-imaging:1.0.0-alpha5'
+
+    //the below lib is used for converting ps file to pdf file
+    implementation 'org.ghost4j:ghost4j:1.0.1', {
+        exclude group: 'com.lowagie', module : 'itext'
+    }
+
+    implementation 'net.java.dev.jna:jna:5.14.0'
+
+    //the below lib is used for converting xml file to pdf file
+    implementation 'org.apache.velocity:velocity-engine-core:2.3'
+
+    //the below lib is used for converting msg file to pdf
+    implementation 'org.apache.poi:poi-scratchpad:5.3.0'
+
+    //the below lib is used for converting dicom/dcm file to pdf
+//    compile 'org.dcm4che:dcm4che-core:5.30.0'
+//    compile 'org.dcm4che:dcm4che-imageio:5.30.0'
+
+    testImplementation("io.micronaut:micronaut-inject-groovy")
+    testImplementation("org.grails:grails-gorm-testing-support")
+    testImplementation("org.grails:grails-web-testing-support")
+    testImplementation("org.spockframework:spock-core")
+    testImplementation("io.micronaut:micronaut-http-client")
+    testImplementation "com.stehno.ersatz:ersatz:2.0.0", {
+        exclude group: "io.undertow", module : "undertow-core"
+    }
+
+
+    implementation group: 'javax.xml.ws', name: 'jaxws-api', version: '2.3.1'
+    implementation 'org.codehaus.groovy:groovy:3.0.22'
+    implementation 'org.codehaus.groovy:groovy-dateutil:3.0.22'
+
+    implementation 'com.oracle.database.jdbc:ojdbc10:19.22.0.0'
+    implementation group: 'net.minidev', name: 'json-smart', version: '2.5.1'
+    testImplementation("com.h2database:h2:2.3.232")
+    testRuntimeOnly 'io.undertow:undertow-core:2.3.18.Final'
+    testCompileOnly group: 'junit', name: 'junit', version: '4.13.1'
+
+//    For Inline Plugins
+//    implementation project(":pv-ui")
+//    implementation project(":pv-dictionary")
+//    implementation project(":audit-logging")
+//    implementation project(':pv-dynamicConfigUpdater')
+//    implementation project(":grails-scim")
+}
+
+java {
+    sourceCompatibility = JavaVersion.toVersion("17")
+}
+
+tasks.withType(GroovyCompile) {
+    configure(options) {
+        listFiles = true
+        verbose = true
+        debugOptions.debugLevel = "source,vars"
+        incremental = true
+        incrementalAfterFailure = true
+    }
+    configure(groovyOptions) {
+        listFiles = true
+        verbose = true
+        forkOptions.jvmArgs = ['-Xms512m', '-Xmx2048m','-Dgroovy.parallel.parse=true','-Dgroovy.antlr4.cache.threshold=600','-Dgroovy.antlr4.sll.threshold=2000','-Dgroovy.output.debug=true','-Dgroovy.output.verbose=true']
+    }
+}
+
+task sourceJar(type: Jar) {
+    archiveClassifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+//tasks.withType(Test) {
+//    testLogging.showStandardStreams = true
+//    testLogging.exceptionFormat = 'full'
+//    useJUnitPlatform()
+//}
+
+task packageJavadoc(type: Jar) {
+    from javadoc
+    archiveClassifier = 'javadoc'
+}
+
+task packageGroovydoc(type: Jar) {
+
+
+    from groovydoc
+    archiveClassifier = 'groovydoc'
+}
+
+bootRun {
+    jvmArgs(['-Dspring.output.ansi.enabled=always', '-Xms1G', '-Xmx2G'])
+    sourceResources sourceSets.main
+    String springProfilesActive = 'spring.profiles.active'
+    systemProperty springProfilesActive, System.getProperty(springProfilesActive)
+    systemProperty 'user.timezone', 'GMT'
+    systemProperty 'org.apache.xml.dtm.DTMManager', 'org.apache.xml.dtm.ref.DTMManagerDefault'
+    systemProperty 'mail.mime.splitlongparameters', 'false'
+    systemProperty 'mail.mime.decodetext.strict', 'false'
+    systemProperties System.properties
+}
+
+// Run using grails -Duser.timezone=GMT -Dgrails.env=test  test-app
+test {
+    enabled = true
+    minHeapSize = "256m"
+    maxHeapSize = "4G"
+    jvmArgs(['-Dspring.output.ansi.enabled=always','-Xms1G', '-Xmx4G'])
+    String springProfilesActive = 'spring.profiles.active'
+    systemProperty springProfilesActive, System.getProperty(springProfilesActive)
+    systemProperty 'user.timezone', 'GMT'
+    systemProperty 'org.apache.xml.dtm.DTMManager', 'org.apache.xml.dtm.ref.DTMManagerDefault'
+    systemProperty 'mail.mime.splitlongparameters', 'false'
+    systemProperty 'mail.mime.decodetext.strict', 'false'
+    systemProperties System.properties
+    testLogging {
+        showStandardStreams = false
+        exceptionFormat = 'full'
+    }
+    useJUnitPlatform()
+    ignoreFailures = true
+}
+
+assets {
+    minifyJs = true
+    minifyCss = true
+    packagePlugin = true
+}
+
+
+war {
+    archiveBaseName = 'reports.war'
+}
+
+gitProperties {
+    dateFormat = "dd-MMM-yyyy HH:mm:ss zzz"
+    dateFormatTimeZone = "UTC"
+}
+
+
+//buildProperties.doLast {
+//    // Find the right file
+//    File grailsBuildInfoFile = it.outputs.files.files.find { it.name == 'grails.build.info' }
+//    if (!grailsBuildInfoFile) return // No need to continue if the file is not there
+//    println "Adding build details"
+//    Properties properties = new Properties()
+//    // Read properties from the file
+//    grailsBuildInfoFile.withInputStream {
+//        properties.load(it)
+//    }
+//    // Add new properties from various sources
+//    properties.setProperty('build.time', new Date().format("dd-MMM-yyyy HH:mm:ss zzz"))
+//    // Get a System property
+//    properties.setProperty('build.java.version', System.getProperty('java.version'))
+//    // Get the host name where the build was created
+//    properties.setProperty('build.host', InetAddress.localHost.hostName)
+//    //  File created by gitProperties plugin
+//    File gitPropertiesFile = file("$buildDir/resources/main/git.properties")
+//    if (gitPropertiesFile && gitPropertiesFile.exists()) {
+//        Properties gitProperties = new Properties()
+//        // Read properties from the file
+//        gitPropertiesFile.withInputStream {
+//            gitProperties.load(it)
+//        }
+//        properties.setProperty('build.git.version', "${gitProperties.getProperty('git.commit.id.abbrev')}.${gitProperties.getProperty('git.branch')}")
+//    }
+//    // Write the properties back to the file
+//    grailsBuildInfoFile.withOutputStream {
+//        properties.store(it, null)
+//    }
+//}
+
+
+//buildProperties.shouldRunAfter generateGitProperties
+
+//buildScan {
+//    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+////    termsOfServiceAgree = 'yes' //uncomment this when need to run gradle --scan
+//}
+
+
+//grails { pathingJar = true }
+
+
+////for inline
+grails {
+    pathingJar = DefaultNativePlatform.currentOperatingSystem.isWindows()
+//    exploded = true
+}
+
+//tasks.sonarqube.dependsOn dependencyCheckAnalyze
+
+application {
+    mainClass.set("reports.Application")
+}
+
+//sonarqube {
+//    properties {
+//        property 'sonar.verbose', 'true'
+//        property "sonar.sourceEncoding", "UTF-8"
+//
+//        property "sonar.language", "groovy"
+//        property "sonar.dynamicAnalysis", "reuseReports"
+//        property "sonar.projectBaseDir", ""
+//        property "sonar.sources", "grails-app,src/main/groovy"
+//        property "sonar.exclusions", "**/conf/**,**/assets/**,**/*.properties,** /*.js,**/*.html,**/*.css"
+//        property "sonar.test.exclusions", "**/*.properties"
+//        property "sonar.dependencyCheck.jsonReportPath", file("build/reports/dependency-check-report.json").absolutePath
+//        property "sonar.dependencyCheck.htmlReportPath", file("build/reports/dependency-check-report.html").absolutePath
+////        property "sonar.projectName", "pvreports-dev-local"
+////        property "sonar.projectKey", "pvreports-dev-local"
+////        property "sonar.host.url", "http://127.0.0.1:9000/"
+////        property "sonar.login","2cb09d2ceee22d17828f3e1d66e02809b35124b8" //local
+//    }
+//}
+//
+//dependencyCheck {
+//    formats=['HTML','JSON']
+//}
+
+
+//to remove
+//sourceSets {
+//    main {
+//        groovy {
+//            exclude '**/test/groovy/**' , '**/integration-test/**'
+//        }
+//        java {
+//            exclude '**/test/groovy/**', '**/integration-test/**'
+//        }
+//    }
+//}
+//
+//
+//tasks.withType(GroovyCompile) {
+//    doFirst {
+//        source = source.filter { !it.path.contains('/test/groovy/') && !it.path.contains('/integration-test/') }
+//    }
+//}
+//
+//tasks.withType(JavaCompile) {
+//    doFirst {
+//        source = source.filter { !it.path.contains('/test/groovy/') && !it.path.contains('/integration-test/') }
+//    }
+//}
+
+runCommand {
+    systemProperty "spring.devtools.restart.enabled", false
+}
+
+jacoco {
+    toolVersion = "0.8.11" // latest stable
+}
+
+jacocoTestReport {
+    dependsOn test // run tests before generating report
+
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+        csv.required.set(false)
+    }
+}
+
+test {
+    finalizedBy jacocoTestReport // Generate report after tests
+}

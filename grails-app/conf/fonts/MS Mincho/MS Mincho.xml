@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="MS Mincho">
+        <normal>fonts/MS Mincho/MS Mincho.ttf</normal>
+        <bold>fonts/MS Mincho/MS Mincho.ttf</bold>
+        <italic>fonts/MS Mincho/MS Mincho.ttf</italic>
+        <boldItalic>fonts/MS Mincho/MS Mincho.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'MS Mincho', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.xhtml">'MS Mincho', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.rtf">Arial</export>
+        </exportFonts>
+    </fontFamily>
+</fontFamilies>

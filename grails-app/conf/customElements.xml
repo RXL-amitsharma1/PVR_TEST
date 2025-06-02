@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="customElementsExportHandlerBundle"
+          class="net.sf.jasperreports.engine.export.DefaultElementHandlerBundle">
+        <property name="namespace" value="http://www.rxlogix.com/customElements"/>
+        <property name="elementHandlers">
+            <map>
+                <entry key="highcharts">
+                    <map>
+                        <entry key="net.sf.jasperreports.html">
+                            <bean class="com.rxlogix.dynamicReports.charts.HtmlChartHandler"/>
+                        </entry>
+                        <entry key="net.sf.jasperreports.xlsx">
+                            <bean class="com.rxlogix.dynamicReports.charts.XlsxChartHandler"/>
+                        </entry>
+                        <entry key="net.sf.jasperreports.docx">
+                            <bean class="com.rxlogix.dynamicReports.charts.DocxChartHandler"/>
+                        </entry>
+                        <entry key="net.sf.jasperreports.pdf">
+                            <bean class="com.rxlogix.dynamicReports.charts.PdfChartHandler"/>
+                        </entry>
+                        <entry key="net.sf.jasperreports.pptx">
+                            <bean class="com.rxlogix.dynamicReports.charts.PptxChartHandler"/>
+                        </entry>
+                    </map>
+                </entry>
+                <entry key="formula">
+                    <map>
+                        <entry key="net.sf.jasperreports.xlsx">
+                            <bean class="com.rxlogix.dynamicReports.customElements.formula.FormulaXlsxHandler"/>
+                        </entry>
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

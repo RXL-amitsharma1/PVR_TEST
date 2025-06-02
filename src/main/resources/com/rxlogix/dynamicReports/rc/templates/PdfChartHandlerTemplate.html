@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <script src="http://localhost/vendorUi/jquery/jquery-3.7.1.min.js"></script>
+    <script src="http://localhost/vendorUi/highcharts/highcharts-10.3.3/highstock.js"></script>
+    <script src="http://localhost/vendorUi/highcharts/highcharts-10.3.3/highcharts-more.js"></script>
+    <script src="http://localhost/vendorUi/highcharts/highcharts-10.3.3/highcharts-3d.js"></script>
+    <script src="http://localhost/vendorUi/highcharts/modules/no-data-to-display.js"></script>
+    <script src="http://localhost/vendorUi/highcharts/modules/map.js"></script>
+    <script src="http://localhost/vendorUi/highcharts/modules/world.js"></script>
+    <script src="http://localhost/vendorUi/highcharts/modules/annotations.js"></script>
+    <script src="http://localhost/vendorUi/highcharts/highcharts-10.3.3/solid-gauge.js"></script>
+    <script src="http://localhost/vendorUi/highcharts/plugins/grouped-categories-1.3.2.js"></script>
+  </head>
+
+  <body>
+    <div id="container" style="width: 100%; height: 100%;"></div>
+    <script>
+      /**
+       * Drop-in compatibility fix for semi-transparent fills for old WebKit
+       * browsers as well as Batik export servers. The fix splits rgba fill colors into
+       * solid colors for fills, and a separate fill-opacity attribute.
+       */
+      Highcharts.SVGElement.prototype.fillSetter = function(value, key, element) {
+          if (typeof value === 'string') {
+              if (value.indexOf('rgba') === 0) {
+                  // Split it up
+                  colorObject = Highcharts.Color(value);
+                  element.setAttribute(key + '-opacity', colorObject.get('a'));
+                  element.setAttribute(key, colorObject.get('rgb'));
+              } else {
+                  element.setAttribute(key, value);
+              }
+          } else if (value) {
+              this.complexColor(value, key, element);
+          }
+      };
+      jQuery(function() {
+          var data = JSON.stringify(${chartData});
+          var latestComment = JSON.stringify(${latestComment});
+          var handler = function(key, value) {
+              if (key === "formatter" || key === "click") {
+                  value = null
+              }
+              return value;
+          };
+          var options = JSON.parse(data, handler);
+          jQuery('#container').highcharts(options);
+          if((latestComment !== null) && (latestComment.length >0) && (latestComment !== '""')) {
+              var chartObj = jQuery('#container').highcharts();
+              var annotationXValue = 0.9 * (chartObj.chartWidth);
+              var annotationYValue = 0.1 * (chartObj.chartHeight);
+              var labelsObj = {};
+              var point = {};
+              point.x = annotationXValue;
+              point.y = annotationYValue;
+              labelsObj.text = latestComment;
+              labelsObj.point = point;
+              var styleObj = {};
+              styleObj.width = 200;
+              labelsObj.style = styleObj;
+              var labels = [];
+              labels.push(labelsObj);
+              var labelOptions = {};
+              labelOptions.backgroundColor = 'rgba(236,236,236,1)';
+              labelOptions.borderWidth = 0;
+              labelOptions.borderRadius = 40;
+              var annotationObj = {};
+              annotationObj.labelOptions = labelOptions;
+              annotationObj.id = 'current';
+              annotationObj.labels = labels;
+              annotationObj.draggable = 'xy';
+              chartObj.addAnnotation(annotationObj);
+          }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,502 @@
+{
+  "templateType": {
+    "enumType": "com.rxlogix.enums.TemplateTypeEnum",
+    "name": "XML"
+  },
+  "userTemplates": [
+    {
+      "reportTemplate": {
+        "id": 3417118
+      },
+      "user": {
+        "id": 6200
+      }
+    }
+  ],
+  "fixedTemplate": null,
+  "nameWithDescription": "XML Test  - Owner: Sergey Gologuzov",
+  "rootNodeId": 3317118,
+  "description": null,
+  "shareWithUsers": [
+    {
+      "id": 6200,
+      "username": "sgologuzov",
+      "fullName": "Sergey Gologuzov"
+    }
+  ],
+  "ownerId": 6200,
+  "rootNode": {
+    "key": 3317118,
+    "title": "ichicsr",
+    "data": {
+      "elementType": "TAG",
+      "type": "TAG_PROPERTIES",
+      "mandatory": false,
+      "primary": false,
+      "orderingNumber": 0,
+      "templateId": null,
+      "filterFieldInfo": null,
+      "jsonQuery": null,
+      "reportFieldInfo": null,
+      "customExpression": null,
+      "value": null,
+      "dataType": null,
+      "dateFormat": null,
+      "allowedValues": null,
+      "maxLength": null
+    },
+    "children": [
+      {
+        "key": 98997118,
+        "title": "ichicsrmessageheader",
+        "data": {
+          "elementType": "TAG",
+          "type": "TAG_PROPERTIES",
+          "mandatory": false,
+          "primary": false,
+          "orderingNumber": 0,
+          "templateId": 28457118,
+          "filterFieldInfo": null,
+          "jsonQuery": null,
+          "reportFieldInfo": null,
+          "customExpression": null,
+          "value": null,
+          "dataType": null,
+          "dateFormat": null,
+          "allowedValues": null,
+          "maxLength": null
+        },
+        "children": [
+          {
+            "key": 99017118,
+            "title": "messageidentifier",
+            "data": {
+              "elementType": "TAG",
+              "type": "SOURCE_FIELD",
+              "mandatory": false,
+              "primary": false,
+              "orderingNumber": 0,
+              "templateId": 28457118,
+              "filterFieldInfo": null,
+              "jsonQuery": null,
+              "reportFieldInfo": {
+                "id": 28397118,
+                "suppressRepeatingValues": false,
+                "suppressLabel": false,
+                "sort": null,
+                "reportField": {
+                  "id": 7893
+                },
+                "stackId": -1,
+                "columnWidth": 0,
+                "customField": null,
+                "redactedValue": false,
+                "commaSeparatedValue": false,
+                "sortLevel": -1,
+                "renameValue": null,
+                "customExpression": null,
+                "newLegendValue": null,
+                "setId": 0,
+                "reportFieldInfoList": {
+                  "id": 28377118
+                },
+                "argusName": "cm.CASE_NUM",
+                "advancedSorting": null,
+                "datasheet": null,
+                "blindedValue": false
+              },
+              "customExpression": null,
+              "value": null,
+              "dataType": "ALPHA_NUMERIC",
+              "dateFormat": null,
+              "allowedValues": null,
+              "maxLength": null
+            },
+            "children": []
+          },
+          {
+            "key": 99037118,
+            "title": "messagedate",
+            "data": {
+              "elementType": "TAG",
+              "type": "SOURCE_FIELD",
+              "mandatory": false,
+              "primary": false,
+              "orderingNumber": 1,
+              "templateId": 28457118,
+              "filterFieldInfo": null,
+              "jsonQuery": null,
+              "reportFieldInfo": {
+                "id": 28317118,
+                "suppressRepeatingValues": false,
+                "suppressLabel": false,
+                "sort": null,
+                "reportField": {
+                  "id": 7917
+                },
+                "stackId": -1,
+                "columnWidth": 0,
+                "customField": null,
+                "redactedValue": false,
+                "commaSeparatedValue": false,
+                "sortLevel": -1,
+                "renameValue": null,
+                "customExpression": null,
+                "newLegendValue": null,
+                "setId": 0,
+                "reportFieldInfoList": {
+                  "id": 28277118
+                },
+                "argusName": "cf.DATE_LAST_UPDATE",
+                "advancedSorting": null,
+                "datasheet": null,
+                "blindedValue": false
+              },
+              "customExpression": null,
+              "value": null,
+              "dataType": "DATE",
+              "dateFormat": "CCYYMMDDhhmmss",
+              "allowedValues": null,
+              "maxLength": null
+            },
+            "children": []
+          },
+          {
+            "key": 99057118,
+            "title": "messagesenderidentifier",
+            "data": {
+              "elementType": "TAG",
+              "type": "SOURCE_FIELD",
+              "mandatory": false,
+              "primary": false,
+              "orderingNumber": 2,
+              "templateId": 28457118,
+              "filterFieldInfo": null,
+              "jsonQuery": null,
+              "reportFieldInfo": {
+                "id": 28337118,
+                "suppressRepeatingValues": false,
+                "suppressLabel": false,
+                "sort": null,
+                "reportField": {
+                  "id": 7149
+                },
+                "stackId": -1,
+                "columnWidth": 0,
+                "customField": {
+                  "id": 28237118
+                },
+                "redactedValue": false,
+                "commaSeparatedValue": false,
+                "sortLevel": -1,
+                "renameValue": "ICSR Sender Identifier",
+                "customExpression": "(select param_value from GTT_REPORT_INPUT_PARAMS where param_key='senderId')",
+                "newLegendValue": null,
+                "setId": 0,
+                "reportFieldInfoList": {
+                  "id": 28277118
+                },
+                "argusName": "cf.CASE_OUTCOME_ID",
+                "advancedSorting": null,
+                "datasheet": null,
+                "blindedValue": false
+              },
+              "customExpression": null,
+              "value": null,
+              "dataType": "ALPHA_NUMERIC",
+              "dateFormat": null,
+              "allowedValues": null,
+              "maxLength": null
+            },
+            "children": []
+          },
+          {
+            "key": 99077118,
+            "title": "messagereceiveridentifier",
+            "data": {
+              "elementType": "TAG",
+              "type": "SOURCE_FIELD",
+              "mandatory": false,
+              "primary": false,
+              "orderingNumber": 3,
+              "templateId": 28457118,
+              "filterFieldInfo": null,
+              "jsonQuery": null,
+              "reportFieldInfo": {
+                "id": 28357118,
+                "suppressRepeatingValues": false,
+                "suppressLabel": false,
+                "sort": null,
+                "reportField": {
+                  "id": 7167
+                },
+                "stackId": -1,
+                "columnWidth": 0,
+                "customField": {
+                  "id": 28257118
+                },
+                "redactedValue": false,
+                "commaSeparatedValue": false,
+                "sortLevel": -1,
+                "renameValue": "ICSR Receiver Identifier",
+                "customExpression": "(select param_value from GTT_REPORT_INPUT_PARAMS where param_key='receiverId')",
+                "newLegendValue": null,
+                "setId": 0,
+                "reportFieldInfoList": {
+                  "id": 28277118
+                },
+                "argusName": "ccf.CHARACTERISTIC_ID",
+                "advancedSorting": null,
+                "datasheet": null,
+                "blindedValue": false
+              },
+              "customExpression": null,
+              "value": null,
+              "dataType": "ALPHA_NUMERIC",
+              "dateFormat": null,
+              "allowedValues": null,
+              "maxLength": null
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "key": 3337118,
+        "title": "safetyreport",
+        "data": {
+          "elementType": "TAG",
+          "type": "TAG_PROPERTIES",
+          "mandatory": false,
+          "primary": true,
+          "orderingNumber": 1,
+          "templateId": 28217118,
+          "filterFieldInfo": null,
+          "jsonQuery": null,
+          "reportFieldInfo": null,
+          "customExpression": null,
+          "value": null,
+          "dataType": null,
+          "dateFormat": null,
+          "allowedValues": null,
+          "maxLength": null
+        },
+        "children": [
+          {
+            "key": 99097118,
+            "title": "safetyreportid",
+            "data": {
+              "elementType": "TAG",
+              "type": "STATIC_VALUE",
+              "mandatory": false,
+              "primary": false,
+              "orderingNumber": 0,
+              "templateId": null,
+              "filterFieldInfo": null,
+              "jsonQuery": null,
+              "reportFieldInfo": null,
+              "customExpression": null,
+              "value": "IN-RXLOGIX-20170201008",
+              "dataType": "ALPHA_NUMERIC",
+              "dateFormat": null,
+              "allowedValues": null,
+              "maxLength": 100
+            },
+            "children": []
+          },
+          {
+            "key": 99117118,
+            "title": "creationdate",
+            "data": {
+              "elementType": "TAG",
+              "type": "SOURCE_FIELD",
+              "mandatory": false,
+              "primary": false,
+              "orderingNumber": 1,
+              "templateId": 28217118,
+              "filterFieldInfo": null,
+              "jsonQuery": null,
+              "reportFieldInfo": {
+                "id": 28017118,
+                "suppressRepeatingValues": false,
+                "suppressLabel": false,
+                "sort": null,
+                "reportField": {
+                  "id": 7899
+                },
+                "stackId": -1,
+                "columnWidth": 0,
+                "customField": null,
+                "redactedValue": false,
+                "commaSeparatedValue": false,
+                "sortLevel": -1,
+                "renameValue": null,
+                "customExpression": null,
+                "newLegendValue": null,
+                "setId": 0,
+                "reportFieldInfoList": {
+                  "id": 27997118
+                },
+                "argusName": "cm.DATE_FIRST_CREATE",
+                "advancedSorting": null,
+                "datasheet": null,
+                "blindedValue": false
+              },
+              "customExpression": null,
+              "value": null,
+              "dataType": null,
+              "dateFormat": null,
+              "allowedValues": null,
+              "maxLength": null
+            },
+            "children": []
+          },
+          {
+            "key": 99137118,
+            "title": "receivedate",
+            "data": {
+              "elementType": "TAG",
+              "type": "SOURCE_FIELD",
+              "mandatory": false,
+              "primary": false,
+              "orderingNumber": 2,
+              "templateId": 28217118,
+              "filterFieldInfo": null,
+              "jsonQuery": null,
+              "reportFieldInfo": {
+                "id": 28057118,
+                "suppressRepeatingValues": false,
+                "suppressLabel": false,
+                "sort": null,
+                "reportField": {
+                  "id": 7917
+                },
+                "stackId": -1,
+                "columnWidth": 0,
+                "customField": null,
+                "redactedValue": false,
+                "commaSeparatedValue": false,
+                "sortLevel": -1,
+                "renameValue": null,
+                "customExpression": null,
+                "newLegendValue": null,
+                "setId": 0,
+                "reportFieldInfoList": {
+                  "id": 27997118
+                },
+                "argusName": "cf.DATE_LAST_UPDATE",
+                "advancedSorting": null,
+                "datasheet": null,
+                "blindedValue": false
+              },
+              "customExpression": null,
+              "value": null,
+              "dataType": "DATE",
+              "dateFormat": "CCYYMMDDhhmmss",
+              "allowedValues": null,
+              "maxLength": null
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "fixedTemplateId": null,
+  "ciomsI": false,
+  "allSelectedFieldsInfo": [],
+  "lastUpdated": "2019-12-02T08:41:31Z",
+  "hasBlanks": false,
+  "dateCreated": "2019-11-04T12:04:16Z",
+  "isDeleted": false,
+  "ciomsITemplate": false,
+  "instanceIdentifierForAuditLog": "XML Test",
+  "sectionsName": "XML Test",
+  "templateFooter": null,
+  "shareWithGroups": [],
+  "modifiedBy": "sgologuzov",
+  "templateUserStates": [],
+  "reassessListedness": null,
+  "owner": {
+    "id": 6200,
+    "username": "sgologuzov",
+    "fullName": "Sergey Gologuzov"
+  },
+  "editable": true,
+  "reassessForProduct": false,
+  "fieldsToValidate": [
+    "rootNode",
+    "cllTemplates",
+    "hasMany",
+    "mapping",
+    "constraints",
+    "namedQueries",
+    "log",
+    "instanceControllersDomainBindingApi",
+    "instanceConvertersApi",
+    "transients",
+    "org_grails_datastore_mapping_dirty_checking_DirtyCheckable__$changedProperties",
+    "org_grails_datastore_gorm_GormValidateable__skipValidate",
+    "org_grails_datastore_gorm_GormValidateable__errors",
+    "$defaultDatabindingWhiteList"
+  ],
+  "cllTemplates": [
+    {
+      "id": 28457118,
+      "category": " ",
+      "name": "ICSR_HEADER",
+      "description": "ICSR_HEADER",
+      "dateCreated": "11/06/2019 18:18:06",
+      "lastUpdated": "11/06/2019 18:18:06",
+      "lastExecuted": null,
+      "tags": null,
+      "owner": {
+        "id": 6200,
+        "username": "sgologuzov",
+        "fullName": "Sergey Gologuzov"
+      },
+      "createdBy": "sgologuzov",
+      "isDeleted": false,
+      "checkUsage": 0,
+      "qualityChecked": false,
+      "type": "Case Line Listing",
+      "useFixedTemplate": false
+    },
+    {
+      "id": 28217118,
+      "category": " ",
+      "name": "SafetyReport",
+      "description": "SafetyReportSection",
+      "dateCreated": "11/06/2019 18:17:48",
+      "lastUpdated": "11/06/2019 18:17:48",
+      "lastExecuted": null,
+      "tags": null,
+      "owner": {
+        "id": 6200,
+        "username": "sgologuzov",
+        "fullName": "Sergey Gologuzov"
+      },
+      "createdBy": "sgologuzov",
+      "isDeleted": false,
+      "checkUsage": 0,
+      "qualityChecked": false,
+      "type": "Case Line Listing",
+      "useFixedTemplate": false
+    }
+  ],
+  "useFixedTemplate": false,
+  "showTemplateFooter": false,
+  "autoTimeStampOff": false,
+  "tags": [],
+  "qualityChecked": false,
+  "userGroupTemplates": [],
+  "factoryDefault": false,
+  "createdBy": "sgologuzov",
+  "name": "XML Test",
+  "showChartSheet": false,
+  "originalTemplateId": 0,
+  "category": null,
+  "lastExecuted": "2019-11-13T10:02:52Z",
+  "POIInputsKeys": [],
+  "categoryId": null
+}

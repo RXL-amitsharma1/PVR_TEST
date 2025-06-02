@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="pvreports" entityID="pvreports">
+    <md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="false"
+                        protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <md:KeyDescriptor use="signing">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>
+                        MIIDVDCCAjygAwIBAgIGAWIN/yAnMA0GCSqGSIb3DQEBCwUAMGsxCzAJBgNVBAYTAlVTMRMwEQYD
+                        VQQIEwpDYWxpZm9ybmlhMRQwEgYDVQQHEwtsb3MgYW5nZWxlczEQMA4GA1UEChMHcnhsb2dpeDEM
+                        MAoGA1UECxMDZGV2MREwDwYDVQQDDAhwaW5nX3B2cjAeFw0xODAzMTAwMzQwNDZaFw0yNDA4MzAw
+                        MzQwNDZaMGsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRQwEgYDVQQHEwtsb3Mg
+                        YW5nZWxlczEQMA4GA1UEChMHcnhsb2dpeDEMMAoGA1UECxMDZGV2MREwDwYDVQQDDAhwaW5nX3B2
+                        cjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM/MlTJyH9XW7VPzw36u8cCB/yIQU1wt
+                        Vh/OldY8Xg5/mHd1VekwUCyamafPD1uMrHG8h9N2Rs5iGQP9eZA+he9LLPGty4CGlQNO/RQqr+Zg
+                        u/W7P5rthd+i5+B9hzX2Q4FoFlfC/W5I7VUtaacr7Qi+YEIZjxKY1fr7RWiypckyegE9dwWqLDCy
+                        7U9CtYq/CoyjcBipAuIXXOjd4fKr1Bqg0Nl5FSGA8z3o/Sfh4Mkd5gt9NXbi9lZhiuJEbgLk/Kks
+                        6nwz0vbt7hez/IoDL9nMIw0sJA7FgSGZB54TtpyvuoeQ76klqaNj7wHaOkeCjlORRKO4fEYhwYhU
+                        7AmWtp8CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAXc1/qefz7XryJEIqiQQZiJJ+wvSQMBg5SoM1
+                        4C3DvgXwqil27yDSsQHPHP5ZTYaO7zYv7wIoh/hTByjF2PJqeK24IjWa5oXaTlJgSFMuk6OMnvN+
+                        gXEVYr+h8SqkOdahX/+Jspel4YH5o2uT747YPZ8XExHCagEtVBtJYrFfIEX1F720pfllKc1ho8JN
+                        DBTLQ4UByEvy06Q33Wax8L2pBD9YJZapIG6fdVh5/MoKKWvLTnkFQLpX2utobQKjmDxzQYtgbEYY
+                        C06jhonSu/er4t2c3HpFzDnTBbYpK2Me5dzpcxJxUthJ4a18A5dtnduhlUg2m4eFu4mAowUuZAiZ
+                        +w==
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </md:KeyDescriptor>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                                Location="http://localhost:8080/reports/saml/SingleLogout"/>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                                Location="http://localhost:8080/reports/saml/SingleLogout"/>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</md:NameIDFormat>
+        <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                                     Location="http://localhost:8080/reports/saml/SSO" index="0" isDefault="true"/>
+    </md:SPSSODescriptor>
+</md:EntityDescriptor>

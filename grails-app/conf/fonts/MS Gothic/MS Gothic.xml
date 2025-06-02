@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="MS Gothic">
+        <normal>fonts/MS Gothic/MS Gothic.ttf</normal>
+        <bold>fonts/MS Gothic/MS Gothic.ttf</bold>
+        <italic>fonts/MS Gothic/MS Gothic.ttf</italic>
+        <boldItalic>fonts/MS Gothic/MS Gothic.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'MS Gothic', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.xhtml">'MS Gothic', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.rtf">Arial</export>
+        </exportFonts>
+    </fontFamily>
+</fontFamilies>

@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+	<pageHeading>PV Reports Application Parameters</pageHeading>
+	<pageSubHeading>Entered parameters will get updated in config.groovy</pageSubHeading>
+	<version>5.3.1</version>
+	<fields id="SEEDING_USER">
+		<fieldType>text</fieldType>
+		<label>Enter PV Reports Seeding User</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter the pv reports seeding user</tooltip>
+		<required>true</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid seeding user</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>SEEDING_USER</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>pvreports.seeding.user</configKey>
+	</fields>
+	<fields id="APP_BASE_URL">
+		<fieldType>text</fieldType>
+		<label>Grails Appbase URL</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter Grails Appbase URL</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid Grails Appbase URL</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>APP_BASE_URL</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.appBaseURL</configKey>
+	</fields>
+	<fields id="SHARED_DIRECTORY">
+		<fieldType>text</fieldType>
+		<label>Enter Shared Directory</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter shared Directory</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid Shared Directory</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>SHARED_DIRECTORY</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>shared.directory</configKey>
+	</fields>
+	<fields id="TEMP_DIRECTORY">
+		<fieldType>text</fieldType>
+		<label>Enter Temp Directory</label>
+		<defaultValue>${System.getProperty("java.io.tmpdir")}/${appName}/</defaultValue>
+		<tooltip>Enter Temp Directory</tooltip>
+		<required>true</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid Temp Directory</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>TEMP_DIRECTORY</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>tempDirectory</configKey>
+	</fields>
+	<fields id="HELP_URL">
+		<fieldType>text</fieldType>
+		<label>Enter help Url</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter help Url</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid help Url</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>HELP_URL</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>helpUrl</configKey>
+	</fields>
+	<fields id="SERVER_DOMAIN">
+		<fieldType>text</fieldType>
+		<label>Enter PV Reports Cluster instance name </label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter the pv reports cluster instance name</tooltip>
+		<required>false</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid server Domain</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>SERVER_DOMAIN</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>pvr.cluster.instance.name</configKey>
+	</fields>
+	<fields id="LDAP_CONTEXT_MANAGER_DN">
+		<fieldType>text</fieldType>
+		<label>Enter LDAP Context Manager Dn</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter the LDAP Context Manager Dn</tooltip>
+		<required>true</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid LDAP Context Manager Dn</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>LDAP_CONTEXT_MANAGER_DN</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.context.managerDn</configKey>
+	</fields>
+	<fields id="LDAP_ADMIN_USER_PASSWORD">
+		<fieldType>password</fieldType>
+		<label>Enter LDAP admin user password</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter the LDAP admin user password</tooltip>
+		<required>true</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid LDAP admin user password</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>LDAP_ADMIN_USER_PASSWORD</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.context.managerPassword</configKey>
+	</fields>
+	<fields id="LDAP_SERVER_FQDN_NAME">
+		<fieldType>text</fieldType>
+		<label>Enter LDAP Server FQDN Name</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter the LDAP Server FQDN Name</tooltip>
+		<required>true</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid Server FQDN Name</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>LDAP_SERVER_FQDN_NAME</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.context.server</configKey>
+	</fields>
+	<fields id="LDAP_SEARCH_BASE">
+		<fieldType>text</fieldType>
+		<label>LDAP Search Base</label>
+		<defaultValue>ou=users,dc=eng,dc=rxlogix,dc=com</defaultValue>
+		<tooltip>Enter the LDAP Serach Base</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter the LDAP Search Base</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>LDAP_SEARCH_BASE</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.search.base</configKey>
+	</fields>
+	<fields id="LDAP_USERS_SEARCH_FILTER">
+		<fieldType>text</fieldType>
+		<label>LDAP users Search Filter</label>
+		<defaultValue>(&amp;(|(uid=*{0}*)(cn=*{0}*)(mail=*{0}*)))</defaultValue>
+		<tooltip>Enter users LDAP Search Filter</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid LDAP Search Filter</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>LDAP_USERS_SEARCH_FILTER</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.users.search.filter</configKey>
+	</fields>
+	<fields id="LDAP_GROUP_SEARCH_BASE">
+		<fieldType>text</fieldType>
+		<label>LDAP Group Search Base</label>
+		<defaultValue>ou=groups,dc=eng,dc=rxlogix,dc=com</defaultValue>
+		<tooltip>Enter LDAP Group Search Base</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid LDAP group search base</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>LDAP_GROUP_SEARCH_BASE</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.authorities.groupSearchBase</configKey>
+	</fields>
+	<fields id="LDAP_SEARCH_FILTER">
+		<fieldType>text</fieldType>
+		<label>LDAP Search Filter</label>
+		<defaultValue>(uid={0})</defaultValue>
+		<tooltip>Enter LDAP Search Filter</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid LDAP Search Filter</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>LDAP_SEARCH_FILTER</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.search.filter</configKey>
+	</fields>
+	<fields id="LDAP_GROUP_SEARCH_FILTER">
+		<fieldType>text</fieldType>
+		<label>LDAP Group Search Filter</label>
+		<defaultValue>UniqueMember={0}</defaultValue>
+		<tooltip>Enter LDAP Group Search Filter</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid LDAP Group Search Filter</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>LDAP_GROUP_SEARCH_FILTER</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.authorities.groupSearchFilter</configKey>
+	</fields>
+	<fields id="LDAP_FULLNAME_ATTRIBUTE">
+		<fieldType>text</fieldType>
+		<label>LDAP Full Name</label>
+		<defaultValue>cn</defaultValue>
+		<tooltip>Enter LDAP Full Name</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid LDAP Full Name</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>LDAP_FULLNAME_ATTRIBUTE</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.fullName.attribute</configKey>
+	</fields>
+	<fields id="LDAP_MAIL_ATTRIBUTE">
+		<fieldType>text</fieldType>
+		<label>LDAP Email</label>
+		<defaultValue>mail</defaultValue>
+		<tooltip>Enter the LDAP mail attribute</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid LDAP mail attribute</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>LDAP_MAIL_ATTRIBUTE</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.email.attribute</configKey>
+	</fields>
+	<fields id="LDAP_USERNAME_ATTRIBUTE">
+		<fieldType>text</fieldType>
+		<label>Enter LDAP username attribute</label>
+		<defaultValue>uid</defaultValue>
+		<tooltip>Enter LDAP username attribute</tooltip>
+		<required>true</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid LDAP username attribute</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>LDAP_USERNAME_ATTRIBUTE</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.ldap.uid.attribute</configKey>
+	</fields>
+	<fields id="DEFAULT_EMAIL_ID">
+		<fieldType>text</fieldType>
+		<label>Enter Grails mail default from</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter LDAP username attribute</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid email id</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>DEFAULT_EMAIL_ID</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.mail.default.from</configKey>
+	</fields>
+	<fields id="SMTP_SERVER">
+		<fieldType>text</fieldType>
+		<label>Enter Grails smtp server</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter Grails smtp server</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid Grails smtp server</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>SMTP_SERVER</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.mail.host</configKey>
+	</fields>
+	<fields id="SMTP_PORT">
+		<fieldType>text</fieldType>
+		<label>Enter Grails smtp port</label>
+		<defaultValue>25</defaultValue>
+		<tooltip>Enter Grails smtp port</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid Grails smtp port</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>SMTP_PORT</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.mail.port</configKey>
+	</fields>
+	<fields id="SMTP_USER_NAME">
+		<fieldType>text</fieldType>
+		<label>Enter Grails smtp username</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter Grails smtp username</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid Grails smtp username</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>SMTP_USER_NAME</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.mail.username</configKey>
+	</fields>
+	<fields id="SMTP_USER_PASSWORD">
+		<fieldType>password</fieldType>
+		<label>Enter Grails smtp user password</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter Grails smtp user password</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid Grails smtp user password</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>SMTP_USER_PASSWORD</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.mail.password</configKey>
+	</fields>
+	<fields id="HAZELCAST_ENABLED">
+		<fieldType>text</fieldType>
+		<label>HazelCast Enabled (true/false)</label>
+		<defaultValue>false</defaultValue>
+		<tooltip>Is hazelcast Enabled (true/false)</tooltip>
+		<required>true</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter hazelcast Enabled in lower case(true/false)</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>HAZELCAST_ENABLED</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>hazelcast.enabled</configKey>
+	</fields>
+	<fields id="HAZELCAST_SERVER_INSTANCE_NAME">
+		<fieldType>text</fieldType>
+		<label>Enter hazelcast server instance name</label>
+		<defaultValue>pvr</defaultValue>
+		<tooltip>Enter hazelcast server instance name</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid hazelcast server instance name</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>HAZELCAST_SERVER_INSTANCE_NAME</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>hazelcast.server.instance.name</configKey>
+	</fields>
+	<fields id="HAZELCAST_SERVER_PORT">
+		<fieldType>text</fieldType>
+		<label>Hazelcast server port</label>
+		<defaultValue>5701</defaultValue>
+		<tooltip>Enter hazelcast server port</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid numberic hazelcast server port</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>HAZELCAST_SERVER_PORT</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>hazelcast.server.port</configKey>
+	</fields>
+	<fields id="HAZELCAST_NETWORK_NODES">
+		<fieldType>text</fieldType>
+		<label>Hazelcast network nodes</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter hazelcast network nodes</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid hazelcast network nodes</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>HAZELCAST_NETWORK_NODES</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>hazelcast.network.nodes</configKey>
+	</fields>
+	<fields id="HAZELCAST_GROUP_NAME">
+		<fieldType>text</fieldType>
+		<label>Hazelcast group name</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter hazelcast group name</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid hazelcast group name</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>HAZELCAST_GROUP_NAME</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>hazelcast.group.name</configKey>
+	</fields>
+	<fields id="HAZELCAST_GROUP_PASSWORD">
+		<fieldType>password</fieldType>
+		<label>Hazelcast group password</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter hazelcast group password</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid hazelcast group password</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>HAZELCAST_GROUP_PASSWORD</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>hazelcast.group.password</configKey>
+	</fields>
+	<fields id="SAML_ACTIVATED_FLAG">
+		<fieldType>text</fieldType>
+		<label>SAML activated flag</label>
+		<defaultValue>false</defaultValue>
+		<tooltip>SAML activated flag (true/false)</tooltip>
+		<required>true</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter SAML activated flag in lower case(true/false)</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>SAML_ACTIVATED_FLAG</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.active</configKey>
+	</fields>
+	<fields id="IDP_METADATA_FILE_PATH">
+		<fieldType>text</fieldType>
+		<label>SAML metadata providers (IDP_ENTITY_ID:IDP_FILE_PATH)</label>
+		<defaultValue></defaultValue>
+		<tooltip>(IDP_ENTITY_ID:IDP_FILE_PATH)</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid (IDP_ENTITY_ID:IDP_FILE_PATH)</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>IDP_METADATA_FILE_PATH</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.providers</configKey>
+	</fields>
+	<fields id="SP_METADATA_FILE_NAME">
+		<fieldType>text</fieldType>
+		<label>SAML SP metadata file name</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter SAML SP metadata file name</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid SAML SP metadata file name</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>SP_METADATA_FILE_NAME</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.sp.file</configKey>
+	</fields>
+	<fields id="KEY_STORE_FILE_PATH">
+		<fieldType>text</fieldType>
+		<label>SAML key manager store file</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter SAML key manager store file</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid SAML key manager store file</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>KEY_STORE_FILE_PATH</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.keyManager.storeFile</configKey>
+	</fields>
+	<fields id="KEY_STORE_FILE_PASSCODE">
+		<fieldType>password</fieldType>
+		<label>SAML key manager store file password</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter SAML key manager store file password</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid SAML key manager store file password</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>KEY_STORE_FILE_PASSCODE</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.keyManager.storePasscode</configKey>
+	</fields>
+	<fields id="KEY_STORE_FILE_PASS">
+		<fieldType>text</fieldType>
+		<label>SAML key manager store file pass</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter SAML key manager store file pass</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid SAML key manager store file pass</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>KEY_STORE_FILE_PASS</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.keyManager.storePass</configKey>
+	</fields>
+	<fields id="KEY_ALIAS">
+		<fieldType>text</fieldType>
+		<label>KEY ALIAS</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter key alias</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid key alias</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>KEY_ALIAS</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.keyManager.passwords.keyAlias</configKey>
+	</fields>
+	<fields id="KEY_PASSCODE">
+		<fieldType>password</fieldType>
+		<label>KEY PASSWORD</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter key password</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid key password</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>KEY_PASSCODE</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.keyManager.passwords.keyPasscode</configKey>
+	</fields>
+	<fields id="KEY_PASS">
+		<fieldType>text</fieldType>
+		<label>KEY PASS</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter key pass</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid key pass</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>KEY_PASS</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.keyManager.passwords.keyPass</configKey>
+	</fields>
+	<fields id="DEFAULT_KEY">
+		<fieldType>text</fieldType>
+		<label>Default Key</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter default key</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid default key</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>DEFAULT_KEY</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.defaultKey</configKey>
+	</fields>
+	<fields id="SP_DEFAULTS_LOCAL">
+		<fieldType>text</fieldType>
+		<label>SP default local(remove the quotes before entering)</label>
+		<defaultValue>''</defaultValue>
+		<tooltip>Enter default local (true/false)</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid default local in lower case(true/false)</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>SP_DEFAULTS_LOCAL</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.sp.defaults.local</configKey>
+	</fields>
+	<fields id="SP_DEFAULT_ALIAS">
+		<fieldType>text</fieldType>
+		<label>SP default alias</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter SP default alias</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid SP default alias</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>SP_DEFAULT_ALIAS</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.sp.defaults.alias</configKey>
+	</fields>
+	<fields id="SP_DEFAULTS_SECURITY_PROFILE">
+		<fieldType>text</fieldType>
+		<label>SP defaults security profile</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter SP default security profile</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid SP default security profile</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>SP_DEFAULTS_SECURITY_PROFILE</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.sp.defaults.securityProfile</configKey>
+	</fields>
+	<fields id="SIGNING_KEY">
+		<fieldType>text</fieldType>
+		<label>SP Signing key</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter SP signing key</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid SP signing key</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>SIGNING_KEY</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.sp.defaults.signingKey</configKey>
+	</fields>
+	<fields id="ENCRYPTION_KEY">
+		<fieldType>text</fieldType>
+		<label>SP Encryption key</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter SP encryption key</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid SP encryption key</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>ENCRYPTION_KEY</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.sp.defaults.encryptionKey</configKey>
+	</fields>
+	<fields id="TLS_KEY">
+		<fieldType>text</fieldType>
+		<label>SP TLS key</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter SP TLS key</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid SP TLS key</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>TLS_KEY</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.sp.defaults.tlsKey</configKey>
+	</fields>
+	<fields id="REQUIRE_ARTIFACT_RESOLVE_SIGNED">
+		<fieldType>text</fieldType>
+		<label>Require artifact resolve signed(remove the quotes before entering)</label>
+		<defaultValue>''</defaultValue>
+		<tooltip>Enter require artifact resolve signed (true/false)</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid require artifact resolve signed in lower case(true/false)</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>REQUIRE_ARTIFACT_RESOLVE_SIGNED</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.sp.defaults.requireArtifactResolveSigned</configKey>
+	</fields>
+	<fields id="REQUIRE_LOGOUT_REQUEST_SIGNED">
+		<fieldType>text</fieldType>
+		<label>Require logout request signed(remove the quotes before entering)</label>
+		<defaultValue>''</defaultValue>
+		<tooltip>Enter require logout request signed (true/false)</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid require logout request signed in lower case(true/false)</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>REQUIRE_LOGOUT_REQUEST_SIGNED</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.sp.defaults.requireLogoutRequestSigned</configKey>
+	</fields>
+	<fields id="REQUIRE_LOGOUT_RESPONSE_SIGNED">
+		<fieldType>text</fieldType>
+		<label>Require logout response signed(remove the quotes before entering)</label>
+		<defaultValue>''</defaultValue>
+		<tooltip>Enter require logout response signed (true/false)</tooltip>
+		<required>false</required> 
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid require logout response signed in lower case(true/false)</regexInvalidErrorMsg>
+		<advanceRequired>true</advanceRequired>
+		<labelForPdf>REQUIRE_LOGOUT_RESPONSE_SIGNED</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<configKey>grails.plugin.springsecurity.saml.metadata.sp.defaults.requireLogoutResponseSigned</configKey>
+	</fields>
+	<fields id="PVR_DB_IP_PORT_NO_AND_SID">
+		<fieldType>text</fieldType>
+		<label>IP:PORT/SID of the PVR DB</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter ip, port no. and sid [IP:PORT/SID]</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid PVR IP, Port No. and SID</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>PVR_DB_HOSTNAME:PVR_PORT/PVR_DB_INSTANCE</labelForPdf>
+		<needIpPortValidation>true</needIpPortValidation>
+		<configKey>dataSources.pva.url</configKey>
+		<compareTo>PVR_DATABASE</compareTo>
+	</fields>
+	<fields id="PVR_USER">
+		<fieldType>text</fieldType>
+		<label>Username of the PVR DB</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter the username of PVR DB</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid username of PVR DB</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>PVR_USER</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<compareTo>PVR_USER_DB_APP</compareTo>
+		<configKey>dataSources.pva.username</configKey>
+	</fields>
+	<fields id="PVR_USER_PASSWORD">
+		<fieldType>password</fieldType>
+		<label>Password of the PVR DB</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter password of PVR DB</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid password of PVR DB</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>PVR_USER_PASSWORD</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<compareTo>PVR_USER_DB_PASSWORD</compareTo>
+		<configKey>dataSources.pva.password</configKey>
+	</fields>
+	<fields id="PVA_APP_USER">
+		<fieldType>text</fieldType>
+		<label>Username of the PVR WebApp</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter the username of PVR WebApp</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid username of PVA DB</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>PVA_APP_USER</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<compareTo>PVR_USER_APP</compareTo>
+		<configKey>dataSource.username</configKey>
+	</fields>
+	<fields id="PVA_USER_PASSWORD">
+		<fieldType>password</fieldType>
+		<label>Password of the PVR WebApp</label>
+		<defaultValue></defaultValue>
+		<tooltip>Enter the password of PVR WebApp</tooltip>
+		<required>true</required>
+		<requiredErrorMsg>This is a mandatory field</requiredErrorMsg>
+		<regexPattern>^.*$</regexPattern>
+		<regexInvalidErrorMsg>Please enter valid password of PVA DB</regexInvalidErrorMsg>
+		<advanceRequired>false</advanceRequired>
+		<labelForPdf>PVA_USER_PASSWORD</labelForPdf>
+		<needIpPortValidation>false</needIpPortValidation>
+		<compareTo>PVR_APP_USER_PASSWORD</compareTo>
+		<configKey>dataSource.password</configKey>
+	</fields>
+</class>

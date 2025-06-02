@@ -1,0 +1,17 @@
+.sub-sate-width > .row{width:auto!important;}
+.form-group{
+    margin-bottom: 0px;
+}
+.timezone .btn{
+    padding-top: 2px;
+    border-radius: 5px 5px 5px 5px;
+    padding-top: 0px;
+    padding-left: 14px;
+}
+.input-group-btn:last-child>.btn{
+    border-radius: 0px 5px 5px 0px;
+    padding-bottom: 3px;
+}
+.modal-body{
+    overflow-y: unset!important;
+}
