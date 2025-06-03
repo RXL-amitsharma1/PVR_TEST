@@ -34,5 +34,6 @@ class ReportExecutorServiceSpec extends Specification implements DataTest, Servi
         normalUser = createUser(username, "ROLE_TEMPLATE_VIEW")
         configuration = createConfiguration(normalUser)
     }
+    
 
     }
