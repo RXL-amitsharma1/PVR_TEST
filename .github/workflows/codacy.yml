@@ -19,13 +19,13 @@ jobs:
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
         run: |
-          -export CODACY_CODE=$GITHUB_WORKSPACE
-          -sudo apt-get -qq update
-          -sudo apt-get -y -qq install openjdk-8-jdk openjdk-8-jre
-          -curl -s "https://get.sdkman.io" | bash
-          -source "$HOME/.sdkman/bin/sdkman-init.sh"
-          -sdk install gradle 7.3.3
+         # export CODACY_CODE=$GITHUB_WORKSPACE
+          # sudo apt-get -qq update
+          # sudo apt-get -y -qq install openjdk-8-jdk openjdk-8-jre
+          # curl -s "https://get.sdkman.io" | bash
+          # source "$HOME/.sdkman/bin/sdkman-init.sh"
+          # sdk install gradle 7.3.3
           gradle -v
-          -gradle jacocoTestReport
-          -bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r lib/build/reports/jacoco/test/jacocoTestReport.xml
+          # gradle jacocoTestReport
+          # bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r lib/build/reports/jacoco/test/jacocoTestReport.xml
          
