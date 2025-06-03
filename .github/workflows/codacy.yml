@@ -1,10 +1,10 @@
 name: Client Side Tools and Coverage
 
 on:
-  push:
-    branches: [ '*' ]
   pull_request:
-    branches: [ '*' ]
+    branches:
+      - main  # Only runs for PRs targeting the main branch
+
 
   workflow_dispatch:
 
