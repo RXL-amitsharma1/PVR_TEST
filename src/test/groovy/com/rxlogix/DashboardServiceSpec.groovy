@@ -36,6 +36,7 @@ class DashboardServiceSpec extends Specification implements DataTest, ServiceUni
             return false
         }
 
+        
         ViewHelper.metaClass.static.isPvPModule = { request ->
             if (request.forwardURI == '/publisher') {
                 return true
