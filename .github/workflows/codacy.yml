@@ -28,5 +28,6 @@ jobs:
           gradle -v
           ./gradlew clean check jacocoTestReport
           # gradle jacocoTestReport
+          
           bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r build/reports/jacoco/test/jacocoTestReport.xml
          
