@@ -26,8 +26,14 @@ jobs:
           # source "$HOME/.sdkman/bin/sdkman-init.sh"
           # sdk install gradle 7.3.3
           gradle -v
-          ./gradlew clean check jacocoTestReport
+          REPO_NAME="${{ github.repository }}"
+          BRANCH_NAME="${{ github.head_ref }}"
+          
+          echo REPO_NAME
+          curl -X POST -u "Ankit.Tiwari@rxlogix.com:11b28691899215ef23612c7e13ee239270" "https://pvbuild-eng.rxlogix.com/job/Jenkins-api_test/build"
+          
+          #./gradlew clean check jacocoTestReport
           # gradle jacocoTestReport
           
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r build/reports/jacoco/test/jacocoTestReport.xml
+          #bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r build/reports/jacoco/test/jacocoTestReport.xml
          
