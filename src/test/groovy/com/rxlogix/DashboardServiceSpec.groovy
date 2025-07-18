@@ -74,6 +74,9 @@ class DashboardServiceSpec extends Specification implements DataTest, ServiceUni
         return adminUser
     }
 
+
+
+    
     private makeUserService(User user) {
         def serviceMock = new MockFor(UserService)
         serviceMock.demand.getCurrentUser(0..2) { -> user }
