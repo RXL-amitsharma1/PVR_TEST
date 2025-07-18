@@ -30,8 +30,9 @@ jobs:
           BRANCH_NAME="${{ github.head_ref }}"
           
           echo REPO_NAME
-          curl -X POST -u "Ankit.Tiwari@rxlogix.com:11b28691899215ef23612c7e13ee239270" "https://pvbuild-eng.rxlogix.com/job/Jenkins-api_test/build"
-          
+          curl -X POST \
+          -u "Ankit.Tiwari@rxlogix.com:your-api-token" \
+          https://pvbuild-eng.rxlogix.com/job/Unused-pipelines/job/Jenkins-api_test/build
           #./gradlew clean check jacocoTestReport
           # gradle jacocoTestReport
           
