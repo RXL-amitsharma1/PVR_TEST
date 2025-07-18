@@ -10,6 +10,8 @@ class CapaInterceptor implements GrailsConfigurationAware {
       Boolean pvQualityEnabled
       Boolean showPvqModule
 
+      
+
       CapaInterceptor() {
             match(controller: "capa")
       }
